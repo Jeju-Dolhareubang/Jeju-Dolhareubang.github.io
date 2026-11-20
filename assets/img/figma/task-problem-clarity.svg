@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="376" height="250" viewBox="0 0 376 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Graphic">
+<circle id="Ellipse" cx="128" cy="180" r="52" fill="#51A2FF"/>
+<mask id="stroke0_0_53" fill="white">
+<path d="M342.547 149.15C346.222 166.437 280.007 195.158 194.653 213.301C109.299 231.443 37.1271 232.137 33.4527 214.85C29.7782 197.563 95.9927 168.842 181.347 150.699C266.701 132.557 338.873 131.863 342.547 149.15Z"/>
+</mask>
+<path id="Ellipse_2" d="M342.547 149.15C346.222 166.437 280.007 195.158 194.653 213.301C109.299 231.443 37.1271 232.137 33.4527 214.85C29.7782 197.563 95.9927 168.842 181.347 150.699C266.701 132.557 338.873 131.863 342.547 149.15Z" stroke-width="3" stroke="#D4D4D4" mask="url(#stroke0_0_53)"/>
+<circle id="Ellipse_3" cx="252" cy="72" r="56" fill="#51A2FF"/>
+</g>
+</svg>

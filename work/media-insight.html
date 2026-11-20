@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Insight — 박단비 Case Study</title>
+<meta name="description" content="Media Insight 케이스 스터디">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="--a:#baff30;--a2:#3f8f00;--a-ink:#111" class="case ">
+<div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
+
+<header class="gnb">
+  <a class="gnb__logo" href="../index.html" aria-label="PARK DANBI 홈">PARK<br>DANBI<small>(SENIOR UI/UX DESIGNER)</small></a>
+  <nav class="menu" aria-label="주요 메뉴">
+    <button class="menu__bar" type="button" aria-expanded="false" aria-controls="menu-panel">
+      <span class="menu__label"><span class="menu__grip" aria-hidden="true"><span></span><span></span><span></span><span></span></span>Menu</span>
+      <span class="menu__status">Open to work · 2026</span>
+    </button>
+    <div class="menu__panel" id="menu-panel">
+      <a class="menu__row" href="../index.html"><span>Home</span><span class="menu__thumb"><span style="background:linear-gradient(135deg,#3d6bff,#9d5cff);width:100%;height:100%;display:grid;place-items:center">PD</span></span></a><a class="menu__row is-current" href="../index.html#work"><span>Work</span><span class="menu__thumb"><img src="../assets/img/logo-task.webp" alt=""></span></a><a class="menu__row" href="../about.html"><span>About</span><span class="menu__thumb"><span style="background:#baff30;color:#111;width:100%;height:100%;display:grid;place-items:center">ME</span></span></a><a class="menu__row" href="../how-i-work.html"><span>How I work</span><span class="menu__thumb"><span style="background:#f2f2f2;color:#111;width:100%;height:100%;display:grid;place-items:center">→</span></span></a>
+      <div class="menu__foot">
+        <div><p>Contact</p><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a></div>
+        <div><p>Based in</p><a href="../about.html">Jeju, Korea</a></div>
+      </div>
+    </div>
+  </nav>
+  <a class="gnb__cta" href="mailto:danbi960214@gmail.com"><i>+</i>Get in touch</a>
+</header>
+<div class="menu-dim"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="toast" role="status">상세 케이스는 준비 중이에요 · Case coming soon</div>
+<a class="cclose" href="../index.html#work" aria-label="닫고 메인으로">✕</a>
+<main>
+  <section class="chero">
+    <div class="chero__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="chero__logo" data-reveal="scale"><img src="../assets/img/logo-media.webp" alt="Media Insight"></div>
+      <h1 data-split>미디어 인사이트</h1>
+      <div class="chero__meta" data-reveal><span><b>Client</b>NEOPLE</span><span><b>Category</b>Analytics Dashboard</span><span><b>Date</b>2025</span></div>
+      <div class="chips" data-reveal><span>Data Viz</span><span>IA/UX Design</span><span>UI Design</span><span>Dashboard</span><span>AI Analysis</span><span>Dark UI</span></div>
+      <div class="chero__intro"><p data-reveal>미디어 인사이트는 NEOPLE 주요 프로젝트를 다룬 YouTube 영상과 채널 정보를 키워드 기반으로 자동 수집하고, 조회수 · 댓글 같은 버즈 데이터를 프로젝트 단위로 모아 보여주는 대시보드형 애널리틱스 서비스입니다.</p><p data-reveal>수집된 영상과 댓글은 생성형 AI가 요약 · 주제 · 감정까지 정리해, 영상을 끝까지 보지 않아도 반응을 한눈에 파악할 수 있습니다. 개발사업실의 니즈로 시작된 신규 구축 프로젝트로 대시보드 · 프로젝트별 조회 · 개별 영상 분석 · 설정 화면을 설계했습니다.</p></div>
+    </div>
+  </section>
+  <div class="cvisual"><div class="cvisual__box" data-scale><img class="shot" src="../assets/img/media-dashboard-bento.webp" alt="미디어 인사이트 대시보드"></div></div>
+  <div class="wrap">
+    <div class="cbody">
+      <nav class="chap" aria-label="챕터"><a href="#overview"><span>Overview</span><span class="chap__t">매일 자동으로 모아 생성형 AI로 읽는 애널리틱스</span><span class="chap__d"><span>엑셀로 직접 정리하던 영상 반응을 별도 웹 서비스로 신규 구축했습니다.</span></span></a><a href="#approach"><span>Approach</span><span class="chap__t">내가 사용자라면 어떤 화면이 편할까</span><span class="chap__d"><span>기존 집계 대시보드를 참고해 세 가지 기준을 세웠습니다.</span></span></a><a href="#ia"><span>Information Architecture</span><span class="chap__t">전체 현황에서 개별 영상까지 좁혀 들어가는 구조</span><span class="chap__d"><span>프로젝트·키워드는 설정에서 관리하고 매일 자동 수집됩니다.</span></span></a><a href="#dashboard"><span>Dashboard</span><span class="chap__t">오늘 무엇이 달라졌는지 첫 화면에서 바로</span><span class="chap__d"><span>KPI → 추이 → TOP 콘텐츠 순으로 배치했습니다.</span></span></a><a href="#project"><span>Project View</span><span class="chap__t">쓰던 엑셀처럼 프로젝트 → 키워드 순으로</span><span class="chap__d"><span>새 도구지만 새로 배울 것이 없게 했습니다.</span></span></a><a href="#video"><span>Video Analysis</span><span class="chap__t">영상 주소만 넣으면 분석까지 한 번에</span><span class="chap__d"><span>입력 필드 하나로 받아 무엇을 넣을지 고민하지 않게 했습니다.</span></span></a><a href="#comment"><span>Comment Analysis</span><span class="chap__t">댓글 반응은 요약부터, 자세한 건 필요할 때만</span><span class="chap__d"><span>반응 요약 → 통계 → 개별 분석 순서로 나눴습니다.</span></span></a><a href="#style"><span>Icons & Colors</span><span class="chap__t">Collect Widely · Analyze Deeply · See Clearly</span><span class="chap__d"><span>블랙 위 라임 포인트로 데이터가 먼저 보이게 했습니다.</span></span></a></nav>
+      <div class="cmain"><section class="csec" id="overview"><p class="csec__eyebrow" data-reveal>01 — Overview</p><h2 class="csec__title" data-reveal>프로젝트의 버즈를 매일 자동으로 모아<br><em>생성형 AI로 읽는 애널리틱스</em></h2><p class="csec__text" data-reveal>개발사업실은 프로젝트별 영상 반응을 확인하기 위해 YouTube를 직접 검색하고 엑셀로 정리해 왔습니다. 수집 기준이 그때그때 달랐고, 영상 내용과 댓글 여론은 하나하나 봐야만 알 수 있었습니다.</p><p class="csec__text" data-reveal>그래서 키워드만 등록하면 매일 자동으로 수집되고, 생성형 AI가 영상과 댓글을 요약해 주는 별도 웹 서비스로 신규 구축했습니다.</p><div class="grid2"><div class="box " data-reveal><p class="box__k">Scope</p><p class="box__t">대시보드 · 프로젝트 조회 · 영상 분석 · 설정</p><p class="box__d">4개 화면 + 데이터 수집 · AI 분석 플로우</p></div><div class="box " data-reveal><p class="box__k">With</p><p class="box__t">개발사업실 · 개발팀</p><p class="box__d">니즈 정의 · 지표 선정 / 수집 · AI 분석 구현</p></div></div></section><section class="csec" id="approach"><p class="csec__eyebrow" data-reveal>02 — Approach</p><h2 class="csec__title" data-reveal>내가 사용자라면<br><em>어떤 화면이 편할까</em></h2><p class="csec__text" data-reveal>기존 YouTube 영상 집계 대시보드를 참고하고, 사용자 입장에서 어떤 방향이 편리할지 고민하며 세 가지 기준을 세웠습니다.</p><div class="grid3"><div class="box box--accent" data-reveal><p class="box__k">01</p><p class="box__t">사용자 관점</p><p class="box__d">무엇을 먼저 보고 싶은지, 어디서 막히는지를 기준으로 화면 순서를 정했습니다.</p></div><div class="box box--accent" data-reveal><p class="box__k">02</p><p class="box__t">익숙한 패턴</p><p class="box__d">이미 익숙한 KPI 카드 · 추이 차트 구조를 가져와 학습 비용을 줄였습니다.</p></div><div class="box box--accent" data-reveal><p class="box__k">03</p><p class="box__t">다크 UI</p><p class="box__d">그래프와 영상 썸네일이 배경보다 먼저 보이도록 다크 모드를 적용했습니다.</p></div></div></section><section class="csec" id="ia"><p class="csec__eyebrow" data-reveal>03 — Information Architecture</p><h2 class="csec__title" data-reveal>전체 현황에서 <em>개별 영상과 댓글까지</em></h2><p class="csec__text" data-reveal>Dashboard에서 전체 현황을 보고, 프로젝트별 조회에서 키워드 단위로 좁혀 들어가며, 개별 영상 분석에서 AI 요약과 댓글 반응까지 확인하는 흐름으로 설계했습니다. 수집 기준이 되는 프로젝트·키워드는 설정에서 관리하며 매일 자동 수집됩니다.</p><figure class="panel" data-reveal><img src="../assets/img/media-ia.webp" alt="미디어 인사이트 정보 구조도" loading="lazy"></figure><p class="figcap">실제 서비스 구조를 기반으로 작성했으며, 프로젝트명은 서비스 내 표기를 따랐습니다.</p></section><section class="csec" id="dashboard"><p class="csec__eyebrow" data-reveal>04 — Dashboard</p><h2 class="csec__title" data-reveal>프로젝트별 버즈 현황을<br><em>한 화면에서 비교</em></h2><div class="why"><div class="why__card" data-reveal><p class="box__k">Why · UX Rationale</p><h4>오늘 무엇이 달라졌는지<br>첫 화면에서 바로 보이게</h4><p>운영자가 매일 처음 여는 화면이라 "오늘 무엇이 달라졌나"에 바로 답해야 했습니다. 결과 → 원인 → 근거를 확인하는 순서대로 KPI → 추이 → TOP 콘텐츠를 배치했습니다.</p></div><figure class="panel" style="margin-top:0" data-reveal><img src="../assets/img/media-dashboard-bento.webp" alt="미디어 인사이트 대시보드" loading="lazy"></figure></div><p class="box__k" style="margin-top:28px" data-reveal>What · Solution</p><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">KPI 요약</p><p class="callout__d">콘텐츠·조회·좋아요·댓글 수를 카드로 요약했습니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">업로드 추이</p><p class="callout__d">키워드별 일별 업로드 추이를 누적 차트로 보여줍니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">TOP 콘텐츠</p><p class="callout__d">조회수 상위 영상을 카드로 바로 확인합니다.</p></div></div></div></section><section class="csec" id="project"><p class="csec__eyebrow" data-reveal>05 — Project View</p><h2 class="csec__title" data-reveal>키워드로 좁혀 보는<br><em>프로젝트별 콘텐츠</em></h2><div class="why"><div class="why__card" data-reveal><p class="box__k">Why · UX Rationale</p><h4>쓰던 엑셀처럼<br>프로젝트 → 키워드 순으로</h4><p>운영자가 쓰던 엑셀 구조(프로젝트 → 키워드)를 그대로 옮겨, 새 도구지만 새로 배울 것이 없게 했습니다. 영상은 제목보다 썸네일로 기억하기 때문에 TOP 10은 썸네일 카드로 두었습니다.</p></div><figure class="panel" style="margin-top:0" data-reveal><img src="../assets/img/media-project.webp" alt="프로젝트별 조회 화면" loading="lazy"></figure></div><p class="box__k" style="margin-top:28px" data-reveal>What · Solution</p><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">키워드 탭</p><p class="callout__d">키워드 탭으로 영상 목록을 한 번에 전환합니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">기간 · 검색</p><p class="callout__d">기간과 제목·채널명으로 필요한 영상만 찾습니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">키워드 추가</p><p class="callout__d">+ 버튼으로 수집할 키워드를 바로 추가합니다.</p></div></div></div></section><section class="csec" id="video"><p class="csec__eyebrow" data-reveal>06 — Video Analysis</p><h2 class="csec__title" data-reveal>주소 하나로 영상을 수집하고<br><em>생성형 AI로 내용까지 분석</em></h2><div class="why"><div class="why__card" data-reveal><p class="box__k">Why · UX Rationale</p><h4>영상 주소만 넣으면<br>분석까지 한 번에</h4><p>주소든 ID든 입력 필드 하나로 받아, 무엇을 넣을지 고민하지 않게 했습니다. 남은 할당량을 입력창 위에 보여주고 결과는 자동 저장해, 부담 없이 분석해 볼 수 있게 했습니다.</p></div><figure class="panel" style="margin-top:0" data-reveal><img src="../assets/img/media-video.webp" alt="영상 조회와 AI 분석 화면" loading="lazy"></figure></div><p class="box__k" style="margin-top:28px" data-reveal>What · Solution</p><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">영상 조회</p><p class="callout__d">주소나 ID만으로 영상 정보를 불러오고 자동 저장합니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">AI 요약</p><p class="callout__d">AI가 요약·주제·타임스탬프를 정리합니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">남은 할당량</p><p class="callout__d">하루 조회 가능한 API 할당량을 상단에 표시했습니다.</p></div></div></div></section><section class="csec" id="comment"><p class="csec__eyebrow" data-reveal>07 — Comment Analysis</p><h2 class="csec__title" data-reveal>댓글 여론을<br><em>긍정 · 부정으로 읽어 내기</em></h2><div class="why"><div class="why__card" data-reveal><p class="box__k">Why · UX Rationale</p><h4>댓글 반응은 요약부터,<br>자세한 건 필요할 때만</h4><p>수백 개 댓글을 한 번에 펼치면 읽히지 않아, 반응 요약 → 통계 → 개별 분석 순서로 나눠 필요할 때만 깊이 들어가게 했습니다. 탭마다 재분석 버튼을 두어 AI 해석의 통제권을 사용자에게 남겼습니다.</p></div><figure class="panel" style="margin-top:0" data-reveal><img src="../assets/img/media-comment.webp" alt="영상 내용 분석과 댓글 반응 요약" loading="lazy"></figure></div><p class="box__k" style="margin-top:28px" data-reveal>What · Solution</p><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">반응 요약</p><p class="callout__d">댓글 동향과 긍정·부정 주제를 AI가 요약합니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">통계 및 샘플</p><p class="callout__d">긍정·부정 비율과 대표 댓글로 근거를 보여줍니다.</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">개별 분석</p><p class="callout__d">댓글마다 분석·프롬프트 버튼으로 깊이 들여다봅니다.</p></div></div></div></section><section class="csec" id="style"><p class="csec__eyebrow" data-reveal>08 — Icons & Colors</p><h2 class="csec__title" data-reveal>Media Insight, <em>Collect Widely · Analyze Deeply · See Clearly</em></h2><figure class="panel" data-reveal><img src="../assets/img/media-icons.webp" alt="미디어 인사이트 심볼과 아이콘 세트" loading="lazy"></figure><div class="palette"><div class="swatch" data-reveal><i style="background:#0b0b0b"></i><p>Black<span>RGB 11/11/11 · #0B0B0B</span></p></div><div class="swatch" data-reveal><i style="background:#baff30"></i><p>Lime<span>RGB 186/255/48 · #BAFF30</span></p></div><div class="swatch" data-reveal><i style="background:#1c1c1e"></i><p>Dark Gray<span>RGB 28/28/30 · #1C1C1E</span></p></div><div class="swatch" data-reveal><i style="background:#ffffff"></i><p>White<span>RGB 255/255/255 · #FFFFFF</span></p></div></div><div class="typo"><div class="box" data-reveal><p class="box__k">Typography</p><p class="box__n" style="margin-top:14px">Aa123</p><p class="box__d">Pretendard</p></div><div class="box" data-reveal><p class="box__t" style="font-size:clamp(22px,2vw,32px);line-height:1.3">Media Insight,<br>Collect Widely<br>Analyze Deeply<br>See Clearly</p><p class="box__d" style="margin-top:18px">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890 .:?!@*&amp;%</p></div></div></section></div>
+    </div>
+  </div>
+  <nav class="pnav" aria-label="다른 프로젝트">
+    <a href="../work/dnf-cms.html" style="--pa:#00bcff"><small>← PREV PROJECT</small><b>던파 유니버스 CMS</b><span>Neople · CMS</span></a>
+    <a href="../work/cyphers.html" style="--pa:#ff5a3c"><small>NEXT PROJECT →</small><b>사이퍼즈 프로모션 배너</b><span>Neople · Banner</span></a>
+  </nav>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="foot__clock"><span data-clock>--:--</span> · Jeju, Korea</p>
+        <h2 class="foot__tag" data-reveal>복잡한 업무를 쉽게 쓰이는 화면으로.<br>함께 만들 프로젝트가 있다면 편하게 이야기 나눠요.</h2>
+        <a class="foot__cta" href="mailto:danbi960214@gmail.com" data-reveal>+ Get in touch</a>
+      </div>
+      <div class="foot__col" data-reveal><h3>Explore</h3><a href="../index.html">Home</a><a href="../index.html#work">Work</a><a href="../about.html">About</a><a href="../how-i-work.html">How I work</a></div>
+      <div class="foot__col" data-reveal><h3>Case study</h3><a href="../work/task.html">업무 요청 시스템</a><a href="../work/neople-developers.html">Neople Developers</a><a href="../work/dnf-cms.html">던파 유니버스 CMS</a><a href="../work/media-insight.html">Media Insight</a><a href="../work/cyphers.html">사이퍼즈 프로모션 배너</a></div>
+    </div>
+    <div class="foot__bottom"><span>© 2026 Park Danbi.<br>All rights reserved.</span><span><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a></span></div>
+  </div>
+  <span class="foot__giant" data-speed="-0.12" aria-hidden="true">DANBI</span>
+</footer>
+<script src="../assets/js/lenis.min.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

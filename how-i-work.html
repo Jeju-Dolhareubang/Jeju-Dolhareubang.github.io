@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I work — 박단비</title>
+<meta name="description" content="설계부터 구현까지 이어지는 박단비의 작업 방식과 도구">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="">
+<div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
+
+<header class="gnb">
+  <a class="gnb__logo" href="index.html" aria-label="PARK DANBI 홈">PARK<br>DANBI<small>(SENIOR UI/UX DESIGNER)</small></a>
+  <nav class="menu" aria-label="주요 메뉴">
+    <button class="menu__bar" type="button" aria-expanded="false" aria-controls="menu-panel">
+      <span class="menu__label"><span class="menu__grip" aria-hidden="true"><span></span><span></span><span></span><span></span></span>Menu</span>
+      <span class="menu__status">Open to work · 2026</span>
+    </button>
+    <div class="menu__panel" id="menu-panel">
+      <a class="menu__row" href="index.html"><span>Home</span><span class="menu__thumb"><span style="background:linear-gradient(135deg,#3d6bff,#9d5cff);width:100%;height:100%;display:grid;place-items:center">PD</span></span></a><a class="menu__row" href="index.html#work"><span>Work</span><span class="menu__thumb"><img src="assets/img/logo-task.webp" alt=""></span></a><a class="menu__row" href="about.html"><span>About</span><span class="menu__thumb"><span style="background:#baff30;color:#111;width:100%;height:100%;display:grid;place-items:center">ME</span></span></a><a class="menu__row is-current" href="how-i-work.html"><span>How I work</span><span class="menu__thumb"><span style="background:#f2f2f2;color:#111;width:100%;height:100%;display:grid;place-items:center">→</span></span></a>
+      <div class="menu__foot">
+        <div><p>Contact</p><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a></div>
+        <div><p>Based in</p><a href="about.html">Jeju, Korea</a></div>
+      </div>
+    </div>
+  </nav>
+  <a class="gnb__cta" href="mailto:danbi960214@gmail.com"><i>+</i>Get in touch</a>
+</header>
+<div class="menu-dim"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="toast" role="status">상세 케이스는 준비 중이에요 · Case coming soon</div>
+
+<main class="case" style="--a:#7aa2ff;--a2:#9d5cff">
+  <section class="chero">
+    <div class="chero__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1 data-split>How I Work</h1>
+      <div class="chero__meta" data-reveal><span><b>Role</b>UX Designer</span><span><b>Focus</b>Design → Code</span><span><b>Tools</b>Figma · Claude · WebStorm</span></div>
+      <div class="chero__intro"><p data-reveal>Figma로 화면과 디자인 시스템을 설계하고, 이를 기준으로 AI 개발 환경에서 화면을 구현합니다.</p><p data-reveal>구현된 결과는 WebStorm과 GitHub에서 직접 확인하고 다듬고, 비주얼 에셋은 Adobe 도구로 마무리합니다. 도구가 바뀌어도 디자인 기준이 구현까지 유지되도록 작업 흐름을 정리했습니다.</p></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="cmain" style="max-width:1100px;margin:0 auto;padding-top:clamp(40px,5vw,80px)">
+      <section class="csec"><p class="csec__eyebrow" data-reveal>01 — Workflow</p><h2 class="csec__title" data-reveal>설계부터 마무리까지<br><em>다섯 단계 작업 흐름</em></h2><div class="steps"><div class="step" data-reveal><span class="step__i dark">Figma</span><div><p class="step__t"><span class="step__n">01</span>Design · Figma</p><p class="step__d">화면 구조와 주요 시안을 Figma로 먼저 설계해 톤과 흐름을 정합니다.</p></div></div><div class="step" data-reveal><span class="step__i dark">Figma</span><div><p class="step__t"><span class="step__n">02</span>System · Figma</p><p class="step__d">컬러 · 타이포 · 컴포넌트를 디자인 시스템 규칙으로 정리해 구현 기준으로 삼습니다.</p></div></div><div class="step" data-reveal><span class="step__i ">Claude</span><div><p class="step__t"><span class="step__n">03</span>Build · Claude Code</p><p class="step__d">디자인 시스템과 정리한 프롬프트로 AI 개발 환경에서 화면을 생성합니다.</p></div></div><div class="step" data-reveal><span class="step__i ">WebStorm</span><div><p class="step__t"><span class="step__n">04</span>Review · WebStorm · GitHub</p><p class="step__d">구현된 화면을 코드에서 직접 확인하고 레이아웃 · 디테일을 수정합니다.</p></div></div><div class="step" data-reveal><span class="step__i dark">Photoshop</span><div><p class="step__t"><span class="step__n">05</span>Finish · Photoshop · Illustrator</p><p class="step__d">배너 · 아이콘 등 비주얼 에셋을 만들어 화면을 마무리합니다.</p></div></div></div></section>
+      <section class="csec"><p class="csec__eyebrow" data-reveal>02 — Toolkit</p><h2 class="csec__title" data-reveal>단계마다 쓰는<br><em>여덟 가지 도구</em></h2><div class="grid4"><div class="box" data-reveal><p class="box__k">Design · System</p><p class="box__t">Figma</p><p class="box__d">화면 설계, 디자인 시스템, 프로토타입까지 작업의 기준을 만듭니다.</p></div><div class="box" data-reveal><p class="box__k">Prototype</p><p class="box__t">Framer</p><p class="box__d">인터랙션과 모션을 실제 화면처럼 빠르게 확인합니다.</p></div><div class="box" data-reveal><p class="box__k">Build</p><p class="box__t">Claude</p><p class="box__d">프롬프트를 정리하고 Claude Code로 화면을 구현합니다.</p></div><div class="box" data-reveal><p class="box__k">Visual</p><p class="box__t">Photoshop</p><p class="box__d">배너 · 프로모션 이미지를 합성하고 보정합니다.</p></div><div class="box" data-reveal><p class="box__k">Document</p><p class="box__t">PowerPoint</p><p class="box__d">기획 의도와 화면 흐름을 문서로 정리해 공유합니다.</p></div><div class="box" data-reveal><p class="box__k">Visual</p><p class="box__t">Illustrator</p><p class="box__d">아이콘과 벡터 그래픽을 제작합니다.</p></div><div class="box" data-reveal><p class="box__k">Review</p><p class="box__t">WebStorm</p><p class="box__d">구현된 화면을 코드에서 확인하고 스타일을 수정합니다.</p></div><div class="box" data-reveal><p class="box__k">Review</p><p class="box__t">GitHub</p><p class="box__d">변경 사항을 확인하고 버전을 관리합니다.</p></div></div></section>
+      <section class="csec"><p class="csec__eyebrow" data-reveal>03 — Projects</p><h2 class="csec__title" data-reveal>이 흐름으로<br><em>작업한 프로젝트</em></h2><div class="grid4"><a class="box" href="work/task.html" data-reveal style="display:block"><p class="box__k" style="color:#3d6bff">Neople · Internal tool</p><p class="box__t">업무 요청 시스템</p><p class="box__d">케이스 보기 ↗</p></a><a class="box" href="work/neople-developers.html" data-reveal style="display:block"><p class="box__k" style="color:#f0b100">Neople · Platform</p><p class="box__t">Neople Developers</p><p class="box__d">케이스 보기 ↗</p></a><a class="box" href="work/dnf-cms.html" data-reveal style="display:block"><p class="box__k" style="color:#00bcff">Neople · CMS</p><p class="box__t">던파 유니버스 CMS</p><p class="box__d">케이스 보기 ↗</p></a><a class="box" href="work/media-insight.html" data-reveal style="display:block"><p class="box__k" style="color:#baff30">Neople · Dashboard</p><p class="box__t">Media Insight</p><p class="box__d">케이스 보기 ↗</p></a></div></section>
+      <section class="csec"><div class="wip" data-reveal><p class="box__k">Key takeaway</p><h3 style="margin-top:14px">도구보다<br><em>흐름을 설계합니다.</em></h3><p class="csec__text">어떤 도구를 쓰든 디자인 기준이 구현까지 이어지도록, 설계 · 구현 · 검수의 연결을 직접 챙깁니다.</p></div></section>
+    </div>
+  </div>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="foot__clock"><span data-clock>--:--</span> · Jeju, Korea</p>
+        <h2 class="foot__tag" data-reveal>복잡한 업무를 쉽게 쓰이는 화면으로.<br>함께 만들 프로젝트가 있다면 편하게 이야기 나눠요.</h2>
+        <a class="foot__cta" href="mailto:danbi960214@gmail.com" data-reveal>+ Get in touch</a>
+      </div>
+      <div class="foot__col" data-reveal><h3>Explore</h3><a href="index.html">Home</a><a href="index.html#work">Work</a><a href="about.html">About</a><a href="how-i-work.html">How I work</a></div>
+      <div class="foot__col" data-reveal><h3>Case study</h3><a href="work/task.html">업무 요청 시스템</a><a href="work/neople-developers.html">Neople Developers</a><a href="work/dnf-cms.html">던파 유니버스 CMS</a><a href="work/media-insight.html">Media Insight</a><a href="work/cyphers.html">사이퍼즈 프로모션 배너</a></div>
+    </div>
+    <div class="foot__bottom"><span>© 2026 Park Danbi.<br>All rights reserved.</span><span><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a></span></div>
+  </div>
+  <span class="foot__giant" data-speed="-0.12" aria-hidden="true">DANBI</span>
+</footer>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
