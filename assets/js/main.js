@@ -185,13 +185,31 @@
   window.addEventListener('resize', onScroll);
 
   /* ---------- work rail ---------- */
-  var track = $('.rail__track'), barFill = $('.rail__bar span');
+  var track = $('.rail__track'), barFill = $('.rail__bar span'), railPages = $$('[data-rail-page]');
+  function railCards() { return track ? $$('.wcard', track) : []; }
+  function goToRailPage(index) {
+    var card = railCards()[index];
+    if (!card || !track) return;
+    var trackLeft = track.getBoundingClientRect().left;
+    var left = card.getBoundingClientRect().left - trackLeft + track.scrollLeft;
+    track.scrollTo({ left: Math.max(0, left), behavior: reduce ? 'auto' : 'smooth' });
+  }
   function updateRail() {
-    if (!track || !barFill) return;
+    if (!track) return;
     var max = track.scrollWidth - track.clientWidth;
-    var vis = track.clientWidth / track.scrollWidth;
-    barFill.style.width = (vis * 100) + '%';
-    barFill.style.transform = 'translateX(' + ((max ? track.scrollLeft / max : 0) * (1 / vis - 1) * 100) + '%)';
+    var vis = track.scrollWidth ? track.clientWidth / track.scrollWidth : 1;
+    if (barFill) {
+      barFill.style.width = (vis * 100) + '%';
+      barFill.style.transform = 'translateX(' + ((max ? track.scrollLeft / max : 0) * (1 / vis - 1) * 100) + '%)';
+    }
+    if (railPages.length) {
+      var cards = railCards(), trackLeft = track.getBoundingClientRect().left, active = 0, nearest = Infinity;
+      cards.forEach(function (card, index) {
+        var distance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+        if (distance < nearest) { nearest = distance; active = index; }
+      });
+      railPages.forEach(function (page, index) { page.setAttribute('aria-pressed', index === active ? 'true' : 'false'); });
+    }
   }
   if (track) {
     track.addEventListener('scroll', updateRail, { passive: true });
@@ -200,6 +218,9 @@
         var card = track.querySelector('.wcard'); var step = card ? card.offsetWidth + 20 : 400;
         track.scrollBy({ left: b.dataset.rail === 'next' ? step : -step, behavior: 'smooth' });
       });
+    });
+    railPages.forEach(function (page) {
+      page.addEventListener('click', function () { goToRailPage(Number(page.dataset.railPage)); });
     });
     // drag to scroll
     var down = false, sx = 0, sl = 0, moved = false;

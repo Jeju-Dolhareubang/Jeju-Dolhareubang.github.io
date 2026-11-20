@@ -106,7 +106,12 @@
         <div class="wcard__art"><i class="ring"></i><i class="ring"></i><i class="ring"></i><span class="wcard__ph"><b>BR</b>Case coming soon</span></div>
       </a>
       </div>
-      <div class="wrap rail__ctrl"><div class="rail__bar"><span></span></div><div class="rail__btns"><button type="button" data-rail="prev" aria-label="이전 카드">←</button><button type="button" data-rail="next" aria-label="다음 카드">→</button></div></div>
+      <div class="wrap rail__ctrl" aria-label="프로젝트 슬라이드 컨트롤">
+        <div class="rail__pager" role="group" aria-label="프로젝트 페이지">
+          <button type="button" data-rail-page="0" aria-label="1번 프로젝트로 이동" aria-pressed="true"></button><button type="button" data-rail-page="1" aria-label="2번 프로젝트로 이동" aria-pressed="false"></button><button type="button" data-rail-page="2" aria-label="3번 프로젝트로 이동" aria-pressed="false"></button><button type="button" data-rail-page="3" aria-label="4번 프로젝트로 이동" aria-pressed="false"></button><button type="button" data-rail-page="4" aria-label="5번 프로젝트로 이동" aria-pressed="false"></button><button type="button" data-rail-page="5" aria-label="6번 프로젝트로 이동" aria-pressed="false"></button><button type="button" data-rail-page="6" aria-label="7번 프로젝트로 이동" aria-pressed="false"></button>
+        </div>
+        <div class="rail__btns"><button type="button" data-rail="prev" aria-label="이전 카드">←</button><button type="button" data-rail="next" aria-label="다음 카드">→</button></div>
+      </div>
     </div>
   </section>
 
@@ -176,7 +181,16 @@
 
 <footer class="foot" id="contact">
   <div class="wrap">
-    <div class="foot__bottom"><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a><span>Jeju, Korea</span></div>
+    <div class="foot__grid">
+      <div>
+        <p class="foot__clock"><span data-clock>--:--</span> · Jeju, Korea</p>
+        <h2 class="foot__tag" data-reveal>복잡한 업무를 쉽게 쓰이는 화면으로.<br>함께 만들 프로젝트가 있다면 편하게 이야기 나눠요.</h2>
+        <a class="foot__cta" href="mailto:danbi960214@gmail.com" data-reveal>+ Get in touch</a>
+      </div>
+      <div class="foot__col" data-reveal><h3>Explore</h3><a href="index.html">Home</a><a href="index.html#work">Work</a><a href="about.html">About</a><a href="how-i-work.html">How I work</a></div>
+      <div class="foot__col" data-reveal><h3>Case study</h3><a href="work/task.html">업무 요청 시스템</a><a href="work/neople-developers.html">Neople Developers</a><a href="work/dnf-cms.html">던파 유니버스 CMS</a><a href="work/media-insight.html">Media Insight</a><a href="work/cyphers.html">사이퍼즈 프로모션 배너</a></div>
+    </div>
+    <div class="foot__bottom"><span>© 2026 Park Danbi.<br>All rights reserved.</span><span><a href="mailto:danbi960214@gmail.com">danbi960214@gmail.com</a></span></div>
   </div>
   <span class="foot__giant" data-speed="-0.12" aria-hidden="true">DANBI</span>
 </footer>
