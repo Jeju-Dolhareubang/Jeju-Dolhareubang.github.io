@@ -922,3 +922,19 @@ body :is(
   .about-experience__year,.task-project-nav strong,
   .task-type__left p,.task-type__right strong
 ) *{font-family:var(--font-title)!important}
+
+/* About — make the Jeju journey a full-bleed chapter, not an inset card. */
+.about-jeju{width:100vw;margin:clamp(96px,12vw,176px) calc(50% - 50vw) 0}
+.about-jeju__journey{max-width:none}
+.about-jeju__stage{place-items:stretch}
+.about-jeju__panel{height:100svh;aspect-ratio:auto;border:0;border-radius:0}
+.about-jeju__art{width:100%;height:100%}
+.about-jeju__copy{top:clamp(116px,17svh,196px);left:clamp(20px,5.21vw,100px);max-width:260px}
+
+@media (max-width:630px){
+  .about-jeju{margin-top:72px}
+  .about-jeju__journey{height:calc(220svh + 120px)}
+  .about-jeju__panel{height:100svh;border-radius:0}
+  .about-jeju__art{height:100%}
+  .about-jeju__copy{top:max(96px,14svh);left:20px;max-width:210px}
+}

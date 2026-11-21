@@ -64,13 +64,19 @@
   if (bar) bar.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
   if (dim) dim.addEventListener('click', closeMenu);
 
-  // hide header on scroll down, show on up
-  var gnb = $('.gnb'), lastY = window.scrollY || window.pageYOffset || 0;
+  // Hide the header after a deliberate directional move. Using an anchor instead
+  // of a single-event delta keeps trackpad and smooth-scroll input reliable.
+  var gnb = $('.gnb'), scrollAnchor = window.scrollY || window.pageYOffset || 0;
   function onScrollHeader(y) {
     if (!gnb) return;
-    if (y > 80 && y > lastY + 4 && !(menu && menu.classList.contains('is-open'))) gnb.classList.add('is-hidden');
-    else if (y < lastY - 4 || y < 80) gnb.classList.remove('is-hidden');
-    lastY = y;
+    if (y < 80 || (menu && menu.classList.contains('is-open'))) {
+      gnb.classList.remove('is-hidden');
+      scrollAnchor = y;
+      return;
+    }
+    if (Math.abs(y - scrollAnchor) < 12) return;
+    gnb.classList.toggle('is-hidden', y > scrollAnchor);
+    scrollAnchor = y;
   }
 
   /* ---------- clock (Seoul) ---------- */
