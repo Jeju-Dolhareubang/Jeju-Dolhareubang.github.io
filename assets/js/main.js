@@ -59,17 +59,17 @@
 
   /* ---------- GNB: menu ---------- */
   var menu = $('.menu'), dim = $('.menu-dim'), bar = menu && $('.menu__bar', menu);
-  function openMenu() { if (!menu) return; menu.classList.add('is-open'); bar.setAttribute('aria-expanded', 'true'); dim && dim.classList.add('is-on'); }
+  function openMenu() { if (!menu) return; gnb && gnb.classList.remove('is-hidden'); menu.classList.add('is-open'); bar.setAttribute('aria-expanded', 'true'); dim && dim.classList.add('is-on'); }
   function closeMenu() { if (!menu) return; menu.classList.remove('is-open'); bar && bar.setAttribute('aria-expanded', 'false'); dim && dim.classList.remove('is-on'); }
   if (bar) bar.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
   if (dim) dim.addEventListener('click', closeMenu);
 
   // hide header on scroll down, show on up
-  var gnb = $('.gnb'), lastY = 0;
+  var gnb = $('.gnb'), lastY = window.scrollY || window.pageYOffset || 0;
   function onScrollHeader(y) {
     if (!gnb) return;
-    if (y > 200 && y > lastY + 4 && !(menu && menu.classList.contains('is-open'))) gnb.classList.add('is-hidden');
-    else if (y < lastY - 4 || y < 200) gnb.classList.remove('is-hidden');
+    if (y > 80 && y > lastY + 4 && !(menu && menu.classList.contains('is-open'))) gnb.classList.add('is-hidden');
+    else if (y < lastY - 4 || y < 80) gnb.classList.remove('is-hidden');
     lastY = y;
   }
 

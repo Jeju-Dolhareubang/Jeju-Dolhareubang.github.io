@@ -101,7 +101,7 @@ body.is-ready .pt__mark{opacity:0}
 .gnb{
   position:fixed;inset:0 0 auto 0;z-index:200;height:var(--header-h);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 var(--gutter);pointer-events:none;
+  padding:0 var(--gutter);pointer-events:none;will-change:transform;
   transition:transform .5s var(--ease);
 }
 .gnb > *{pointer-events:auto}
@@ -731,7 +731,7 @@ body.is-ready .pt__mark{opacity:0}
 .task-problem__arrows{font-size:0;line-height:0}.task-problem__arrows span{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:24px}.task-problem__arrows img{width:15.5885px;height:9px;max-width:none}.task-problem__solutions .task-orbit{display:block;position:absolute;top:105px;left:32px;width:376px;height:250px;max-width:none;transform:none}.task-problem__solutions .task-orbit~h3{bottom:62px}.task-problem__solutions .task-orbit~p{bottom:28px}
 .task-feature>img{height:auto;object-fit:contain;object-position:center;overflow:visible}
 @media (min-width:821px) and (max-width:1919px){.task-feature>img{height:auto;object-fit:contain}.task-intro__connector{left:56%;transform:scale(.78);transform-origin:left top}.task-intro__point{left:54.9%}.task-intro__dot--mid{left:68.8%}.task-intro__dot--end{left:86.7%}}
-@media (min-width:821px){.home{--header-h:112px}.home .gnb.is-hidden{transform:none}.home .menu{top:18px}.home .menu__bar{height:60px;padding:0 26px;border-radius:999px;background:rgba(18,18,18,.82);border-color:rgba(255,255,255,.10);box-shadow:0 10px 30px rgba(0,0,0,.18)}.home .gnb__cta{height:52px;padding:0 22px;border-radius:999px}.home .menu__panel{padding-top:74px;border-radius:30px;clip-path:inset(0 0 calc(100% - 60px) 0 round 30px)}.home .menu.is-open .menu__panel{clip-path:inset(0 0 0 0 round 30px)}}
+@media (min-width:821px){.home{--header-h:112px}.home .gnb.is-hidden{transform:translate3d(0,-115%,0)}.home .menu{top:18px}.home .menu__bar{height:60px;padding:0 26px;border-radius:999px;background:rgba(18,18,18,.82);border-color:rgba(255,255,255,.10);box-shadow:0 10px 30px rgba(0,0,0,.18)}.home .gnb__cta{height:52px;padding:0 22px;border-radius:999px}.home .menu__panel{padding-top:74px;border-radius:30px;clip-path:inset(0 0 calc(100% - 60px) 0 round 30px)}.home .menu.is-open .menu__panel{clip-path:inset(0 0 0 0 round 30px)}}
 @media (max-width:820px){.task-intro__connector,.task-intro__point,.task-intro__dot{display:none}.task-problem__solutions .task-orbit{top:56px;left:50%;width:min(376px,calc(100% - 48px));height:auto;transform:translateX(-50%)}.task-problem__solutions article{height:420px}.task-problem__solutions h3{bottom:70px}.task-problem__solutions p{bottom:26px}.task-feature>img{height:auto;object-fit:contain}}
 
 /* Main feedback pass: Figma alignment, carousel controls, and full footer */
@@ -817,7 +817,7 @@ body.is-ready .pt__mark{opacity:0}
 :root{--header-h:112px}
 
 .gnb{height:var(--header-h);padding:0 var(--gutter);align-items:center;background:linear-gradient(180deg,rgba(0,0,0,.74),rgba(0,0,0,0))}
-.gnb.is-hidden{transform:none}
+.gnb.is-hidden{transform:translate3d(0,-115%,0)}
 .gnb__logo{margin-top:0;font-family:"Pretendard Variable",sans-serif;font-size:15px;line-height:1;letter-spacing:.02em;mix-blend-mode:normal;color:#fff}
 .gnb__logo small{margin-top:5px;font-size:9px;letter-spacing:.06em}
 .menu{top:18px;width:min(304px,calc(100vw - 2*var(--gutter) - 210px))}
