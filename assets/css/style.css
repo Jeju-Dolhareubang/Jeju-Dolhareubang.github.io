@@ -3,6 +3,26 @@
    Reference: midu.design (GNB, motion, layout rhythm)
    ========================================================= */
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+/* Korean web-font sources supplied for website embedding by the distributor.
+   Montserrat is listed first in the tokens below, so Latin glyphs always use
+   Montserrat while Hangul automatically falls through to the ONE faces. */
+@font-face{
+  font-family:"ONE Mobile";
+  src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff") format("woff");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"ONE Mobile Title";
+  src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff") format("woff");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 @font-face{
   font-family:"Pretendard Variable";
   src:url("../fonts/PretendardVariable.woff2") format("woff2-variations"),
@@ -11,6 +31,9 @@
 }
 
 :root{
+  --font-body:"Montserrat","ONE Mobile","Pretendard Variable",sans-serif;
+  --font-title:"Montserrat","ONE Mobile Title","ONE Mobile","Pretendard Variable",sans-serif;
+  --font-latin:"Montserrat",sans-serif;
   --bg:#050505;
   --bg-2:#0d0d0d;
   --card:#141414;
@@ -875,3 +898,27 @@ body.is-ready .pt__mark{opacity:0}
 @media (prefers-reduced-motion:reduce){
   .about-jeju__journey{height:auto}.about-jeju__stage{position:relative}.about-jeju__pulse{animation:none}.about-jeju__dolphin-scene.is-visible .about-jeju__dolphin{animation:none;opacity:1;transform:translate(0,-18px)}.about-jeju__dolphin-scene.is-visible .about-jeju__ripple{animation:none;opacity:.55}
 }
+
+/* -------------------------------------------------------------------------
+   Global typography system
+   Latin: Montserrat / Korean body: ONE Mobile / Korean display: ONE Mobile
+   Title. The component-level overrides replace legacy font exceptions across
+   every page without changing the established layout or motion.
+--------------------------------------------------------------------------- */
+body,
+body *{font-family:var(--font-body)!important}
+
+body :is(
+  h1,h2,h3,h4,h5,h6,
+  .hero__giant,.foot__giant,.statement__big,.tools__h,
+  .wcard__title,.pcard__title,.pnav b,
+  .about-experience__year,.task-project-nav strong,
+  .task-type__left p,.task-type__right strong
+),
+body :is(
+  h1,h2,h3,h4,h5,h6,
+  .hero__giant,.foot__giant,.statement__big,.tools__h,
+  .wcard__title,.pcard__title,.pnav b,
+  .about-experience__year,.task-project-nav strong,
+  .task-type__left p,.task-type__right strong
+) *{font-family:var(--font-title)!important}
