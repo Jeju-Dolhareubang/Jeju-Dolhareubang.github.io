@@ -23,7 +23,7 @@
     ' vec2 q=gl_FragCoord.xy/band;',
     ' float x=q.x*.55;',
     // the crest line: layered sines drifting at different speeds
-    ' float w=.62+.2*sin(x*1.35+t*.32)+.12*sin(x*2.7-t*.46+1.7)+.06*sin(x*4.9+t*.61+.4)+.1*(noise(vec2(x*1.2,t*.12))-.5);',
+    ' float w=.8+.28*sin(x*1.35+t*.32)+.15*sin(x*2.7-t*.46+1.7)+.07*sin(x*4.9+t*.61+.4)+.12*(noise(vec2(x*1.2,t*.12))-.5);',
     ' float d=w-q.y;',
     // grain that breaks up the edge like a dithered blur
     ' float g=hash(gl_FragCoord.xy+fract(t*7.3)*91.7)-.5;',
@@ -78,13 +78,14 @@
     }
   }
 
+  var SPEED = 1.8; // overall flow speed of the wave
   var visible = true, raf = 0, start = performance.now();
   function draw(now) {
     resize();
     gl.uniform2f(uRes, canvas.width, canvas.height);
     var gh = giant ? giant.getBoundingClientRect().height : hero.clientHeight * 0.3;
     gl.uniform1f(uBand, Math.max(160, gh) * dpr);
-    gl.uniform1f(uT, reduce ? 4 : (now - start) / 1000);
+    gl.uniform1f(uT, reduce ? 4 : (now - start) / 1000 * SPEED);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     raf = (!reduce && visible) ? requestAnimationFrame(draw) : 0;
   }

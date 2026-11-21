@@ -160,6 +160,7 @@
 
   /* ---------- parallax / scale ---------- */
   var para = $$('[data-speed]'), scalers = $$('[data-scale]'), coverPanels = $$('[data-cover]'), stack = $$('.scard');
+  var footBox = $('.foot > .wrap');
   function updateFX() {
     var vh = window.innerHeight;
     para.forEach(function (el) {
@@ -182,6 +183,14 @@
       el.style.transform = 'translate3d(0,' + (lift * (1 - p)).toFixed(1) + 'px,0)';
       el.style.borderRadius = radius.toFixed(1) + 'px';
     });
+    // footer box (fixaplan.com pattern): starts lifted and slightly smaller,
+    // settles into place as the page reaches its end
+    if (footBox) {
+      // measure the (untransformed) footer section, not the moving box
+      var fr = footBox.parentNode.getBoundingClientRect();
+      var fp = Math.max(0, Math.min(1, 1 - (fr.bottom - vh) / Math.max(1, footBox.offsetHeight)));
+      footBox.style.transform = fp > 0.995 ? '' : 'translate3d(0,' + (-210 * (1 - fp)).toFixed(1) + 'px,0) scale(' + (0.95 + 0.05 * fp).toFixed(4) + ')';
+    }
     stack.forEach(function (el, i) {
       var next = stack[i + 1];
       if (!next) { el.style.transform = ''; el.style.filter = ''; return; }
@@ -357,9 +366,17 @@
       scShots.forEach(function (n, k) { n.classList.toggle('is-active', k === i); });
       if (scPill) scPill.style.transform = 'translateY(' + (scItems[i].offsetTop + 4) + 'px)';
     };
-    // the item crossing the line just under the sticky intro (or the sticky display on mobile)
+    var scInner = $('.showcase__inner', showcase);
+    // desktop: the list is pinned, so scroll progress through the section picks the item;
+    // mobile: the item crossing the line just under the sticky display
     var fromScroll = function () {
-      var edge = narrow.matches ? scStage.getBoundingClientRect().bottom : scIntro.getBoundingClientRect().bottom;
+      if (!narrow.matches && scInner) {
+        var r = scInner.getBoundingClientRect();
+        var range = Math.max(1, r.height - window.innerHeight);
+        var p = Math.max(0, Math.min(0.9999, -r.top / range));
+        return Math.floor(p * scItems.length);
+      }
+      var edge = scStage.getBoundingClientRect().bottom;
       var line = edge + 26, pick = 0;
       scItems.forEach(function (n, k) { if (n.getBoundingClientRect().top <= line) pick = k; });
       return pick;
@@ -370,26 +387,16 @@
       if (!scList || !scItems.length) return;
       var h = scItems[0].offsetHeight;
       var pb;
-      if (narrow.matches) {
-        pb = window.innerHeight - scStage.offsetHeight - h - 26;
-      } else {
-        // just enough room for the last item to reach the line while the
-        // (desk-sized, not full-height) stage is still pinned
-        pb = scStage.offsetHeight - scIntro.offsetHeight - h - 6;
-      }
+      if (!narrow.matches) { scList.style.paddingBottom = '0px'; return; } // pinned list on desktop
+      pb = window.innerHeight - scStage.offsetHeight - h - 26;
       scList.style.paddingBottom = Math.max(h, pb) + 'px';
     };
     var scTick = false;
     var update = function () {
       scTick = false;
       setActive(scHover !== null ? scHover : fromScroll());
-      // once the display stops being pinned, let the intro leave with it
-      if (!narrow.matches) {
-        var st = scStage.getBoundingClientRect().top;
-        scIntro.style.transform = st < 0 ? 'translateY(' + st.toFixed(1) + 'px)' : '';
-      } else if (scIntro.style.transform) {
-        scIntro.style.transform = '';
-      }
+      // the whole side column is pinned now, so the intro never needs its own offset
+      if (scIntro.style.transform) scIntro.style.transform = '';
     };
     var queue = function () { if (!scTick) { scTick = true; requestAnimationFrame(update); } };
     window.addEventListener('scroll', queue, { passive: true });
