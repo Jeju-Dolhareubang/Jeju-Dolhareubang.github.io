@@ -344,5 +344,45 @@
     img.addEventListener('error', mark);
   });
 
+  /* ---------- about card pointer response ---------- */
+  if (window.matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
+    $$('.about-profile-card, .about-experience__card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width;
+        var y = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--pointer-x', (x * 100).toFixed(1) + '%');
+        card.style.setProperty('--pointer-y', (y * 100).toFixed(1) + '%');
+        card.style.transform = 'perspective(1000px) rotateX(' + ((.5 - y) * 3).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 4).toFixed(2) + 'deg) translateY(-5px)';
+        card.classList.add('is-tilting');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.removeProperty('transform');
+        card.classList.remove('is-tilting');
+      });
+    });
+  }
+
+  /* ---------- project monitor preview ---------- */
+  var showcase = $('[data-project-showcase]');
+  if (showcase) {
+    var previewItems = $$('[data-project-preview]', showcase);
+    var thumbnail = $('[data-project-thumbnail]', showcase);
+    var previewCategory = $('[data-project-category]', showcase);
+    var previewTitle = $('[data-project-title]', showcase);
+    var previewSummary = $('[data-project-summary]', showcase);
+    var showPreview = function (item) {
+      previewItems.forEach(function (node) { node.classList.toggle('is-active', node === item); });
+      thumbnail.style.setProperty('--preview-color', item.dataset.color);
+      previewCategory.textContent = item.dataset.category;
+      previewTitle.textContent = item.dataset.title;
+      previewSummary.textContent = item.dataset.summary;
+    };
+    previewItems.forEach(function (item) {
+      item.addEventListener('pointerenter', function () { showPreview(item); });
+      item.addEventListener('focus', function () { showPreview(item); });
+    });
+  }
+
   onScroll();
 })();
