@@ -59,10 +59,33 @@
 
   /* ---------- GNB: menu ---------- */
   var menu = $('.menu'), dim = $('.menu-dim'), bar = menu && $('.menu__bar', menu);
-  function openMenu() { if (!menu) return; gnb && gnb.classList.remove('is-hidden'); menu.classList.add('is-open'); bar.setAttribute('aria-expanded', 'true'); dim && dim.classList.add('is-on'); }
-  function closeMenu() { if (!menu) return; menu.classList.remove('is-open'); bar && bar.setAttribute('aria-expanded', 'false'); dim && dim.classList.remove('is-on'); }
+  var menuFoot = menu && $('.menu__foot', menu);
+  if (menuFoot && !$('.menu__cta', menuFoot)) {
+    var menuCta = doc.createElement('a');
+    menuCta.className = 'menu__cta';
+    menuCta.href = 'mailto:danbi960214@gmail.com';
+    menuCta.innerHTML = '<i aria-hidden="true">✦</i>Get in touch';
+    menuFoot.appendChild(menuCta);
+  }
+  function openMenu() {
+    if (!menu) return;
+    gnb && gnb.classList.remove('is-hidden');
+    menu.classList.add('is-open');
+    bar.setAttribute('aria-expanded', 'true');
+    bar.setAttribute('aria-label', 'Close menu');
+    dim && dim.classList.add('is-on');
+  }
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.remove('is-open');
+    bar && bar.setAttribute('aria-expanded', 'false');
+    bar && bar.setAttribute('aria-label', 'Open menu');
+    dim && dim.classList.remove('is-on');
+  }
+  if (bar) bar.setAttribute('aria-label', 'Open menu');
   if (bar) bar.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
   if (dim) dim.addEventListener('click', closeMenu);
+  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu && menu.classList.contains('is-open')) closeMenu(); });
 
   // Hide the header after a deliberate directional move. Using an anchor instead
   // of a single-event delta keeps trackpad and smooth-scroll input reliable.
