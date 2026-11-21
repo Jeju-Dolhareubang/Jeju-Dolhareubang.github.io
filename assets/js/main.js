@@ -87,19 +87,10 @@
   if (dim) dim.addEventListener('click', closeMenu);
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu && menu.classList.contains('is-open')) closeMenu(); });
 
-  // Hide the header after a deliberate directional move. Using an anchor instead
-  // of a single-event delta keeps trackpad and smooth-scroll input reliable.
-  var gnb = $('.gnb'), scrollAnchor = window.scrollY || window.pageYOffset || 0;
-  function onScrollHeader(y) {
-    if (!gnb) return;
-    if (y < 80 || (menu && menu.classList.contains('is-open'))) {
-      gnb.classList.remove('is-hidden');
-      scrollAnchor = y;
-      return;
-    }
-    if (Math.abs(y - scrollAnchor) < 12) return;
-    gnb.classList.toggle('is-hidden', y > scrollAnchor);
-    scrollAnchor = y;
+  // The header stays fixed while scrolling; it is never hidden.
+  var gnb = $('.gnb');
+  function onScrollHeader() {
+    if (gnb) gnb.classList.remove('is-hidden');
   }
 
   /* ---------- clock (Seoul) ---------- */
@@ -189,7 +180,7 @@
       var lift = window.innerWidth <= 820 ? 120 : 260;
       var radius = 48 - 24 * p;
       el.style.transform = 'translate3d(0,' + (lift * (1 - p)).toFixed(1) + 'px,0)';
-      el.style.borderRadius = radius.toFixed(1) + 'px ' + radius.toFixed(1) + 'px 0 0';
+      el.style.borderRadius = radius.toFixed(1) + 'px';
     });
     stack.forEach(function (el, i) {
       var next = stack[i + 1];
@@ -344,44 +335,80 @@
     img.addEventListener('error', mark);
   });
 
-  /* ---------- about card pointer response ---------- */
-  if (window.matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
-    $$('.about-profile-card, .about-experience__card').forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width;
-        var y = (e.clientY - r.top) / r.height;
-        card.style.setProperty('--pointer-x', (x * 100).toFixed(1) + '%');
-        card.style.setProperty('--pointer-y', (y * 100).toFixed(1) + '%');
-        card.style.transform = 'perspective(1000px) rotateX(' + ((.5 - y) * 3).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 4).toFixed(2) + 'deg) translateY(-5px)';
-        card.classList.add('is-tilting');
-      });
-      card.addEventListener('pointerleave', function () {
-        card.style.removeProperty('transform');
-        card.classList.remove('is-tilting');
-      });
-    });
-  }
+  /* about-page card motion lives in about-motion.js */
 
-  /* ---------- project monitor preview ---------- */
-  var showcase = $('[data-project-showcase]');
+  /* ---------- work showcase: scroll/hover picks the project on the display ---------- */
+  var showcase = $('[data-showcase]');
   if (showcase) {
-    var previewItems = $$('[data-project-preview]', showcase);
-    var thumbnail = $('[data-project-thumbnail]', showcase);
-    var previewCategory = $('[data-project-category]', showcase);
-    var previewTitle = $('[data-project-title]', showcase);
-    var previewSummary = $('[data-project-summary]', showcase);
-    var showPreview = function (item) {
-      previewItems.forEach(function (node) { node.classList.toggle('is-active', node === item); });
-      thumbnail.style.setProperty('--preview-color', item.dataset.color);
-      previewCategory.textContent = item.dataset.category;
-      previewTitle.textContent = item.dataset.title;
-      previewSummary.textContent = item.dataset.summary;
+    var scItems = $$('[data-showcase-item]', showcase);
+    var scShots = $$('.desk__screen img', showcase);
+    var scPill = $('.showcase__pill', showcase);
+    var scIntro = $('.showcase__intro', showcase);
+    var scStage = $('.showcase__stage', showcase);
+    var scMore = $('.showcase__more', showcase);
+    var scBio = $('.showcase__bio', showcase);
+    var scHover = null, scCurrent = -1;
+    var narrow = window.matchMedia('(max-width:1023px)');
+
+    var setActive = function (i) {
+      if (i === scCurrent) return;
+      scCurrent = i;
+      scItems.forEach(function (n, k) { n.classList.toggle('is-active', k === i); });
+      scShots.forEach(function (n, k) { n.classList.toggle('is-active', k === i); });
+      if (scPill) scPill.style.transform = 'translateY(' + (scItems[i].offsetTop + 4) + 'px)';
     };
-    previewItems.forEach(function (item) {
-      item.addEventListener('pointerenter', function () { showPreview(item); });
-      item.addEventListener('focus', function () { showPreview(item); });
+    // the item crossing the line just under the sticky intro (or the sticky display on mobile)
+    var fromScroll = function () {
+      var edge = narrow.matches ? scStage.getBoundingClientRect().bottom : scIntro.getBoundingClientRect().bottom;
+      var line = edge + 26, pick = 0;
+      scItems.forEach(function (n, k) { if (n.getBoundingClientRect().top <= line) pick = k; });
+      return pick;
+    };
+    // Keep the intro and display pinned exactly until the last item reaches the line.
+    var scList = $('.showcase__list', showcase);
+    var fitList = function () {
+      if (!scList || !scItems.length) return;
+      var h = scItems[0].offsetHeight;
+      var pb;
+      if (narrow.matches) {
+        pb = window.innerHeight - scStage.offsetHeight - h - 26;
+      } else {
+        // just enough room for the last item to reach the line while the
+        // (desk-sized, not full-height) stage is still pinned
+        pb = scStage.offsetHeight - scIntro.offsetHeight - h - 6;
+      }
+      scList.style.paddingBottom = Math.max(h, pb) + 'px';
+    };
+    var scTick = false;
+    var update = function () {
+      scTick = false;
+      setActive(scHover !== null ? scHover : fromScroll());
+      // once the display stops being pinned, let the intro leave with it
+      if (!narrow.matches) {
+        var st = scStage.getBoundingClientRect().top;
+        scIntro.style.transform = st < 0 ? 'translateY(' + st.toFixed(1) + 'px)' : '';
+      } else if (scIntro.style.transform) {
+        scIntro.style.transform = '';
+      }
+    };
+    var queue = function () { if (!scTick) { scTick = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', function () { scCurrent = -1; fitList(); queue(); });
+    scItems.forEach(function (item, k) {
+      item.addEventListener('pointerenter', function () { scHover = k; queue(); });
+      item.addEventListener('focus', function () { scHover = k; queue(); });
+      item.addEventListener('blur', function () { scHover = null; queue(); });
     });
+    if (scList) scList.addEventListener('pointerleave', function () { scHover = null; queue(); });
+    if (scMore && scBio) scMore.addEventListener('click', function () {
+      var open = scMore.getAttribute('aria-expanded') !== 'true';
+      scMore.setAttribute('aria-expanded', open ? 'true' : 'false');
+      scBio.classList.toggle('is-open', open);
+      setTimeout(function () { scCurrent = -1; fitList(); queue(); }, 420);
+    });
+    fitList();
+    window.addEventListener('load', fitList);
+    update();
   }
 
   onScroll();

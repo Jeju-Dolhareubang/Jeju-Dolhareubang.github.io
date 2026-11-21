@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>박단비 — Senior UI/UX Designer</title>
 <meta name="description" content="복잡한 정보와 업무 흐름을 쉽게 이해할 수 있는 구조로 정리하는 8년차 UI/UX 디자이너 박단비의 포트폴리오.">
-<link rel="stylesheet" href="assets/css/style.css?v=green-tone-20261121">
+<link rel="stylesheet" href="assets/css/style.css?v=showcase-fit-20261122">
 </head>
 <body class="home">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
@@ -40,53 +40,62 @@
         <p class="hero__sub" data-reveal>8년차 UI/UX 디자이너.<br>데이터·운영 서비스와 게임 IP 플랫폼의 시스템과 경험을 설계합니다. Currently at <b>Neople.</b></p>
       </div>
     </div>
+    <div class="wrap hero__bar" data-reveal>
+      <span>Senior UI/UX Designer</span>
+      <span class="hero__bar-loc"><span data-clock>--:--</span>Jeju, Korea</span>
+      <span class="hero__bar-scroll">Scroll to explore <i aria-hidden="true">↓</i></span>
+    </div>
     <span class="hero__giant" data-speed="0.18" aria-hidden="true"><span>DANBI</span></span>
   </section>
 
   <!-- ABOUT ME -->
   <section class="statement wrap" id="about">
+    <h2 class="statement__big" data-words>복잡한 정보와 업무 흐름을, 사용자가 쉽게 이해하고 예측할 수 있는 구조로 정리합니다.</h2>
     <div class="statement__grid">
-      <p class="mono statement__label" data-reveal>About me</p>
-      <div class="statement__side d2" data-reveal>
-        <h2 class="statement__big" data-words>복잡한 정보와 업무 흐름을, 사용자가 쉽게 이해하고 예측할 수 있는 구조로 정리합니다.</h2>
-        <p class="statement__lead"><b>디자인 에이전시에서</b> 커머스 쇼핑몰, 교육 플랫폼, 기업 브랜드 사이트를 만들었고, <b>지금은 네오플에서 1인 디자이너로</b> 초기 기획부터 UX·UI 디자인, 스타일 구현, QA까지 맡고 있습니다.</p>
-        <p>최근에는 Figma와 AI 코딩 도구를 연결해 디자인 시스템이 실제 화면으로 빠르게 구현되는 방식을 실험하고 있습니다. 디자이너와 개발자가 더 일관되게 협업할 수 있는 구조를 만드는 것이 목표입니다.</p>
-        <a class="btn" href="about.html"><i>↗</i>Read more</a>
-      </div>
+      <p class="statement__lead" data-reveal><b>About me.</b> 디자인 에이전시에서 커머스 쇼핑몰, 교육 플랫폼, 기업 브랜드 사이트를 만들었고, <strong>지금은 네오플에서 1인 디자이너로 초기 기획부터 UX·UI 디자인, 스타일 구현, QA까지 맡고 있습니다.</strong></p>
+      <p class="statement__note d2" data-reveal>최근에는 Figma와 AI 코딩 도구를 연결해 디자인 시스템이 실제 화면으로 빠르게 구현되는 방식을 실험하고 있습니다. 디자이너와 개발자가 더 일관되게 협업할 수 있는 구조를 만드는 것이 목표입니다.</p>
     </div>
+    <a class="btn statement__btn" href="about.html" data-reveal><i>↗</i>Read more</a>
   </section>
 
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="wrap">
-      <div class="shead" style="padding-top:clamp(40px,6vw,100px)">
-        <h2 class="shead__title" data-words>Selected work. <em>사용자가 매일 여는 운영 화면을 설계했습니다.</em></h2>
-        <div class="shead__row">
-          <p data-reveal><b>업무 요청 시스템부터 분석 대시보드, IP CMS까지</b> 네오플의 사내 플랫폼과 운영 도구를 설계했습니다.</p>
-          <p data-reveal>카드를 눌러 각 프로젝트의 문제 정의, 정보 구조, 화면 설계 과정을 확인해 보세요.</p>
-        </div>
+  <!-- WORK — list + desk display showcase -->
+  <section class="work showcase" id="work" data-showcase>
+    <div class="showcase__inner">
+      <div class="showcase__side">
+        <header class="showcase__intro">
+          <h2 class="showcase__name">Selected work</h2>
+          <p class="showcase__tagline">사용자가 매일 여는<br>운영 화면을 설계했습니다.</p>
+          <button class="showcase__more" type="button" aria-expanded="false" aria-controls="showcase-bio">More <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="showcase__bio" id="showcase-bio">
+            <p><b>업무 요청 시스템부터 분석 대시보드, IP CMS까지</b> 네오플의 사내 플랫폼과 운영 도구를 설계했습니다.</p>
+            <p>프로젝트를 누르면 문제 정의, 정보 구조, 화면 설계 과정을 볼 수 있어요.</p>
+          </div>
+        </header>
+        <nav class="showcase__list" aria-label="프로젝트 목록">
+          <span class="showcase__pill" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M7 1.5h3.5V5M10.5 1.5 6.8 5.2M5 10.5H1.5V7M1.5 10.5l3.7-3.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <a class="showcase__item is-active" href="work/task.html" data-showcase-item><span class="showcase__title">TASK 업무 요청 시스템</span><span class="showcase__sub">Neople · Internal tool</span></a>
+          <a class="showcase__item" href="work/neople-developers.html" data-showcase-item><span class="showcase__title">Neople Developers</span><span class="showcase__sub">Neople · Platform</span></a>
+          <a class="showcase__item" href="work/dnf-cms.html" data-showcase-item><span class="showcase__title">던파 유니버스 CMS</span><span class="showcase__sub">Neople · CMS</span></a>
+          <a class="showcase__item" href="work/media-insight.html" data-showcase-item><span class="showcase__title">Media Insight</span><span class="showcase__sub">Neople · Dashboard</span></a>
+          <a class="showcase__item" href="work/cyphers.html" data-showcase-item><span class="showcase__title">사이퍼즈 프로모션 배너</span><span class="showcase__sub">Neople · Banner</span></a>
+        </nav>
       </div>
-    </div>
-    <div class="project-showcase" data-project-showcase>
-      <nav class="project-showcase__list" aria-label="프로젝트 목록">
-        <a class="project-showcase__item is-active" href="work/task.html" data-project-preview data-category="Neople · Internal tool" data-title="TASK 업무 요청 시스템" data-summary="업무 탐색과 요청·진행 확인 흐름을 다시 설계했습니다." data-color="#3d6bff">TASK 업무 요청 시스템 <span>↗</span></a>
-        <a class="project-showcase__item" href="work/neople-developers.html" data-project-preview data-category="Neople · Platform" data-title="Neople Developers" data-summary="디자인부터 AI 기반 구현까지 개발자 센터를 리뉴얼하고 있습니다." data-color="#f0b100">Neople Developers <span>↗</span></a>
-        <a class="project-showcase__item" href="work/dnf-cms.html" data-project-preview data-category="Neople · CMS" data-title="DNF CMS" data-summary="홈페이지 콘텐츠를 운영하는 관리자 화면을 설계했습니다." data-color="#4f9dff">DNF CMS <span>↗</span></a>
-        <a class="project-showcase__item" href="work/media-insight.html" data-project-preview data-category="Neople · Dashboard" data-title="Media Insight" data-summary="흩어진 미디어 지표를 읽기 쉬운 분석 화면으로 정리했습니다." data-color="#a8f86a">Media Insight <span>↗</span></a>
-        <a class="project-showcase__item" href="work/cyphers.html" data-project-preview data-category="Neople · Banner" data-title="사이퍼즈 프로모션" data-summary="시즌 이벤트마다 메인과 서브 배너를 제작하고 있습니다." data-color="#ff5a3c">사이퍼즈 프로모션 <span>↗</span></a>
-      </nav>
-      <div class="project-showcase__visual" aria-live="polite">
-        <div class="project-monitor">
-          <div class="project-monitor__screen">
-            <div class="project-monitor__chrome"><i></i><i></i><i></i><span>Selected project</span></div>
-            <div class="project-monitor__thumbnail" data-project-thumbnail>
-              <p data-project-category>Neople · Internal tool</p>
-              <strong data-project-title>TASK 업무 요청 시스템</strong>
-              <span data-project-summary>업무 탐색과 요청·진행 확인 흐름을 다시 설계했습니다.</span>
+      <div class="showcase__stage" aria-hidden="true">
+        <div class="desk">
+          <div class="desk__display">
+            <div class="desk__screen">
+              <img class="is-active" src="assets/img/task-dashboard-bento.webp" alt="" loading="lazy" decoding="async">
+              <img src="assets/img/nd-api-tobe.webp" alt="" loading="lazy" decoding="async">
+              <img src="assets/img/dnf-content.webp" alt="" loading="lazy" decoding="async" style="object-position:58% 50%">
+              <img src="assets/img/media-dashboard-bento.webp" alt="" loading="lazy" decoding="async">
+              <img src="assets/img/cy-03.webp" alt="" loading="lazy" decoding="async" style="object-position:50% 18%">
             </div>
           </div>
-          <div class="project-monitor__stand"></div>
-          <div class="project-monitor__base"></div>
+          <div class="desk__neck"></div>
+          <div class="desk__slab">
+            <div class="desk__top"><span class="desk__keyboard"></span><span class="desk__mouse"></span></div>
+            <div class="desk__front"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -230,6 +239,8 @@
       </div>
   </div>
 </div><script src="assets/js/lenis.min.js"></script>
-<script src="assets/js/main.js?v=scroll-map-20261121"></script>
+<script src="assets/js/main.js?v=showcase-fit-20261122"></script>
+<script src="assets/js/hero-wave.js?v=wave-20261122"></script>
+<script src="assets/js/office-guide.js?v=guide-20261122"></script>
 </body>
 </html>
