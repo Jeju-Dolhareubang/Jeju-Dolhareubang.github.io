@@ -27,7 +27,7 @@
     '  float fall=smoothstep(1.7,.2,dist);',
     '  float core=exp(-dist*dist*2.2);',
     '  float lit=(r*cone*fall*.6+core*.5)*uFade;',
-    '  float bottom=smoothstep(0.,.75,uv.y);',      // let the floor go dark
+    '  float bottom=smoothstep(0.,.5,uv.y);',      // let the floor go dark
     '  vec3 col=uBase*mix(.05,1.,bottom*bottom);',
     '  col+=uRay*lit*mix(.15,1.,bottom);',
     '  col+=vec3(.75,.88,1.)*pow(core,4.)*.12*uFade;',
