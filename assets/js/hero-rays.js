@@ -9,7 +9,7 @@
   var FRAG = [
     'precision mediump float;',
     'uniform vec2 uRes;uniform float uTime;uniform float uLean;uniform float uFade;',
-    'uniform vec3 uRay;uniform vec3 uBase;',
+    'uniform vec3 uRay;uniform vec3 uBase;uniform float uMode;',
     'float band(float a,float f,float s,float ph,float sharp){',
     '  return pow(.5+.5*sin(a*f+uTime*s+ph+sin(a*f*.37-uTime*s*.6)*1.4),sharp);',
     '}',
@@ -26,11 +26,12 @@
     '  r+=.08*sin(uTime*.7+a*3.);',
     '  float fall=smoothstep(1.7,.2,dist);',
     '  float core=exp(-dist*dist*2.2);',
-    '  float lit=(r*cone*fall*.6+core*.5)*uFade;',
+    '  float lit=(r*cone*fall*.42+core*.34)*uFade;',  // toned down: softer rays, lower contrast
     '  float bottom=smoothstep(0.,.5,uv.y);',      // let the floor go dark
-    '  vec3 col=uBase*mix(.05,1.,bottom*bottom);',
+    '  if(uMode>.5){gl_FragColor=vec4(mix(vec3(1.),uRay,clamp(lit*.4,0.,1.)),1.);return;}',  // light pages: tint over white, multiplied in CSS
+    '  vec3 col=uBase*mix(.22,1.,bottom*bottom);',
     '  col+=uRay*lit*mix(.15,1.,bottom);',
-    '  col+=vec3(.75,.88,1.)*pow(core,4.)*.12*uFade;',
+    '  col+=vec3(.75,.88,1.)*pow(core,4.)*.06*uFade;',
     '  float n=fract(sin(dot(gl_FragCoord.xy,vec2(12.9898,78.233)))*43758.5453);',
     '  col+=(n-.5)/255.*2.;',                       // dither against banding
     '  gl_FragColor=vec4(col,1.);',
@@ -71,9 +72,10 @@
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
     var U = {};
-    ['uRes', 'uTime', 'uLean', 'uFade', 'uRay', 'uBase'].forEach(function (k) { U[k] = gl.getUniformLocation(prog, k); });
+    ['uRes', 'uTime', 'uLean', 'uFade', 'uRay', 'uBase', 'uMode'].forEach(function (k) { U[k] = gl.getUniformLocation(prog, k); });
     gl.uniform3fv(U.uRay, hex(canvas.getAttribute('data-rays-color') || '#51a2ff'));
     gl.uniform3fv(U.uBase, hex(canvas.getAttribute('data-rays-base') || '#0a132f'));
+    gl.uniform1f(U.uMode, canvas.getAttribute('data-rays-mode') === 'light' ? 1 : 0);
 
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     var host = canvas.parentElement;

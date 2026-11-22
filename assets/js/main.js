@@ -24,7 +24,7 @@
   function ready() { requestAnimationFrame(function () { body.classList.add('is-ready'); }); }
   if (doc.readyState === 'complete') ready(); else window.addEventListener('load', ready);
   setTimeout(ready, 1200);
-  window.addEventListener('pageshow', function (e) { if (e.persisted && pt) { pt.classList.remove('is-leaving', 'go'); body.classList.add('is-ready'); } });
+  window.addEventListener('pageshow', function (e) { if (e.persisted && pt) { pt.classList.remove('is-leaving', 'go'); body.classList.add('is-ready'); body.classList.remove('is-closing'); $$('.px-dim,.px-sheet').forEach(function (n) { n.remove(); }); } });
 
   doc.addEventListener('click', function (e) {
     var a = e.target.closest('a');
@@ -43,6 +43,27 @@
       var tt = doc.getElementById(href.split('#')[1]);
       if (tt) { e.preventDefault(); closeMenu(); scrollToEl(tt); return; }
     }
+    // case-study close (plus-ex.com pattern): the page slides down over a grey dim, then the list shows through
+    if (a.classList.contains('task-case__close') && !reduce) {
+      e.preventDefault();
+      try { sessionStorage.setItem('pd-skip-intro', 'close'); } catch (err) {}
+      body.classList.add('is-closing');
+      setTimeout(function () { location.href = href; }, 800);
+      return;
+    }
+    // opening a case study: grey dim fades in, then a sheet slides up from the bottom
+    if (/(^|\/)work\/[^/]+\.html(#.*)?$/.test(href) && !reduce) {
+      e.preventDefault();
+      closeMenu();
+      try { sessionStorage.setItem('pd-skip-intro', 'open'); } catch (err) {}
+      var dim = doc.createElement('div'), sheet = doc.createElement('div');
+      dim.className = 'px-dim'; sheet.className = 'px-sheet';
+      body.appendChild(dim); body.appendChild(sheet);
+      void sheet.offsetWidth;
+      dim.classList.add('on'); sheet.classList.add('on');
+      setTimeout(function () { location.href = href; }, 1200);
+      return;
+    }
     if (!/\.html(#.*)?$/.test(href) || !pt || reduce) return;
     e.preventDefault();
     closeMenu();
@@ -51,10 +72,22 @@
     pt.classList.add('go');
     setTimeout(function () { location.href = href; }, 620);
   });
+  // arriving from a case-study close button: no curtain, land on the hash at once
+  var skipIntro = false;
+  try { skipIntro = sessionStorage.getItem('pd-skip-intro'); sessionStorage.removeItem('pd-skip-intro'); } catch (err) {}
+  if (skipIntro && pt) pt.style.display = 'none';
+  if (skipIntro === 'close') { // back on the list: the grey dim lifts off
+    var lift = doc.createElement('div');
+    lift.className = 'px-dim on';
+    body.appendChild(lift);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { lift.classList.remove('on'); }); });
+    setTimeout(function () { lift.remove(); }, 700);
+  }
   // land on hash after transition
   if (location.hash) {
     var target = doc.getElementById(location.hash.slice(1));
-    if (target) setTimeout(function () { scrollToEl(target); }, 700);
+    if (target && skipIntro) window.scrollTo(0, target.getBoundingClientRect().top + window.pageYOffset - 80);
+    else if (target) setTimeout(function () { scrollToEl(target); }, 700);
   }
 
   /* ---------- GNB: menu ---------- */

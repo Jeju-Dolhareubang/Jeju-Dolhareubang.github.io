@@ -7,7 +7,7 @@
 <meta name="description" content="Media Insight 케이스 스터디">
 <link rel="stylesheet" href="../assets/css/style.css?v=lightnav-20261122a">
 </head>
-<body class="mi-case">
+<body class="mi-case mi-dark">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
 
 <!-- @header -->
@@ -32,19 +32,20 @@
 <div class="menu-dim"></div>
 <div class="cursor" aria-hidden="true"></div>
 <div class="toast" role="status">상세 케이스는 준비 중이에요 · Case coming soon</div>
+<a class="task-case__close" href="../index.html#work" aria-label="프로젝트 목록으로 돌아가기">×</a>
 <main class="mi-main">
   <section class="mi-hero">
-    <a class="task-case__close" href="../index.html#work" aria-label="프로젝트 목록으로 돌아가기">×</a>
+    <canvas class="task-hero__rays" data-rays data-rays-color="#baff30" data-rays-base="#10290a" aria-hidden="true"></canvas>
     <div class="mi-hero__top">
       <h1>미디어 인사이트</h1>
       <div class="mi-hero__meta"><span>Client. <b>NEOPLE</b></span><span>Category. <b>Analytics Dashboard</b></span><span>Date. <b>2025</b></span></div>
     </div>
     <div class="mi-hero__body">
       <div class="dfu-graph mi-graph" aria-hidden="true">
-        <img class="dfu-graph__dots" src="../assets/img/mi/dots.png" alt="">
-        <span class="dfu-graph__logo" style="--x:380;--y:201;--w:200;--hh:200"><img src="../assets/img/mi/logo.png" alt=""></span>
-        <img class="dfu-graph__vec" style="--x:591.71;--y:300.99;--w:356.686;--hh:238.14" src="../assets/img/mi/vector1.svg" alt="">
-        <img class="dfu-graph__pt" style="--x:580.5;--y:293;--w:16;--hh:16" src="../assets/img/mi/point.svg" alt="">
+        <img class="dfu-graph__dots" src="../assets/img/mi/dark/dots.png" alt="">
+        <span class="dfu-graph__logo" style="--x:380;--y:201;--w:200;--hh:200"><span class="mi-logo"><img class="mi-logo__back" src="../assets/img/mi/dark/logo-back.svg" alt=""><img class="mi-logo__front" src="../assets/img/mi/dark/logo-front.svg" alt=""></span></span>
+        <img class="dfu-graph__vec" style="--x:591.71;--y:300.99;--w:356.686;--hh:238.14" src="../assets/img/mi/dark/vector1.svg" alt="">
+        <img class="dfu-graph__pt" style="--x:580.5;--y:293;--w:16;--hh:16" src="../assets/img/mi/dark/point.svg" alt="">
         <i class="dfu-graph__mid" style="--x:742.1;--y:531"></i>
         <i class="dfu-graph__end" style="--x:939.1;--y:532"></i>
       </div>
@@ -52,9 +53,9 @@
         <div class="mi-hero__copyin" data-reveal>
           <div>
             <h2>[MEDIA INSIGHT]</h2>
-            <p>미디어 인사이트는 NEOPLE 주요 프로젝트를 다룬 영상·기사·커뮤니티 콘텐츠의 발생 현황과 조회수, 언급량 등 버즈 데이터를 수집해 통합 분석하는 대시보드형 애널리틱스 서비스입니다.</p>
-            <p>키워드 기반으로 YouTube 영상 정보(제목·링크·조회수·댓글)와 채널 정보(채널명·구독자 수)를 자동 수집하고, 수집된 영상과 댓글을 생성형 AI로 분석해 어떤 콘텐츠가 생성되고 있고 그 파급력이 어느 정도인지 한눈에 파악할 수 있게 했습니다.</p>
-            <p>개발사업실의 니즈로 시작된 프로젝트로, 별도 웹페이지에서 모든 데이터를 관리할 수 있도록 대시보드 · 프로젝트별 조회 · 개별 영상 분석 · 설정 화면을 설계했습니다.</p>
+            <p>미디어 인사이트는 NEOPLE 주요 프로젝트를 다룬 YouTube 영상과 채널 정보를 키워드 기반으로 자동 수집하고,<br>조회수 · 댓글 같은 버즈 데이터를 프로젝트 단위로 모아 보여주는 대시보드형 애널리틱스 서비스입니다.</p>
+            <p>수집된 영상과 댓글은 생성형 AI가 요약 · 주제 · 감정까지 정리해, 영상을 끝까지 보지 않아도<br>어떤 콘텐츠가 만들어지고 반응이 어떤지 한눈에 파악할 수 있습니다.</p>
+            <p>개발사업실의 니즈로 시작된 신규 구축 프로젝트로, 별도 웹페이지에서 모든 데이터를 관리할 수 있도록<br>대시보드 · 프로젝트별 조회 · 개별 영상 분석 · 설정 화면을 설계했습니다.</p>
           </div>
           <div class="mi-tags"><span>Data Viz</span><span>IA/UX Design</span><span>UI Design</span><span>Dashboard</span><span>AI Analysis</span><span>Dark UI</span></div>
         </div>
@@ -65,8 +66,8 @@
     <div class="mi-overview__intro" data-reveal>
       <small class="mi-eyebrow">01 - OVERVIEW</small>
       <h2>프로젝트의 버즈를 매일 자동으로 모아<br>생성형 AI로 읽는 애널리틱스</h2>
-      <p>미디어 인사이트는 NEOPLE 주요 프로젝트를 다룬 YouTube 영상·채널 정보를 키워드 기반으로 자동 수집하고,<br>조회수·댓글 같은 버즈 데이터를 프로젝트 단위로 통합해 보여주는 대시보드형 애널리틱스 서비스입니다.</p>
-      <p>수집된 영상과 댓글은 생성형 AI가 요약·주제·감정까지 정리해, 운영자가 영상을 다 보지 않아도<br>어떤 콘텐츠가 만들어지고 파급력이 어느 정도인지 한눈에 파악할 수 있습니다.</p>
+      <p>개발사업실은 프로젝트별 영상 반응을 확인하기 위해 YouTube를 직접 검색하고 엑셀로 정리해 왔습니다.<br>수집 기준이 그때그때 달랐고, 영상 내용과 댓글 여론은 하나하나 봐야만 알 수 있었습니다.</p>
+      <p>그래서 키워드만 등록하면 매일 자동으로 수집되고,<br>생성형 AI가 영상과 댓글을 요약해 주는 별도 웹 서비스로 신규 구축했습니다.</p>
     </div>
     <div class="mi-metas d1" data-reveal>
       <div class="mi-meta"><b>대시보드 · 프로젝트 조회 · 영상 분석 · 설정</b><span>4개 화면 + 데이터 수집 · AI 분석 플로우</span></div>
@@ -74,71 +75,75 @@
     </div>
   </section>
   <section class="mi-approach" id="approach">
-    <header data-reveal><small class="mi-eyebrow">02 - APPROACH</small><h2>내가 사용자라면 어떤 화면이 편할까</h2></header>
+    <header data-reveal><h2>내가 사용자라면 어떤 화면이 편할까</h2></header>
     <p class="mi-approach__lead" data-reveal>기존 YouTube 영상 집계 대시보드를 참고하고, 사용자 입장에서 어떤 방향이 편리할지 고민하며 세 가지 기준을 세웠습니다.</p>
-    <div class="mi-acards"><div class="mi-acard" data-reveal><small>USER PERSPECTIVE</small><p>"내가 사용자라면"이라는 1인칭 관점으로 시작했습니다.<br>무엇을 먼저 보고 싶은지, 어디서 막히는지를 기준으로 화면 순서를 정했습니다.</p></div><div class="mi-acard mi-acard--alt" data-reveal><small>FAMILIAR PATTERN</small><p>기존 YouTube 영상 집계 대시보드를 참고했습니다.<br>이미 익숙한 KPI 카드 · 추이 차트 구조를 가져와 학습 비용을 줄였습니다.</p></div><div class="mi-acard" data-reveal><small>DARK UI</small><p>그래프와 영상 썸네일이 더 잘 보이도록 다크 모드를 적용했습니다.<br>데이터와 콘텐츠가 배경보다 먼저 눈에 들어오게 했습니다.</p></div></div>
+    <div class="mi-acards"><div class="mi-acard mi-acard--hl" data-reveal><b>사용자 관점</b><p>무엇을 먼저 보고 싶은지, 어디서 막히는지를 기준으로<br>화면 순서를 정했습니다.</p></div><div class="mi-acard d1" data-reveal><b>익숙한 패턴</b><p>이미 익숙한 KPI 카드 · 추이 차트 구조를 가져와<br>학습 비용을 줄였습니다.</p></div><div class="mi-acard d2" data-reveal><b>다크 UI</b><p>그래프와 영상 썸네일이 배경보다 먼저 보이도록<br>다크 모드를 적용했습니다.</p></div></div>
   </section>
   <section class="mi-ia" id="ia">
-    <header data-reveal><h2>Information Architecture</h2><p>Dashboard에서 전체 현황을 보고, 프로젝트별 조회에서 키워드 단위로 좁혀 들어가며, 개별 영상 분석에서 AI 요약과 댓글 반응까지 확인하는 흐름으로 정보 구조를 설계했습니다.<br>데이터 수집의 기준이 되는 프로젝트·키워드는 설정에서 관리하며, 등록된 키워드는 매일 자동 수집됩니다.</p></header>
-    <figure class="mi-ia__map" data-reveal><img src="../assets/img/mi/sitemap.png" alt="미디어 인사이트 정보 구조도" loading="lazy"></figure>
+    <header data-reveal><h2>Information Architecture</h2><p>Dashboard에서 전체 현황을 보고, 프로젝트별 조회에서 키워드 단위로 좁혀 들어가며, 개별 영상 분석에서 AI 요약과 댓글 반응까지 확인하는 흐름으로 정보 구조를 설계했습니다.</p></header>
+    <figure class="mi-ia__map" data-reveal><img src="../assets/img/mi/dark/sitemap.png" alt="미디어 인사이트 정보 구조도" loading="lazy"></figure>
     <p class="mi-ia__note" data-reveal>실제 서비스 구조를 기반으로 작성했으며, 프로젝트명은 서비스 내 표기를 따랐습니다.</p>
   </section>
   <section class="mi-feat" id="dashboard">
     <aside class="mi-ctx" data-reveal>
-      <div><small class="mi-ctx__eyebrow">WHAT · SOLUTION</small><h3>프로젝트별 버즈 현황을<br>한 화면에서 비교</h3></div>
-      <ol class="mi-ctx__list"><li><small>01</small><div><b>KPI 요약</b><p>프로젝트별 콘텐츠 수, 조회수, 좋아요, 댓글 수를 카드로 요약해 파급력을 숫자로 먼저 보여줍니다.</p></div></li><li><small>02</small><div><b>업로드 추이</b><p>키워드별 일별 업로드 추이를 누적 영역 차트로 보여줘, 어느 시점에 어떤 키워드로 콘텐츠가 몰렸는지 파악할 수 있습니다.</p></div></li><li><small>03</small><div><b>TOP 콘텐츠</b><p>조회수 상위 콘텐츠를 카드로 나열했습니다. 지금 가장 퍼지고 있는 영상을 바로 확인합니다.</p></div></li></ol>
+      <small class="mi-ctx__eyebrow">WHY · UX RATIONALE</small>
+      <h3>오늘 무엇이 달라졌는지<br>첫 화면에서 바로 보이게</h3>
+      <p class="mi-ctx__why">운영자가 매일 처음 여는 화면이라 "오늘 무엇이 달라졌나"에 바로 답해야 했습니다. 결과 → 원인 → 근거를 확인하는 순서대로 KPI → 추이 → TOP 콘텐츠를 배치했습니다.</p>
     </aside>
     <div class="mi-feat__body">
-      <header data-reveal><span class="mi-label">DASHBOARD</span><h2><span class="mi-g">게임별 버즈를 KPI · 추이 · TOP 콘텐츠로 묶어</span><br>지금 어디에 관심이 쏠리는지 한눈에</h2></header>
+      <header data-reveal><span class="mi-label">DASHBOARD</span><h2><span class="mi-g">프로젝트별 버즈 현황을</span><br>한 화면에서 비교</h2></header>
       <hr>
-      <small class="mi-why" data-reveal>WHY · UX RATIONALE</small>
+      <small class="mi-why" data-reveal>WHAT · SOLUTION</small>
       <div class="mi-feat__row">
-        <div class="mi-feat__text" data-reveal><p>운영자가 매일 처음 여는 화면은 "오늘 무엇이 달라졌나"에 바로 답해야 합니다. 그래서 KPI → 추이 → TOP 콘텐츠 순으로 배치했습니다. 결과를 보고, 원인을 보고, 근거를 확인하는 질문 순서와 시선 흐름이 같아집니다.</p><p>프로젝트 필터는 숨기지 않고 상단에 체크박스로 펼쳐 두었습니다. 이 화면의 핵심 과업은 비교이고, 비교 대상을 바꾸는 데 한 번의 클릭이면 충분해야 했습니다.</p><p>어두운 배경에 라임 포인트를 쓴 이유도 분명합니다. 라인이 많은 추이 차트에서 색 구분이 또렷해야 했기 때문입니다.</p></div>
+        <ol class="mi-ctx__list" data-reveal><li><small>01</small><div><b>KPI 요약</b><p>콘텐츠·조회·좋아요·댓글 수를 카드로 요약했습니다.</p></div></li><li><small>02</small><div><b>업로드 추이</b><p>키워드별 일별 업로드 추이를 누적 차트로 보여줍니다.</p></div></li><li><small>03</small><div><b>TOP 콘텐츠</b><p>조회수 상위 영상을 카드로 바로 확인합니다.</p></div></li></ol>
         <div class="mi-screen d1" data-reveal><div class="mi-screen__in"><img src="../assets/img/mi/s-dashboard.png" alt="DASHBOARD 화면" loading="lazy" style="height:102.08%"></div><i class="mi-blur" style="left:13.25%;top:72.74%;width:84.62%;height:23.21%"></i></div>
       </div>
     </div>
   </section>
   <section class="mi-feat" id="project-view">
     <aside class="mi-ctx" data-reveal>
-      <div><small class="mi-ctx__eyebrow">WHAT · SOLUTION</small><h3>키워드로 좁혀 보는<br>프로젝트별 콘텐츠</h3></div>
-      <ol class="mi-ctx__list"><li><small>01</small><div><b>키워드 탭</b><p>프로젝트에 등록된 키워드를 탭으로 두었습니다. 전체와 키워드별 영상 목록을 클릭 한 번으로 전환할 수 있습니다.</p></div></li><li><small>02</small><div><b>기간 · 검색</b><p>지난 30일 등 기간을 바꾸고 영상 제목·채널명으로 검색합니다. 수천 건의 영상에서 필요한 콘텐츠만 빠르게 찾습니다.</p></div></li><li><small>03</small><div><b>키워드 추가</b><p>+ 버튼으로 키워드를 바로 추가합니다. 다음 수집부터 새 키워드 영상이 함께 들어옵니다.</p></div></li></ol>
+      <small class="mi-ctx__eyebrow">WHY · UX RATIONALE</small>
+      <h3>쓰던 엑셀처럼<br>프로젝트 → 키워드 순으로</h3>
+      <p class="mi-ctx__why">운영자가 쓰던 엑셀 구조(프로젝트 → 키워드)를 그대로 옮겨, 새 도구지만 새로 배울 것이 없게 했습니다. 영상은 제목보다 썸네일로 기억하기 때문에 TOP 10은 썸네일 카드로 두었습니다.</p>
     </aside>
     <div class="mi-feat__body">
-      <header data-reveal><span class="mi-label">PROJECT VIEW</span><h2><span class="mi-g">프로젝트 안을 키워드 탭으로 쪼개</span><br>원하는 콘텐츠 흐름만 골라 추적</h2></header>
+      <header data-reveal><span class="mi-label">PROJECT VIEW</span><h2><span class="mi-g">키워드로 좁혀 보는</span><br>프로젝트별 콘텐츠</h2></header>
       <hr>
-      <small class="mi-why" data-reveal>WHY · UX RATIONALE</small>
+      <small class="mi-why" data-reveal>WHAT · SOLUTION</small>
       <div class="mi-feat__row">
-        <div class="mi-feat__text" data-reveal><p>운영자의 머릿속 구조는 "게임(프로젝트) → 키워드"입니다. 기존 엑셀 시트가 그 구조였습니다. 그래서 좌측 내비게이션은 프로젝트, 상단 탭은 키워드로 똑같이 옮겼습니다. 새 도구지만 새로 배울 것은 없게 하는 것이 목표였습니다.</p><p>TOP 10은 표가 아니라 썸네일 카드로 두었습니다. 운영자는 영상을 제목이 아니라 썸네일로 기억합니다. "그 영상"을 찾는 시간이 눈에 띄게 줄어듭니다.</p><p>기간 선택은 우측 상단에 고정했습니다. 어떤 탭에서도 같은 자리에서 범위를 바꿀 수 있습니다.</p></div>
+        <ol class="mi-ctx__list" data-reveal><li><small>01</small><div><b>키워드 탭</b><p>키워드 탭으로 영상 목록을 한 번에 전환합니다.</p></div></li><li><small>02</small><div><b>기간 · 검색</b><p>기간과 제목·채널명으로 필요한 영상만 찾습니다.</p></div></li><li><small>03</small><div><b>키워드 추가</b><p>+ 버튼으로 수집할 키워드를 바로 추가합니다.</p></div></li></ol>
         <div class="mi-screen d1" data-reveal><div class="mi-screen__in"><img src="../assets/img/mi/s-project.jpg" alt="PROJECT VIEW 화면" loading="lazy" style="height:162.51%"></div><i class="mi-blur" style="left:14.7%;top:73.21%;width:83.17%;height:24.16%"></i></div>
       </div>
     </div>
   </section>
   <section class="mi-feat" id="video-analysis">
     <aside class="mi-ctx" data-reveal>
-      <div><small class="mi-ctx__eyebrow">WHAT · SOLUTION</small><h3>주소 하나로 영상을 수집하고<br>생성형 AI로 내용까지 분석</h3></div>
-      <ol class="mi-ctx__list"><li><small>01</small><div><b>영상 조회</b><p>영상 주소 혹은 고유 ID를 입력하면 제목·채널·구독자·조회·댓글 정보를 불러오고, 조회된 영상은 수동 등록 내역에 자동 저장됩니다.</p></div></li><li><small>02</small><div><b>AI 요약</b><p>영상 제목·요약·주요 주제와 타임스탬프를 생성형 AI가 정리하고, 프롬프트를 바꿔 다시 분석할 수 있습니다.</p></div></li><li><small>03</small><div><b>남은 할당량</b><p>API 할당량을 상단에 표시했습니다. 하루에 조회할 수 있는 영상 수를 미리 알 수 있습니다.</p></div></li></ol>
+      <small class="mi-ctx__eyebrow">WHY · UX RATIONALE</small>
+      <h3>영상 주소만 넣으면<br>분석까지 한 번에</h3>
+      <p class="mi-ctx__why">주소든 ID든 입력 필드 하나로 받아, 무엇을 넣을지 고민하지 않게 했습니다. 남은 할당량을 입력창 위에 보여주고 결과는 자동 저장해, 부담 없이 분석해 볼 수 있게 했습니다.</p>
     </aside>
     <div class="mi-feat__body">
-      <header data-reveal><span class="mi-label">VIDEO ANALYSIS</span><h2>주소 한 줄이면 영상 정보 수집부터<br><span class="mi-g">AI 요약까지, 보지 않아도 아는 내용</span></h2></header>
+      <header data-reveal><span class="mi-label">VIDEO ANALYSIS</span><h2><span class="mi-g">주소 하나로 영상을 수집하고</span><br>생성형 AI로 내용까지 분석</h2></header>
       <hr>
-      <small class="mi-why" data-reveal>WHY · UX RATIONALE</small>
+      <small class="mi-why" data-reveal>WHAT · SOLUTION</small>
       <div class="mi-feat__row">
-        <div class="mi-feat__text" data-reveal><p>입력 필드는 하나뿐입니다. 주소든 ID든 구분 없이 받습니다. "뭘 넣어야 하지"라는 판단을 입력 전에 하지 않게 하려는 의도입니다. 예시와 팁 블록은 빈 화면이 막막하지 않도록 첫 사용을 안내합니다.</p><p>남은 할당량은 입력창 바로 위에 보입니다. 생성형 AI 호출이 비용이라는 사실을 자연스럽게 인지하고, 꼭 필요한 영상만 돌리게 됩니다.</p><p>조회 결과는 자동으로 저장됩니다. "다시 못 찾으면 어쩌지"라는 불안이 사라지면, 일단 돌려보는 행동이 가벼워집니다.</p></div>
+        <ol class="mi-ctx__list" data-reveal><li><small>01</small><div><b>영상 조회</b><p>주소나 ID만으로 영상 정보를 불러오고 자동 저장합니다.</p></div></li><li><small>02</small><div><b>AI 요약</b><p>AI가 요약·주제·타임스탬프를 정리합니다.</p></div></li><li><small>03</small><div><b>남은 할당량</b><p>하루 조회 가능한 API 할당량을 상단에 표시했습니다.</p></div></li></ol>
         <div class="mi-screen d1" data-reveal><div class="mi-screen__in"><img src="../assets/img/mi/s-video.png" alt="VIDEO ANALYSIS 화면" loading="lazy" style="height:100%"></div></div>
       </div>
     </div>
   </section>
   <section class="mi-feat" id="comment-analysis">
     <aside class="mi-ctx" data-reveal>
-      <div><small class="mi-ctx__eyebrow">WHAT · SOLUTION</small><h3>댓글 여론을<br>긍정 · 부정으로 읽어 내기</h3></div>
-      <ol class="mi-ctx__list"><li><small>01</small><div><b>반응 요약</b><p>전반적인 댓글 동향과 주요 긍정·부정 주제를 AI가 요약해 여론의 방향을 먼저 보여줍니다.</p></div></li><li><small>02</small><div><b>통계 및 샘플</b><p>긍정·부정 비율과 대표 댓글 샘플을 함께 보여줘 근거를 확인할 수 있습니다.</p></div></li><li><small>03</small><div><b>개별 분석</b><p>전체 댓글 목록에서 댓글마다 분석 · 프롬프트 버튼을 제공해 특정 반응을 깊이 들여다볼 수 있습니다.</p></div></li></ol>
+      <small class="mi-ctx__eyebrow">WHY · UX RATIONALE</small>
+      <h3>댓글 반응은 요약부터,<br>자세한 건 필요할 때만</h3>
+      <p class="mi-ctx__why">수백 개 댓글을 한 번에 펼치면 읽히지 않아, 반응 요약 → 통계 → 개별 분석 순서로 나눠 필요할 때만 깊이 들어가게 했습니다. 탭마다 재분석 버튼을 두어 AI 해석의 통제권을 사용자에게 남겼습니다.</p>
     </aside>
     <div class="mi-feat__body">
-      <header data-reveal><span class="mi-label">COMMENT ANALYSIS</span><h2>수백 개 댓글을 AI가 세 단계로 압축<br><span class="mi-g">열광과 비판이 어디서 갈리는지 바로 파악</span></h2></header>
+      <header data-reveal><span class="mi-label">COMMENT ANALYSIS</span><h2><span class="mi-g">댓글 여론을</span><br>긍정 · 부정으로 읽어 내기</h2></header>
       <hr>
-      <small class="mi-why" data-reveal>WHY · UX RATIONALE</small>
+      <small class="mi-why" data-reveal>WHAT · SOLUTION</small>
       <div class="mi-feat__row">
-        <div class="mi-feat__text" data-reveal><p>수백 개 댓글을 한 번에 펼치면 아무도 읽지 않습니다. 그래서 반응 요약 → 통계 및 샘플 → 개별 분석 세 탭으로 나눴습니다. 전체 방향을 먼저 보고, 필요할 때만 깊이 들어가는 점진적 공개 구조입니다.</p><p>영상 정보는 좌측, 분석 결과는 우측에 나란히 둡니다. "어떤 영상의 반응인지"라는 맥락을 잃지 않기 위해서입니다. 긍정과 부정은 색으로 먼저 구분되어 스크롤 없이도 여론의 기울기가 보입니다.</p><p>탭마다 프롬프트 수정과 재분석 버튼을 두었습니다. AI 결과를 그대로 믿지 않아도 됩니다. 해석의 통제권은 사용자에게 있습니다.</p></div>
+        <ol class="mi-ctx__list" data-reveal><li><small>01</small><div><b>반응 요약</b><p>댓글 동향과 긍정·부정 주제를 AI가 요약합니다.</p></div></li><li><small>02</small><div><b>통계 및 샘플</b><p>긍정·부정 비율과 대표 댓글로 근거를 보여줍니다.</p></div></li><li><small>03</small><div><b>개별 분석</b><p>댓글마다 분석·프롬프트 버튼으로 깊이 들여다봅니다.</p></div></li></ol>
         <div class="mi-screen d1" data-reveal><div class="mi-screen__in"><img src="../assets/img/mi/s-comment.jpg" alt="COMMENT ANALYSIS 화면" loading="lazy" style="height:153.08%"></div><i class="mi-blur" style="left:14.7%;top:16.84%;width:32.88%;height:54%"></i><i class="mi-blur" style="left:49.03%;top:31.05%;width:47.87%;height:39.79%"></i><i class="mi-blur" style="left:14.7%;top:87.89%;width:82.2%;height:9.47%"></i></div>
       </div>
     </div>
@@ -186,6 +191,7 @@
 <script src="../assets/js/main.js?v=showcase-fit-20261122"></script>
 <script src="../assets/js/nd-scroll.js?v=nd-20261122c"></script>
 <script src="../assets/js/dfu-type.js?v=dfu-20261122"></script>
+<script src="../assets/js/hero-rays.js?v=rays-20261122d"></script>
 <script src="../assets/js/office-guide.js?v=guide-20261122" data-root="../"></script>
 </body>
 </html>
