@@ -26,6 +26,33 @@
   setTimeout(ready, 1200);
   window.addEventListener('pageshow', function (e) { if (e.persisted && pt) { pt.classList.remove('is-leaving', 'go'); body.classList.add('is-ready'); body.classList.remove('is-closing'); $$('.px-dim,.px-sheet').forEach(function (n) { n.remove(); }); } });
 
+  // case-study close: load the list page into a hidden iframe so it shows underneath while the case slides down
+  var prevF = null;
+  function prevFrame(href) {
+    if (!prevF) {
+      var f = doc.createElement('iframe'), st = { ready: false, f: f };
+      f.className = 'px-prev'; f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1; f.src = href;
+      f.addEventListener('load', function () {
+        // freeze the preview: no reveal animations replaying while the case slides away
+        try {
+          var d = f.contentDocument, sty = d.createElement('style');
+          sty.textContent = '[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}';
+          d.head.appendChild(sty);
+        } catch (err) {}
+        setTimeout(function () { st.ready = true; f.dispatchEvent(new Event('pxready')); }, 200);
+      });
+      doc.documentElement.appendChild(f);
+      var dm = doc.createElement('div'); dm.className = 'px-prev-dim'; dm.setAttribute('aria-hidden', 'true');
+      doc.documentElement.appendChild(dm);
+      prevF = st;
+    }
+    return prevF;
+  }
+  var closeLink = $('.task-case__close');
+  if (closeLink && !reduce && window.self === window.top) {
+    var warm = function () { prevFrame(closeLink.getAttribute('href')); };
+    ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) { closeLink.addEventListener(ev, warm, { once: true, passive: true }); });
+  }
   doc.addEventListener('click', function (e) {
     var a = e.target.closest('a');
     if (!a) return;
@@ -47,8 +74,9 @@
     if (a.classList.contains('task-case__close') && !reduce) {
       e.preventDefault();
       try { sessionStorage.setItem('pd-skip-intro', 'close'); } catch (err) {}
-      body.classList.add('is-closing');
-      setTimeout(function () { location.href = href; }, 800);
+      var go = function () { body.classList.add('is-closing'); setTimeout(function () { location.href = href; }, 420); };
+      var pv = prevFrame(href);
+      if (pv.ready) go(); else { pv.f.addEventListener('pxready', go, { once: true }); setTimeout(go, 700); }
       return;
     }
     // opening a case study: grey dim fades in, then a sheet slides up from the bottom
@@ -74,15 +102,10 @@
   });
   // arriving from a case-study close button: no curtain, land on the hash at once
   var skipIntro = false;
-  try { skipIntro = sessionStorage.getItem('pd-skip-intro'); sessionStorage.removeItem('pd-skip-intro'); } catch (err) {}
+  if (window.self !== window.top) skipIntro = 'embed';
+  else try { skipIntro = sessionStorage.getItem('pd-skip-intro'); sessionStorage.removeItem('pd-skip-intro'); } catch (err) {}
   if (skipIntro && pt) pt.style.display = 'none';
-  if (skipIntro === 'close') { // back on the list: the grey dim lifts off
-    var lift = doc.createElement('div');
-    lift.className = 'px-dim on';
-    body.appendChild(lift);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { lift.classList.remove('on'); }); });
-    setTimeout(function () { lift.remove(); }, 700);
-  }
+  // after a close the list is already on screen (shown by the preview iframe): no dim, no curtain, so nothing flashes
   // land on hash after transition
   if (location.hash) {
     var target = doc.getElementById(location.hash.slice(1));

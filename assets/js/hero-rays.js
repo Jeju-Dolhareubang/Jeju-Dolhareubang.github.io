@@ -1,5 +1,5 @@
 /* Case-study hero light: soft rays falling from a source just above the top
-   centre, drifting slowly and leaning a little toward the pointer.
+   centre, drifting slowly with a flowing wave; no pointer interaction.
    Usage: <canvas data-rays data-rays-color="#51a2ff" data-rays-base="#0a132f">
    Falls back to the section's CSS background when WebGL is unavailable. */
 (function () {
@@ -11,7 +11,7 @@
     'uniform vec2 uRes;uniform float uTime;uniform float uLean;uniform float uFade;',
     'uniform vec3 uRay;uniform vec3 uBase;uniform float uMode;',
     'float band(float a,float f,float s,float ph,float sharp){',
-    '  return pow(.5+.5*sin(a*f+uTime*s+ph+sin(a*f*.37-uTime*s*.6)*1.4),sharp);',
+    '  return pow(.5+.5*sin(a*f+uTime*s*.15+ph+sin(a*f*.37-uTime*s*.1)*1.4),sharp);',
     '}',
     'void main(){',
     '  vec2 uv=gl_FragCoord.xy/uRes;',
@@ -23,7 +23,8 @@
     '  a-=uLean*.06;',
     '  float cone=exp(-a*a*1.1);',
     '  float r=band(a,9.,.38,0.,1.6)*.5+band(a,16.,-.27,1.7,2.4)*.3+band(a,5.,.16,4.2,1.3)*.5;',
-    '  r+=.08*sin(uTime*.7+a*3.);',
+    '  r*=.68+.32*sin(dist*6.-uTime*1.1);',
+    '  r+=.06*sin(uTime*.6-dist*4.);',
     '  float fall=smoothstep(1.7,.2,dist);',
     '  float core=exp(-dist*dist*2.2);',
     '  float lit=(r*cone*fall*.42+core*.34)*uFade;',  // toned down: softer rays, lower contrast
@@ -95,7 +96,8 @@
     }
 
     function draw(now) {
-      lean += (leanTo - lean) * 0.04;
+      var t = reduce ? 8 : (now - start) / 1000;
+      lean = 0; // no side-to-side movement, no pointer
       if (fade < 1) fade = Math.min(1, fade + 0.012);
       gl.uniform1f(U.uTime, reduce ? 8 : (now - start) / 1000);
       gl.uniform1f(U.uLean, lean);
@@ -120,13 +122,6 @@
     document.addEventListener('visibilitychange', kick);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) { visible = es[0].isIntersecting; kick(); }).observe(canvas);
-    }
-    if (!reduce && window.matchMedia('(hover: hover)').matches) {
-      host.addEventListener('pointermove', function (e) {
-        var r = host.getBoundingClientRect();
-        leanTo = ((e.clientX - r.left) / r.width - 0.5) * 2;
-      });
-      host.addEventListener('pointerleave', function () { leanTo = 0; });
     }
 
     // Hero copy drifts up and fades as the page scrolls past it.

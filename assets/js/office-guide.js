@@ -142,8 +142,9 @@
         '<label for="office-guide-search">궁금한 내용을 입력하세요.</label>' +
         '<div class="office-guide__row"><input id="office-guide-search" type="text" autocomplete="off" placeholder="예: 던파, 대시보드, 피그마"><button type="button" class="office-guide__btn" data-act="search">찾기(S)</button></div>' +
         '<button type="button" class="office-guide__btn office-guide__options" data-act="options">옵션(O)</button>' +
+        '<div class="office-guide__opts" hidden><label><input type="checkbox" data-act="auto" checked> 랜덤 동작 자동 재생</label><p>말풍선을 열면 쉬고, 닫으면 다시 움직여요.</p><button type="button" class="office-guide__btn" data-act="more">다른 동작 보기</button></div>' +
       '</div>' +
-      '<button type="button" class="office-guide__mascot" aria-expanded="false" aria-label="Office 길잡이 열기 또는 닫기"><span class="office-guide__dog" role="img" aria-label="도움을 드리는 강아지 길잡이"></span></button>' +
+      '<button type="button" class="office-guide__mascot" aria-expanded="false" aria-label="Office 길잡이 열기 또는 닫기"><span class="office-guide__dog" role="img" aria-label="도움을 드리는 강아지 길잡이"><span class="office-guide__pose" aria-hidden="true"></span><span class="office-guide__house" aria-hidden="true"><i></i><i></i></span></span></button>' +
       '<button type="button" class="office-guide__hide">길잡이 숨기기</button>' +
     '</aside>' +
     '<button type="button" class="office-guide__menu" hidden>도움말(H) <span>▾</span><small>Office 길잡이 표시</small></button>';
@@ -162,6 +163,31 @@
     dialog.hidden = !on;
     mascot.setAttribute('aria-expanded', on ? 'true' : 'false');
     if (on) input.focus();
+  }
+  var busy = false, autoPlay = true, openAfter = false;
+  var HOUSE_OUT = 1650, HOUSE_IN = 1450;
+  function enter(openIt) {
+    guide.hidden = false; menu.hidden = true; store(null);
+    if (reduce) { if (openIt) setOpen(true); idle(1200); return; }
+    busy = true; clearTimeout(timer);
+    dogEl.classList.remove('is-exiting'); dogEl.classList.add('is-entering');
+    showPose('look');
+    setTimeout(function () {
+      dogEl.classList.remove('is-entering');
+      showPose('look', 'arrival');
+      setTimeout(function () {
+        showPose('sit', 'settling');
+        setTimeout(function () { busy = false; if (openIt) setOpen(true); idle(1200); }, 500);
+      }, 620);
+    }, HOUSE_OUT);
+  }
+  function leave() {
+    setOpen(false);
+    if (reduce) { setVisible(false); return; }
+    busy = true; clearTimeout(timer);
+    dogEl.classList.add('is-exiting');
+    showPose('tilt');
+    setTimeout(function () { dogEl.classList.remove('is-exiting'); busy = false; setVisible(false); }, HOUSE_IN);
   }
   function setVisible(on) {
     guide.hidden = !on;
@@ -230,6 +256,7 @@
   guide.querySelector('.office-guide__close').addEventListener('click', function () { setOpen(false); });
   guide.querySelector('[data-act="search"]').addEventListener('click', search);
   guide.querySelector('[data-act="options"]').addEventListener('click', function () {
+    optsEl.hidden = !optsEl.hidden;
     msg.textContent = '이런 단어로 찾아보세요: 프로젝트, 던파, 대시보드, 배너, 피그마, AI, 경력, 제주, 연락처';
     showList([]);
   });
@@ -237,8 +264,75 @@
     if (e.key === 'Enter') search();
     if (e.key === 'Escape') setOpen(false);
   });
-  guide.querySelector('.office-guide__hide').addEventListener('click', function () { setOpen(false); setVisible(false); });
-  menu.addEventListener('click', function () { setVisible(true); setOpen(true); });
+  guide.querySelector('.office-guide__hide').addEventListener('click', function () { leave(); });
+  menu.addEventListener('click', function () { enter(true); });
+
+    /* ---------- idle behaviours (sprite poses from the Office 길잡이 animation project) ---------- */
+  var POSES = {
+    sit:   { x: 1,   y: 0,  w: 47, h: 63 },
+    look:  { x: 56,  y: 2,  w: 47, h: 65 },
+    tilt:  { x: 103, y: 5,  w: 46, h: 64 },
+    read:  { x: 149, y: 3,  w: 63, h: 64 },
+    phone: { x: 2,   y: 76, w: 56, h: 72 },
+    sleep: { x: 56,  y: 70, w: 85, h: 28 },
+    work:  { x: 111, y: 79, w: 88, h: 68, clip: 'polygon(30px 0,100% 0,100% 100%,0 100%,0 19px,30px 19px)' }
+  };
+  function fr(pose, ms, motion) { return { pose: pose, ms: ms, motion: motion || '' }; }
+  var ACTIONS = [
+    { id: 'look',    frames: [fr('look', 800), fr('sit', 400), fr('look', 1000), fr('sit', 500)] },
+    { id: 'curious', frames: [fr('look', 450), fr('tilt', 1400, 'curious'), fr('look', 450), fr('sit', 500)] },
+    { id: 'read',    frames: [fr('look', 400), fr('read', 4200, 'reading'), fr('look', 400), fr('sit', 500)] },
+    { id: 'phone',   frames: [fr('tilt', 450), fr('phone', 3600, 'talking'), fr('look', 400), fr('sit', 500)] },
+    { id: 'sleep',   frames: [fr('tilt', 420), fr('sleep', 3600, 'sleeping'), fr('sleep', 420, 'waking'), fr('look', 520, 'rising'), fr('look', 900, 'proud'), fr('sit', 550, 'settling')] },
+    { id: 'work',    frames: [fr('look', 450), fr('work', 4200, 'relaxing'), fr('look', 450), fr('sit', 500)] }
+  ];
+  var dogEl = guide.querySelector('.office-guide__dog');
+  var poseEl = guide.querySelector('.office-guide__pose');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bag = [], lastId = '', timer = 0;
+
+  function showPose(name, motion) {
+    var p = POSES[name];
+    poseEl.style.setProperty('--pw', p.w + 'px');
+    poseEl.style.setProperty('--ph', p.h + 'px');
+    poseEl.style.setProperty('--px', -p.x + 'px');
+    poseEl.style.setProperty('--py', -p.y + 'px');
+    poseEl.style.clipPath = p.clip || '';
+    poseEl.className = 'office-guide__pose' + (motion ? ' og-motion-' + motion : '');
+    dogEl.setAttribute('data-sleeping', motion === 'sleeping' ? '1' : '');
+  }
+  function nextBag() {
+    var b = ACTIONS.slice();
+    for (var i = b.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = b[i]; b[i] = b[j]; b[j] = t; }
+    if (b[0].id === lastId) { var t2 = b[0]; b[0] = b[1]; b[1] = t2; }
+    return b;
+  }
+  function canMove() { return !reduce && !busy && autoPlay && !document.hidden && dialog.hidden && !guide.hidden; }
+  function schedule(fn, ms) { clearTimeout(timer); timer = setTimeout(fn, ms); }
+  function rest() { showPose('sit'); }
+  function idle(delay) { rest(); schedule(function () { if (canMove()) play(); else idle(2000); }, delay); }
+  function play() {
+    if (!bag.length) bag = nextBag();
+    var a = bag.shift(); lastId = a.id;
+    var i = 0;
+    (function step() {
+      if (!canMove()) return idle(2500);
+      var f = a.frames[i++];
+      if (!f) return idle(1500 + Math.random() * 1500);
+      showPose(f.pose, f.motion);
+      schedule(step, f.ms);
+    })();
+  }
+  function playNow() { clearTimeout(timer); if (!reduce && !busy) play(); }
+  var optsEl = guide.querySelector('.office-guide__opts');
+  guide.querySelector('[data-act="auto"]').addEventListener('change', function (e) { autoPlay = e.target.checked; if (autoPlay) idle(1200); else { clearTimeout(timer); rest(); } });
+  guide.querySelector('[data-act="more"]').addEventListener('click', function () { optsEl.hidden = true; setOpen(false); setTimeout(playNow, 250); });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) { clearTimeout(timer); rest(); } else idle(1200); });
+  // keep still while the help dialog is open, resume when it closes
+  new MutationObserver(function () { if (!dialog.hidden) { clearTimeout(timer); rest(); } else idle(1500); }).observe(dialog, { attributes: true, attributeFilter: ['hidden'] });
+  showPose('sit');
+  if (!reduce) idle(1200 + Math.random() * 800);
 
   setVisible(!hiddenStored());
+  try { if (!hiddenStored() && !sessionStorage.getItem('office-guide-intro')) { sessionStorage.setItem('office-guide-intro', '1'); enter(false); } } catch (e) {}
 })();

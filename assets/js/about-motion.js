@@ -103,8 +103,8 @@
       card.addEventListener('mousemove', function (e) {
         if (drag.active) return;
         var r = card.getBoundingClientRect();
-        tilt.try_ = ((e.clientX - r.left) / r.width - .5) * 18;
-        tilt.trx = (.5 - (e.clientY - r.top) / r.height) * 12;
+        tilt.try_ = ((e.clientX - r.left) / r.width - .5) * 4;
+        tilt.trx = (.5 - (e.clientY - r.top) / r.height) * 2.5;
       });
       card.addEventListener('mouseleave', function () {
         drag.hovering = false;
@@ -290,8 +290,8 @@
 
       if (!isTouch && !drag.hovering && !drag.active && !drag.released && Math.abs(drag.x) < 1 && Math.abs(drag.y) < 1) {
         var ts = elapsed * .001; // idle float
-        tilt.try_ = Math.sin(ts * .7) * 3 + Math.sin(ts * 1.3) * 1.5;
-        tilt.trx = Math.cos(ts * .5) * 2 + Math.cos(ts * 1.1);
+        tilt.try_ = Math.sin(ts * .7) * .6 + Math.sin(ts * 1.3) * .3;
+        tilt.trx = Math.cos(ts * .5) * .3 + Math.cos(ts * 1.1) * .2;
       }
 
       if (drag.released) {
@@ -347,7 +347,7 @@
         else if (drag.lift !== 1) sc = drag.lift;
         else if (drag.released) sc = 1 + Math.min(.04, (Math.abs(drag.vx) + Math.abs(drag.vy)) * .003);
         sc *= .92 + .08 * en;
-        var rxAll = isTouch ? 8 * (1 - en) : tilt.rx + 8 * (1 - en);
+        var rxAll = isTouch ? 0 : tilt.rx;
         var ryAll = isTouch ? 0 : tilt.ry;
         card.style.transform = 'translate(' + drag.x.toFixed(1) + 'px,' + drag.y.toFixed(1) + 'px) rotateX(' + rxAll.toFixed(2) +
           'deg) rotateY(' + ryAll.toFixed(2) + 'deg) rotateZ(' + (drag.spin * .15).toFixed(2) + 'deg) scale(' + sc.toFixed(3) + ')';
