@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Neople Developers — 박단비 Case Study</title>
 <meta name="description" content="Neople Developers 케이스 스터디">
-<link rel="stylesheet" href="../assets/css/style.css?v=hero-20261122a">
+<link rel="stylesheet" href="../assets/css/style.css?v=lightnav-20261122a">
 </head>
-<body style="--a:#f0b100;--a2:#ff8a00;--a-ink:#111" class="case ">
+<body class="nd-case">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
 
 <!-- @header -->
@@ -32,29 +32,86 @@
 <div class="menu-dim"></div>
 <div class="cursor" aria-hidden="true"></div>
 <div class="toast" role="status">상세 케이스는 준비 중이에요 · Case coming soon</div>
-<a class="cclose" href="../index.html#work" aria-label="닫고 메인으로">✕</a>
-<main>
-  <section class="chero">
-    <div class="chero__glow" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="chero__logo txt" data-reveal="scale">ND</div>
-      <h1 data-split>Neople Developers</h1>
-      <div class="chero__meta" data-reveal><span><b>Client</b>NEOPLE</span><span><b>Category</b>Open API Portal Renewal</span><span><b>Date</b>2026.11 ~</span></div>
-      <div class="chips" data-reveal><span>Design System</span><span>Claude Code</span><span>UI Refinement</span><span>Figma</span><span>In progress</span></div>
-      <div class="chero__intro"><p data-reveal>Neople Developers는 던전앤파이터 · 사이퍼즈 오픈 API를 제공하는 개발자 포털입니다. 사용자 화면과 관리자 화면을 리뉴얼하고 있습니다.</p><p data-reveal>Figma로 메인 화면의 톤을 먼저 잡고, 디자인 시스템과 개선 프롬프트를 Claude Code에 연결해 화면을 구현했습니다. 지금은 코드 환경에서 UI 디테일을 다듬고 있습니다.</p></div>
+<main class="nd-main">
+  <section class="nd-hero">
+    <a class="task-case__close" href="../index.html#work" aria-label="프로젝트 목록으로 돌아가기">×</a>
+    <div class="nd-hero__title">
+      <h1>Neople Developers</h1>
+      <div class="nd-hero__meta"><span>Client. <b>NEOPLE</b></span><span>Category. <b>Open API Portal Renewal</b></span><span>Date. <b>2026.11 ~</b></span></div>
     </div>
   </section>
-  <div class="cvisual"><div class="cvisual__box" data-scale><img class="shot" src="../assets/img/nd-api-tobe.webp" alt="Neople Developers API Docs 화면"></div></div>
-  <div class="wrap">
-    <div class="cbody">
-      <nav class="chap" aria-label="챕터"><a href="#overview"><span>Overview</span><span class="chap__t">디자인 시스템으로 시작해 AI와 함께 코드까지</span><span class="chap__d"><span>메인 시안 → 프롬프트 → Claude Code → 코드에서 다듬기.</span></span></a><a href="#process"><span>Design Process</span><span class="chap__t">메인 시안에서 Figma까지 여섯 단계</span><span class="chap__d"><span>단계마다 쓰는 도구와 함께 정리했습니다.</span></span></a><a href="#docs"><span>API Docs</span><span class="chap__t">탐색 · 문서 · 테스트를 한 화면으로</span><span class="chap__d"><span>흩어진 아코디언 목록을 트리 · 문서 · 테스트로 재구성.</span></span></a><a href="#app"><span>My Application</span><span class="chap__t">키만 보이던 표를 앱 상태가 보이는 카드로</span><span class="chap__d"><span>카드형 앱 목록과 상세에서의 키 관리.</span></span></a><a href="#wip"><span>Work in Progress</span><span class="chap__t">지금도 다듬고 있는 다음 단계</span><span class="chap__d"><span>04 / 06 단계 완료, UI Refinement 진행 중.</span></span></a><a href="#takeaway"><span>Key Takeaway</span><span class="chap__t">디자인 시스템을 구현 환경까지</span><span class="chap__d"><span>디자인과 구현 사이의 간격을 줄인 작업.</span></span></a></nav>
-      <div class="cmain"><section class="csec" id="overview"><p class="csec__eyebrow" data-reveal>01 — Overview</p><h2 class="csec__title" data-reveal>디자인 시스템으로 시작해<br><em>AI와 함께 코드까지 완성한 UI</em></h2><p class="csec__text" data-reveal>Neople Developers의 사용자 · 관리자 화면 설계 및 구현. 메인 화면을 Figma로 먼저 작업해 톤과 무드를 잡고, 이를 기준으로 라이브 서비스의 개선 사항을 프롬프트로 정리했습니다.</p><p class="csec__text" data-reveal>기존 디자인 시스템과 함께 Claude Code에 적용해 화면을 생성하고, 코드 환경에서 레이아웃 · 컴포넌트 · 디테일을 직접 개선했습니다.</p><div class="grid2"><div class="box " data-reveal><p class="box__k">Scope</p><p class="box__t">사용자 화면 · 관리자 화면</p><p class="box__d">디자인 시스템 적용 · AI 화면 생성 · UI 리파인</p></div><div class="box " data-reveal><p class="box__k">Tools</p><p class="box__t">Claude Code · Figma</p><p class="box__d">디자인 시스템 연동 · 코드 리파인 · Figma 연계</p></div></div></section><section class="csec" id="process"><p class="csec__eyebrow" data-reveal>02 — Design Process</p><h2 class="csec__title" data-reveal>메인 화면 시안에서 Figma까지<br><em>여섯 단계 작업 흐름</em></h2><div class="steps"><div class="step" data-reveal><span class="step__i dark">Figma</span><div><p class="step__t"><span class="step__n">01</span>Key Screen</p><p class="step__d">메인 화면을 Figma로 먼저 작업해 전체 톤과 무드를 기준으로 설정</p></div></div><div class="step" data-reveal><span class="step__i dark">Figma</span><div><p class="step__t"><span class="step__n">02</span>Design System</p><p class="step__d">기존 디자인 시스템과 컴포넌트 규칙을 구현 기준으로 사용</p></div></div><div class="step" data-reveal><span class="step__i ">Claude</span><div><p class="step__t"><span class="step__n">03</span>Improvement Prompt</p><p class="step__d">시안을 기준으로 라이브 서비스의 개선 포인트를 정리해 AI에게 구현 프롬프트 작성을 요청</p></div></div><div class="step" data-reveal><span class="step__i ">Claude</span><div><p class="step__t"><span class="step__n">04</span>Claude Code</p><p class="step__d">정리한 프롬프트와 디자인 시스템을 참조해 사용자 · 관리자 화면 생성</p></div></div><div class="step" data-reveal><span class="step__i ">WebStorm</span><div><p class="step__t"><span class="step__n">05</span>UI Refinement</p><p class="step__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일 직접 수정</p></div></div><div class="step" data-reveal><span class="step__i dark">Figma</span><div><p class="step__t"><span class="step__n">06</span>Figma Sync</p><p class="step__d">유지보수를 고려해 구현된 화면을 Figma 디자인 파일로 재구성 예정</p></div></div></div></section><section class="csec" id="docs"><p class="csec__eyebrow" data-reveal>03 — Screen Design · API Docs</p><h2 class="csec__title" data-reveal>흩어진 아코디언 목록을<br><em>탐색 · 문서 · 테스트 한 화면으로</em></h2><div class="asis"><div data-reveal><p class="asis__k">AS-IS</p><figure class="panel" style="margin-top:0"><img src="../assets/img/nd-api-asis.webp" alt="AS-IS 화면" loading="lazy"></figure><ul><li>36개 API가 한 페이지에 나열되어 스크롤로만 탐색</li><li>문서와 테스트가 분리되어 별도 도구 필요</li></ul></div><div data-reveal><p class="asis__k to">TO-BE</p><figure class="panel" style="margin-top:0"><img src="../assets/img/nd-api-tobe.webp" alt="TO-BE 화면" loading="lazy"></figure><p class="figcap">디자인 시스템 기반으로 Claude Code가 생성하고 코드에서 다듬은 화면 · 데이터는 블러 처리</p></div></div><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">API 트리 · 검색</p><p class="callout__d">좌측 트리와 검색으로 원하는 API에 바로 이동</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">엔드포인트 중심 문서</p><p class="callout__d">메서드 · URL을 상단에, 변수와 응답은 표로 정리</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">옆에서 바로 테스트</p><p class="callout__d">문서를 보며 값 입력 후 즉시 요청 · 응답 확인</p></div></div></div></section><section class="csec" id="app"><p class="csec__eyebrow" data-reveal>04 — Screen Design · My Application</p><h2 class="csec__title" data-reveal>키만 보이던 표를<br><em>앱 상태가 보이는 카드로</em></h2><div class="asis"><div data-reveal><p class="asis__k">AS-IS</p><figure class="panel" style="margin-top:0"><img src="../assets/img/nd-app-asis.webp" alt="AS-IS 화면" loading="lazy"></figure><ul><li>앱이 표 한 줄로만 표시되고 관리는 설정 버튼 하나</li><li>API Key가 목록에 그대로 노출</li></ul></div><div data-reveal><p class="asis__k to">TO-BE</p><figure class="panel" style="margin-top:0"><img src="../assets/img/nd-app-tobe.webp" alt="TO-BE 화면" loading="lazy"></figure><p class="figcap">디자인 시스템 기반으로 Claude Code가 생성하고 코드에서 다듬은 화면 · 데이터는 블러 처리</p></div></div><div class="callouts"><div class="callout" data-reveal><span class="callout__n">01</span><div><p class="callout__t">카드형 앱 목록</p><p class="callout__d">게임 · 호출 수 · 생성일을 카드 하나로 비교</p></div></div><div class="callout" data-reveal><span class="callout__n">02</span><div><p class="callout__t">남은 생성 수 안내</p><p class="callout__d">빈 카드로 남은 개수 표시, 바로 생성으로 연결</p></div></div><div class="callout" data-reveal><span class="callout__n">03</span><div><p class="callout__t">키는 상세에서</p><p class="callout__d">목록에서는 숨기고 상세에서 보기 · 복사 · 재발급</p></div></div></div></section><section class="csec" id="wip"><div class="wip" data-reveal><p class="box__k">Work in progress</p><h3 style="margin-top:14px">Still in progress:<br><em>지금도 다듬고 있는 다음 단계의 화면들.</em></h3><div class="grid3"><div class="box"><p class="box__k">Done</p><p class="box__n" style="margin-top:16px">04<small>/ 06 steps</small></p><p class="box__d">Key Screen · Design System · Improvement Prompt · Claude Code — 메인 시안부터 화면 생성까지 완료했습니다.</p></div><div class="box box--accent"><p class="box__k">In progress</p><p class="box__t">UI Refinement</p><p class="box__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일을 직접 다듬고 있습니다.</p></div><div class="box"><p class="box__k" style="color:var(--fg-3)">Next</p><p class="box__t">Figma Sync</p><p class="box__d">유지보수를 고려해 구현된 화면을 Figma 디자인 파일로 재구성할 예정입니다.</p></div></div></div></section><section class="csec" id="takeaway"><p class="csec__eyebrow" data-reveal>Key Takeaway</p><h2 class="csec__title" data-reveal>디자인 시스템을<br><em>구현 환경까지 확장하다</em></h2><p class="csec__text" data-reveal>디자인 시스템을 AI 개발 환경에 연결하고, 생성된 결과물을 코드에서 직접 개선하며 디자인과 구현 사이의 간격을 줄인 작업입니다.</p></section></div>
+
+  <section class="nd-overview" id="overview">
+    <div class="nd-overview__intro" data-reveal>
+      <small class="nd-eyebrow">01 - OVERVIEW</small>
+      <h2>디자인 시스템으로 시작해<br>AI와 함께 코드까지 완성한 UI</h2>
+      <p>Neople Developers의 사용자 · 관리자 화면 설계 및 구현.<br>메인 화면을 Figma로 먼저 작업해 톤과 무드를 잡고, 이를 기준으로 라이브 서비스의 개선 사항을 프롬프트로 정리했습니다.<br>기존 디자인 시스템과 함께 Claude Code에 적용해 화면을 생성하고,<br>코드 환경에서 레이아웃 · 컴포넌트 · 디테일을 직접 개선하였습니다.</p>
     </div>
-  </div>
-  <nav class="pnav" data-reveal aria-label="다른 프로젝트">
-    <a href="../work/task.html" style="--pa:#3d6bff"><small>← PREV PROJECT</small><b>업무 요청 시스템</b><span>Neople · Internal tool</span></a>
-    <a href="../work/dnf-cms.html" style="--pa:#00bcff"><small>NEXT PROJECT →</small><b>던파 유니버스 CMS</b><span>Neople · CMS</span></a>
-  </nav>
+    <div class="nd-overview__cards">
+      <div class="nd-meta" data-reveal><b>사용자 화면 · 관리자 화면</b><p>디자인 시스템 적용 · AI 화면 생성 · UI 리파인</p></div>
+      <div class="nd-meta d1" data-reveal><b>Claude Code · Figma</b><p>디자인 시스템 연동 · 코드 리파인 · Figma 연계</p></div>
+    </div>
+  </section>
+
+  <section class="nd-section nd-process" id="process">
+    <header data-reveal><small class="nd-eyebrow">02 - DESIGN PROCESS</small><h2>메인 화면 시안에서 Figma까지<br>여섯 단계 작업 흐름</h2></header>
+    <div class="nd-process__list"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>01</small><b>Key Screen</b></p><p class="nd-step__d">메인 화면을 Figma로 먼저 작업해 전체 톤과 무드를 기준으로 설정</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>02</small><b>Design System</b></p><p class="nd-step__d">기존 디자인 시스템과 컴포넌트 규칙을 구현 기준으로 사용</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--claude"><img src="../assets/img/nd/tool-claude.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>03</small><b>Improvement Prompt</b></p><p class="nd-step__d">시안을 기준으로 라이브 서비스의 개선 포인트를 정리해 AI에게 구현 프롬프트 작성을 요청</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--claude"><img src="../assets/img/nd/tool-claude.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>04</small><b>Claude Code</b></p><p class="nd-step__d">정리한 프롬프트와 디자인 시스템을 참조해 사용자 · 관리자 화면 생성</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--light"><img src="../assets/img/nd/tool-webstorm.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>05</small><b>UI Refinement</b></p><p class="nd-step__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일 직접 수정</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>06</small><b>Figma Sync</b></p><p class="nd-step__d">유지보수를 고려해 구현된 화면을 Figma 디자인 파일로 재구성 예정</p></div></div></div>
+  </section>
+
+  <section class="nd-section nd-screen" id="api">
+    <header data-reveal><small class="nd-eyebrow nd-eyebrow--dim">03 - SCREEN DESIGN · API DOCS</small><h2>흩어진 아코디언 목록을<br>탐색 · 문서 · 테스트 한 화면으로</h2></header>
+    <div class="nd-screen__row">
+      <div class="nd-asis" data-reveal>
+        <p class="nd-tag">AS-IS</p>
+        <div class="nd-asis__img nd-asis__img--tall"><img src="../assets/img/nd/api-asis.jpg" alt="Open API 기존 화면" loading="lazy"></div>
+        <ul class="nd-issues"><li><span>—</span>36개 API가 한 페이지에 나열되어 스크롤로만 탐색</li><li><span>—</span>문서와 테스트가 분리되어 별도 도구 필요</li></ul>
+      </div>
+      <div class="nd-tobe d1" data-reveal>
+        <p class="nd-tag nd-tag--gold">TO-BE</p>
+        <div class="nd-card" style="--ar:1216/770"><div class="nd-card__screen"><img src="../assets/img/nd/api-tobe.jpg" alt="Open API 개선 화면" loading="lazy"></div><i class="nd-blur" style="left:1.974%;top:17.662%;width:12.5%;height:80.519%"></i><i class="nd-blur" style="left:17.188%;top:25.974%;width:42.516%;height:72.208%"></i><i class="nd-blur" style="left:63.487%;top:14.286%;width:26.645%;height:32.987%"></i></div>
+        <p class="nd-caption">디자인 시스템 기반으로 Claude Code가 생성하고 코드에서 다듬은 화면 · 데이터는 블러 처리</p>
+        <div class="nd-imps"><div class="nd-imp"><small>01</small><b>API 트리 · 검색</b><p>좌측 트리와 검색으로 원하는 API에 바로 이동</p></div><div class="nd-imp"><small>02</small><b>엔드포인트 중심 문서</b><p>메서드 · URL을 상단에, 변수와 응답은 표로 정리</p></div><div class="nd-imp"><small>03</small><b>옆에서 바로 테스트</b><p>문서를 보며 값 입력 후 즉시 요청 · 응답 확인</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-section nd-screen" id="app">
+    <header data-reveal><small class="nd-eyebrow nd-eyebrow--dim">04 - SCREEN DESIGN · MY APPLICATION</small><h2>키만 보이던 표를<br>앱 상태가 보이는 카드로</h2></header>
+    <div class="nd-screen__row">
+      <div class="nd-asis" data-reveal>
+        <p class="nd-tag">AS-IS</p>
+        <div class="nd-asis__img nd-asis__img--short"><img src="../assets/img/nd/app-asis.jpg" alt="내 애플리케이션 기존 화면" loading="lazy"><i class="nd-blur" style="left:47.063%;top:47.367%;width:18.388%;height:3.756%"></i></div>
+        <ul class="nd-issues"><li><span>—</span>앱이 표 한 줄로만 표시되고 관리는 설정 버튼 하나</li><li><span>—</span>API Key가 목록에 그대로 노출</li></ul>
+      </div>
+      <div class="nd-tobe d1" data-reveal>
+        <p class="nd-tag nd-tag--gold">TO-BE</p>
+        <div class="nd-card" style="--ar:1216/448"><div class="nd-card__screen"><img src="../assets/img/nd/app-tobe.jpg" alt="내 애플리케이션 개선 화면" loading="lazy"></div><i class="nd-blur" style="left:15.789%;top:36.607%;width:61.02%;height:23.661%"></i></div>
+        <p class="nd-caption">디자인 시스템 기반으로 Claude Code가 생성하고 코드에서 다듬은 화면 · 데이터는 블러 처리</p>
+        <div class="nd-imps"><div class="nd-imp"><small>01</small><b>카드형 앱 목록</b><p>게임 · 호출 수 · 생성일을 카드 하나로 비교</p></div><div class="nd-imp"><small>02</small><b>남은 생성 수 안내</b><p>빈 카드로 남은 개수 표시, 바로 생성으로 연결</p></div><div class="nd-imp"><small>03</small><b>키는 상세에서</b><p>목록에서는 숨기고 상세에서 보기 · 복사 · 재발급</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-wip" id="progress">
+    <img class="nd-wip__glow" src="../assets/img/nd/corner-glow.svg" alt="" aria-hidden="true">
+    <h2 class="nd-wip__head" data-reveal><span>Still in progress:</span><em>지금도 다듬고 있는<br>다음 단계의 화면들.</em></h2>
+    <div class="nd-wip__progress">
+      <p>Progress</p>
+      <div class="nd-wip__cards">
+        <article class="nd-pcard nd-pcard--done" data-reveal><span class="nd-chip">Done</span><div class="nd-pcard__body"><p class="nd-pcard__big"><b>04</b><small>/ 06 steps</small></p><p class="nd-pcard__d">Key Screen · Design System · Improvement Prompt · Claude Code<br>메인 시안부터 화면 생성까지 완료했습니다.</p></div><span class="nd-obj nd-obj--a"><img src="../assets/img/nd/obj-done.svg" alt="" aria-hidden="true"></span></article>
+        <article class="nd-pcard nd-pcard--progress d1" data-reveal><span class="nd-chip">In Progress</span><div class="nd-pcard__body"><p class="nd-pcard__title">UI Refinement</p><p class="nd-pcard__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일을<br>직접 다듬고 있습니다.</p></div><span class="nd-obj nd-obj--a"><img src="../assets/img/nd/obj-progress.svg" alt="" aria-hidden="true"></span></article>
+        <article class="nd-pcard nd-pcard--next d2" data-reveal><span class="nd-chip">Next</span><div class="nd-pcard__body"><p class="nd-pcard__title">Figma Sync</p><p class="nd-pcard__d">유지보수를 고려해 구현된 화면을<br>Figma 디자인 파일로 재구성할 예정입니다.</p></div><span class="nd-obj nd-obj--b"><img src="../assets/img/nd/obj-next.svg" alt="" aria-hidden="true"></span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nd-take" id="takeaway" data-reveal>
+    <small class="nd-eyebrow nd-eyebrow--yellow">KEY TAKEAWAY</small>
+    <h2>디자인 시스템을 구현 환경까지 확장하다</h2>
+    <p>디자인 시스템을 AI 개발 환경에 연결하고, 생성된 결과물을 코드에서 직접 개선하며<br>디자인과 구현 사이의 간격을 줄인 작업</p>
+  </section>
+
+  <nav class="task-project-nav" data-reveal aria-label="다른 프로젝트"><a href="../work/task.html" style="--pa:#3d6bff"><small>← PREV PROJECT</small><strong>업무 요청 시스템</strong><span>Neople · Internal tool</span></a><a href="../work/dnf-cms.html" style="--pa:#00bcff"><small>NEXT PROJECT →</small><strong>DNF CMS</strong><span>Neople · CMS</span></a></nav>
 </main>
 
 <!-- @footer -->
@@ -76,6 +133,7 @@
 <!-- @end footer -->
 <script src="../assets/js/lenis.min.js"></script>
 <script src="../assets/js/main.js?v=showcase-fit-20261122"></script>
+<script src="../assets/js/nd-scroll.js?v=nd-20261122c"></script>
 <script src="../assets/js/office-guide.js?v=guide-20261122" data-root="../"></script>
 </body>
 </html>
