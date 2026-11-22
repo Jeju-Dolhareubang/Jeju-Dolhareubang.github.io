@@ -2342,5 +2342,81 @@ body.task-case .task-type__ctrl input:hover::-webkit-slider-thumb,body.task-case
 body.task-case .task-type__ctrl input:focus-visible{outline:2px solid rgba(81,162,255,.8);outline-offset:4px}
 body.task-case .task-type__ctrl output{flex:none;min-width:84px;font-family:"Roboto Mono",ui-monospace,monospace!important;font-size:12px;line-height:1;color:rgba(255,255,255,.6);text-align:right}
 body.task-case .task-type__left{width:min(596px,calc(100% - 48px))}
-body.task-case .task-project-nav a+a{border-left:0;border-top:0}
+body.task-case .task-project-nav a+a,body.cy-case .task-project-nav a+a{border-left:0;border-top:0}
 body.task-case .task-type__left p{white-space:nowrap}
+
+/* Cyphers banners — Figma 1471:317. Hero stays pinned while the sections slide over it;
+   each section pins its text card (like midu.design) while the banners scroll past. */
+body.cy-case{background:#000;color:#fafafa}
+body.cy-case .task-case__close{position:absolute;z-index:3}
+.cy-main{position:relative;z-index:1;background:#000}
+.cy-hero{position:sticky;top:0;z-index:0;isolation:isolate;display:flex;flex-direction:column;height:640px;overflow:hidden;background:#000 url("../img/cyphers/hero.jpg") 0 0/100% 146.41% no-repeat}
+.cy-hero::before{content:"";position:absolute;inset:0;z-index:0;background:rgba(0,0,0,.5)}
+.cy-hero::after{content:"";position:absolute;inset:0;z-index:0;background:rgba(255,199,51,.55);mix-blend-mode:color}
+.cy-hero__top,.cy-hero__intro{position:relative;z-index:1;flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.cy-hero__top{gap:20px}
+.cy-hero h1{margin:0;font-size:72px;font-weight:400;line-height:normal;letter-spacing:-.4px;white-space:nowrap}
+.cy-hero__meta{display:flex;gap:40px;font-size:14px;line-height:20px;letter-spacing:-.4px;white-space:nowrap;color:rgba(250,250,250,.4)}
+.cy-hero__meta b{font-weight:500;color:rgba(250,250,250,.8)}
+body.cy-case .cy-hero__meta,body.cy-case .cy-hero__meta span,body.cy-case .cy-hero__meta b{font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace!important}
+.cy-hero__intro{gap:12px;padding:0 40px;text-align:center;letter-spacing:-.4px}
+.cy-hero__intro h2{margin:0;font-size:18px;font-weight:400;line-height:28px;opacity:.8}
+.cy-hero__intro p{margin:0;font-size:15px;line-height:1.7;opacity:.6}
+.cy-body{position:relative;z-index:1;background:#000}
+.cy-layout{display:grid;grid-template-columns:551fr 1261fr;column-gap:clamp(16px,1.46vw,28px);align-items:start;padding:0 clamp(20px,2.08vw,40px) 96px}
+.cy-side{position:sticky;top:96px;align-self:start;margin-top:48px;display:flex;flex-direction:column;gap:10px}
+.cy-list{min-width:0;display:flex;flex-direction:column;gap:96px;padding:48px 0 0}
+.cy-sec{display:flex;flex-direction:column;gap:10px;scroll-margin-top:96px}
+.cy-item{display:block;margin:0 20px;padding:20px 24px;border-radius:16px;background:rgba(23,23,28,.55);color:rgba(250,250,250,.45);letter-spacing:-.4px;transition:margin .6s var(--ease),background .5s,color .5s,padding .6s var(--ease)}
+.cy-item:hover{color:rgba(250,250,250,.75)}
+.cy-item h2{margin:0;font-size:15px;font-weight:400;line-height:24px;color:inherit;transition:font-size .5s var(--ease)}
+.cy-item__more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s var(--ease),opacity .45s}
+.cy-item__more>span{display:block;min-height:0;overflow:hidden}
+.cy-item__desc p{padding-top:12px}
+.cy-item p{margin:0;font-size:15px;line-height:24px;color:#a1a1a1;opacity:.7}
+.cy-item.is-active{margin:0;padding:20px 28px 20px 24px;background:#17171c;color:#fafafa}
+.cy-item.is-active h2{font-size:20px;line-height:normal}
+.cy-item.is-active .cy-item__more{grid-template-rows:1fr;opacity:1}
+.cy-card{display:none}
+.cy-shots{display:flex;flex-direction:column;gap:10px;min-width:0}
+.cy-shot{position:relative;margin:0;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:#000}
+.cy-shot img{display:block;width:100%;height:100%;object-fit:cover}
+.cy-shot--main{aspect-ratio:1261/387}
+.cy-row{display:grid;gap:10px}
+.cy-row .cy-shot:first-child img{object-fit:contain}
+.cy-row--row1 .cy-shot{aspect-ratio:1261/184}
+.cy-row--row2{grid-template-columns:622fr 629fr}
+.cy-row--row2 .cy-shot:first-child{aspect-ratio:622/350}
+.cy-row--row3{grid-template-columns:309fr 309fr 623fr}
+.cy-row--row3 .cy-shot:nth-child(3){aspect-ratio:623/307}
+.cy-row--row3 .cy-shot img{object-fit:contain}
+.cy-row--row3 .cy-shot--card{background:#17171c}
+.cy-row--row6{grid-template-columns:1fr 1fr}
+.cy-row--row6 .cy-shot{aspect-ratio:623/307}
+@media (max-width:1100px){
+  .cy-hero{height:auto;min-height:560px;padding:96px 0 48px}
+  .cy-hero h1{font-size:48px}
+  .cy-hero__meta{flex-wrap:wrap;justify-content:center;gap:8px 20px;padding:0 20px}
+  .cy-hero__intro{padding:0 24px;margin-top:32px}
+  .cy-layout{grid-template-columns:1fr;padding:0 20px 48px}
+  .cy-side{display:none}
+  .cy-list{gap:48px;padding:32px 0 0}
+  .cy-card{display:block;padding:24px;border-radius:16px;background:#17171c;letter-spacing:-.4px}
+  .cy-card small{display:block;margin-bottom:16px;font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;color:#fdc700}
+  .cy-card h2{margin:0 0 12px;font-size:20px;font-weight:400}
+  .cy-card p{margin:0;font-size:14px;line-height:22px;color:#a1a1a1;opacity:.8}
+  .cy-row--row3{grid-template-columns:1fr 1fr}
+  .cy-row--row3 .cy-shot:nth-child(3){grid-column:1/-1}
+}
+.cy-row--row3 .cy-shot--card img{position:absolute;inset:0}
+.cy-lens{position:fixed;left:0;top:0;z-index:9999;width:200px;height:200px;border-radius:50%;pointer-events:none;background:#000 no-repeat;border:2px solid rgba(255,255,255,.55);box-shadow:0 14px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(0,0,0,.35);opacity:0;scale:.6;transition:opacity .25s ease,scale .4s var(--ease);will-change:transform}
+.cy-lens.is-on{opacity:1;scale:1}
+.cy-lens__icon{position:absolute;right:-6px;bottom:-6px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:#111;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+body.cy-zooming .cy-shot,body.cy-zooming .cy-shot img{cursor:none}
+body.cy-zooming .cursor{opacity:0!important}
+@media (prefers-reduced-motion:reduce){.cy-lens{transition:opacity .15s}}
+/* Case-study hero type (same as TASK): title NanumSquare Neo Heavy, meta Roboto Mono */
+body.case .chero h1,body.case .chero h1 *,body.cy-case .cy-hero h1{font-family:"NanumSquare Neo","Pretendard Variable",sans-serif!important;font-weight:900}
+body.case .chero__meta,body.case .chero__meta *{font-family:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace!important}
+body.case .chero__meta{font-weight:500}
+body.case .chero__meta b{font-weight:400}
