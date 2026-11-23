@@ -3497,3 +3497,11 @@ body.dfu-case .dfu-acards .dfu-acard p{letter-spacing:-.05em}
 .dfu-pop>div{border-radius:calc(2*var(--u))}
 .dfu-call h3{font-size:max(max(calc(20*var(--u)),calc(16*var(--px))),14px)}
 .dfu-call p{font-size:max(max(calc(15*var(--u)),calc(14*var(--px))),14px)}
+
+/* Cyphers: square thumbnail + strip banner row, and blur patches over private copy */
+.cy-row--sq{grid-template-columns:158fr 1093fr}
+.cy-row--sq .cy-shot{aspect-ratio:auto;height:100%}
+.cy-row--sq .cy-shot--card{aspect-ratio:1/1;background:#17171c}
+.cy-row--sq .cy-shot--card img{position:absolute;left:4.15%;top:8.24%;width:91.71%;height:83.51%;object-fit:contain}
+.cy-row--sq .cy-shot:not(.cy-shot--card) img{object-fit:cover}
+.cy-blur{position:absolute;border-radius:calc(6*var(--px));background:rgba(255,255,255,.15);-webkit-backdrop-filter:blur(calc(10*var(--px)));backdrop-filter:blur(calc(10*var(--px)));pointer-events:none}
