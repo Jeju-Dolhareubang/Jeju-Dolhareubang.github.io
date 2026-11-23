@@ -54,6 +54,7 @@
     ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) { closeLink.addEventListener(ev, warm, { once: true, passive: true }); });
   }
   doc.addEventListener('click', function (e) {
+    if (e.defaultPrevented) return;
     var a = e.target.closest('a');
     if (!a) return;
     var href = a.getAttribute('href') || '';
@@ -479,6 +480,22 @@
     fitList();
     window.addEventListener('load', fitList);
     update();
+  }
+
+  /* ---------- "See how I work": design-process flow in a dialog ---------- */
+  var flowDlg = $('.flow-modal');
+  if (flowDlg && typeof flowDlg.showModal === 'function') {
+    var flowClose = function () { if (flowDlg.open) flowDlg.close(); };
+    $$('[data-flow-open]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        flowDlg.showModal();
+        lock(true);
+      });
+    });
+    flowDlg.addEventListener('close', function () { lock(false); });
+    $$('[data-flow-close]', flowDlg).forEach(function (b) { b.addEventListener('click', flowClose); });
+    flowDlg.addEventListener('click', function (e) { if (e.target === flowDlg) flowClose(); });
   }
 
   onScroll();

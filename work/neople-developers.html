@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Neople Developers — 박단비 Case Study</title>
 <meta name="description" content="Neople Developers 케이스 스터디">
-<link rel="stylesheet" href="../assets/css/style.css?v=px-20261123q">
+<link rel="stylesheet" href="../assets/css/style.css?v=tabs-20261123a">
 </head>
 <body class="nd-case">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
@@ -54,11 +54,20 @@
     </div>
   </section>
 
-  <section class="nd-section nd-process" id="process">
-    <header data-reveal><small class="nd-eyebrow">02 - DESIGN PROCESS</small><h2>메인 화면 시안에서 Figma까지<br>여섯 단계 작업 흐름</h2></header>
-    <div class="nd-process__list"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>01</small><b>Key Screen</b></p><p class="nd-step__d">메인 화면을 Figma로 먼저 작업해 전체 톤과 무드를 기준으로 설정</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>02</small><b>Design System</b></p><p class="nd-step__d">기존 디자인 시스템과 컴포넌트 규칙을 구현 기준으로 사용</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--claude"><img src="../assets/img/nd/tool-claude.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>03</small><b>Improvement Prompt</b></p><p class="nd-step__d">시안을 기준으로 라이브 서비스의 개선 포인트를 정리해 AI에게 구현 프롬프트 작성을 요청</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--claude"><img src="../assets/img/nd/tool-claude.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>04</small><b>Claude Code</b></p><p class="nd-step__d">정리한 프롬프트와 디자인 시스템을 참조해 사용자 · 관리자 화면 생성</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--light"><img src="../assets/img/nd/tool-webstorm.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>05</small><b>UI Refinement</b></p><p class="nd-step__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일 직접 수정</p></div></div><img class="nd-arrow" src="../assets/img/nd/arrow-down.svg" alt="" aria-hidden="true"><div class="nd-step" data-reveal><span class="nd-icon nd-icon--dark"><img src="../assets/img/nd/tool-figma.png" alt="" loading="lazy"></span><div><p class="nd-step__t"><small>06</small><b>Figma Sync</b></p><p class="nd-step__d">유지보수를 고려해 구현된 화면을 Figma 디자인 파일로 재구성 예정</p></div></div></div>
+
+  <section class="nd-flow" id="process">
+    <div class="nd-flow__stage">
+      <header class="nd-flow__head" data-reveal><small class="nd-eyebrow">02 - DESIGN PROCESS</small><h2>여섯 단계, 하나의 흐름.<br>시안과 코드 사이에 빈틈 없이.</h2></header>
+      <img class="nd-flow__map" data-reveal src="../assets/img/nd/process-flow.jpg" width="1811" height="683" loading="lazy" decoding="async" alt="Neople Developers 작업 흐름: Live Service 브리프 → Key Screen → Design System · Improvement Prompt → Claude Code → UI Refinement → Figma Sync">
+      <p class="nd-flow__desc d1" data-reveal>메인 화면 시안 한 장에서 톤을 잡고, 디자인 시스템과 프롬프트를 Claude Code에 연결해 화면을 만들었습니다.<br>코드에서 다듬은 결과는 다시 Figma로 옮겨, 디자인과 구현이 같은 기준을 유지하도록 이어 갑니다.</p>
+    </div>
   </section>
 
+  <section class="nd-take" id="takeaway">
+    <small class="nd-eyebrow nd-eyebrow--yellow" data-reveal>KEY TAKEAWAY</small>
+    <h2 data-reveal class="d1">디자인 시스템을 구현 환경까지 확장하다</h2>
+    <p data-reveal class="d2">디자인 시스템을 AI 개발 환경에 연결하고, 생성된 결과물을 코드에서 직접 개선하며<br>디자인과 구현 사이의 간격을 줄인 작업</p>
+  </section>
   <section class="nd-section nd-screen" id="api">
     <header data-reveal><small class="nd-eyebrow nd-eyebrow--dim">03 - SCREEN DESIGN · API DOCS</small><h2>흩어진 아코디언 목록을<br>탐색 · 문서 · 테스트 한 화면으로</h2></header>
     <div class="nd-screen__row">
@@ -93,24 +102,7 @@
     </div>
   </section>
 
-  <section class="nd-wip" id="progress">
-    <img class="nd-wip__glow" src="../assets/img/nd/corner-glow.svg" alt="" aria-hidden="true">
-    <h2 class="nd-wip__head" data-reveal><span>Still in progress:</span><em>지금도 다듬고 있는<br>다음 단계의 화면들.</em></h2>
-    <div class="nd-wip__progress">
-      <p>Progress</p>
-      <div class="nd-wip__cards">
-        <article class="nd-pcard nd-pcard--done" data-reveal><span class="nd-chip">Done</span><div class="nd-pcard__body"><p class="nd-pcard__big"><b>04</b><small>/ 06 steps</small></p><p class="nd-pcard__d">Key Screen · Design System · Improvement Prompt · Claude Code<br>메인 시안부터 화면 생성까지 완료했습니다.</p></div><span class="nd-obj nd-obj--a"><img src="../assets/img/nd/obj-done.svg" alt="" aria-hidden="true"></span></article>
-        <article class="nd-pcard nd-pcard--progress d1" data-reveal><span class="nd-chip">진행중</span><div class="nd-pcard__body"><p class="nd-pcard__title">UI Refinement</p><p class="nd-pcard__d">코드 환경에서 레이아웃 · 컴포넌트 · 디테일을<br>직접 다듬고 있습니다.</p></div><span class="nd-obj nd-obj--a"><img src="../assets/img/nd/obj-progress.svg" alt="" aria-hidden="true"></span></article>
-        <article class="nd-pcard nd-pcard--next d2" data-reveal><span class="nd-chip">Next</span><div class="nd-pcard__body"><p class="nd-pcard__title">Figma Sync</p><p class="nd-pcard__d">유지보수를 고려해 구현된 화면을<br>Figma 디자인 파일로 재구성할 예정입니다.</p></div><span class="nd-obj nd-obj--b"><img src="../assets/img/nd/obj-next.svg" alt="" aria-hidden="true"></span></article>
-      </div>
-    </div>
-  </section>
 
-  <section class="nd-take" id="takeaway" data-reveal>
-    <small class="nd-eyebrow nd-eyebrow--yellow">KEY TAKEAWAY</small>
-    <h2>디자인 시스템을 구현 환경까지 확장하다</h2>
-    <p>디자인 시스템을 AI 개발 환경에 연결하고, 생성된 결과물을 코드에서 직접 개선하며<br>디자인과 구현 사이의 간격을 줄인 작업</p>
-  </section>
 
   <nav class="task-project-nav" data-reveal aria-label="다른 프로젝트"><a href="../work/task.html" style="--pa:#3d6bff"><small>← PREV PROJECT</small><strong>업무 요청 시스템</strong><span>Neople · Internal tool</span></a><a href="../work/dnf-cms.html" style="--pa:#00bcff"><small>NEXT PROJECT →</small><strong>DNF CMS</strong><span>Neople · CMS</span></a></nav>
 </main>
@@ -133,8 +125,8 @@
 </footer>
 <!-- @end footer -->
 <script src="../assets/js/lenis.min.js"></script>
-<script src="../assets/js/main.js?v=close-20261123i"></script>
-<script src="../assets/js/nd-scroll.js?v=end-20261123b"></script>
+<script src="../assets/js/main.js?v=flowmodal-20261123b"></script>
+<script src="../assets/js/nd-scroll.js?v=flow-20261123a"></script>
 <script src="../assets/js/hero-rays.js?v=flow-20261123c"></script>
 <script src="../assets/js/office-guide.js?v=guide-20261123d" data-root="../"></script>
 </body>

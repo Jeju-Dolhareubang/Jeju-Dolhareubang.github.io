@@ -1,7 +1,7 @@
 /* Neople Developers: the page is light, so the fixed logo flips to white while a dark section is under it. */
 (function () {
   'use strict';
-  var dark = [].slice.call(document.querySelectorAll('.nd-wip, .nd-take, .foot, .dfu-band--black, .mi-band--black, .mi-band--dark, .task-project-nav'));
+  var dark = [].slice.call(document.querySelectorAll('.nd-flow, .nd-wip, .nd-take, .foot, .dfu-band--black, .mi-band--black, .mi-band--dark, .task-project-nav'));
   if (!dark.length) return;
   var ticking = false;
   function update() {
