@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="118%" r="88%">
+      <stop offset="0" stop-color="#b9ffcb"/>
+      <stop offset=".38" stop-color="#2fd171"/>
+      <stop offset=".72" stop-color="#0e5a35" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9ffe4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#0a0a0a"/>
+  <rect width="64" height="64" rx="15" fill="url(#glow)"/>
+  <!-- bold geometric D with a lime full stop, the "DANBI." mark -->
+  <path fill="url(#ink)" fill-rule="evenodd" d="M15 13H31A19 19 0 0 1 31 51H15ZM25 23V41H31A9 9 0 0 0 31 23Z"/>
+  <circle cx="50" cy="46" r="4.6" fill="#a8f86a"/>
+</svg>
