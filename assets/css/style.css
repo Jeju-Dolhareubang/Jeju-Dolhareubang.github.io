@@ -3331,3 +3331,5 @@ body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav small,body:is(.nd-case,.d
 body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav a:hover::before{opacity:.22}
 body:is(.nd-case,.dfu-case,.mi-case) .foot{color:#fafafa}
 .home .statement{padding-left:max(20px,calc((100% - 900px) / 2));padding-right:max(20px,calc((100% - 900px) / 2))}
+/* modal project title: 32px everywhere */
+.mpane__text h3{font-size:32px;line-height:40px}
