@@ -1560,12 +1560,12 @@ body .menu:not(.is-open):focus-within .menu__panel{
   pointer-events:none;
 }
 .desk__screen{position:relative;aspect-ratio:16 / 9.3;overflow:hidden;border-radius:calc(3*var(--px));background:#0b0b0b}
-.desk__screen img{
+.desk__screen :is(img,video){
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;
   opacity:0;transform:scale(1.015);
   transition:opacity .45s ease,transform .6s cubic-bezier(.22,1,.36,1);
 }
-.desk__screen img.is-active{opacity:1;transform:none}
+.desk__screen :is(img,video).is-active{opacity:1;transform:none}
 
 
 @media (max-width:1023px){
@@ -2128,7 +2128,7 @@ body .about-experience .about-experience__year{font-family:"Syne","Pretendard Va
 /* Snappier list focus: ~18vh of scroll per project, quicker pill + screen. */
 @media (min-width:1024px){.showcase__inner{min-height:calc(100vh + 90vh)}}
 .showcase__pill{transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .2s ease}
-.desk__screen img{transition:opacity .28s ease,transform .4s cubic-bezier(.22,1,.36,1)}
+.desk__screen :is(img,video){transition:opacity .28s ease,transform .4s cubic-bezier(.22,1,.36,1)}
 .showcase__title,.showcase__live{transition-duration:.18s}
 
 /* ---------------------------------------------------------------------------
@@ -3408,3 +3408,8 @@ body.mi-dark .mi-acard p{letter-spacing:-.05em;word-break:keep-all}
 /* Light case pages: dark canvas near the end so overscroll under the footer stays dark */
 html.nd-end{background:#030303}
 /* no-fit */ .desk--mock .desk__screen{width:1600px;height:900px} /* desk-mockup.js warps a fixed 1600x900 screen onto the monitor */
+/* Media Insight feature sections: drop the 1060px card floor so each section is only as tall as its content */
+@media (min-width:821px){
+  body.mi-dark .mi-ctx{min-height:0;padding-block:calc(80*var(--px))}
+  body.mi-dark .mi-feat__body{padding-top:calc(72*var(--px));padding-bottom:calc(72*var(--px))}
+}

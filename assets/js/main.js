@@ -406,7 +406,8 @@
   var showcase = $('[data-showcase]');
   if (showcase) {
     var scItems = $$('[data-showcase-item]', showcase);
-    var scShots = $$('.desk__screen img', showcase);
+    var scShots = $$('.desk__screen > img, .desk__screen > video', showcase);
+    var scStill = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     var scPill = $('.showcase__pill', showcase);
     var scIntro = $('.showcase__intro', showcase);
     var scStage = $('.showcase__stage', showcase);
@@ -419,7 +420,13 @@
       if (i === scCurrent) return;
       scCurrent = i;
       scItems.forEach(function (n, k) { n.classList.toggle('is-active', k === i); });
-      scShots.forEach(function (n, k) { n.classList.toggle('is-active', k === i); });
+      scShots.forEach(function (n, k) {
+        n.classList.toggle('is-active', k === i);
+        if (n.tagName === 'VIDEO') {
+          if (k === i && !scStill) { var pr = n.play(); if (pr && pr.catch) pr.catch(function () {}); }
+          else n.pause();
+        }
+      });
       if (scPill) scPill.style.transform = 'translateY(' + (scItems[i].offsetTop + 4) + 'px)';
     };
     var scInner = $('.showcase__inner', showcase);
