@@ -2170,7 +2170,7 @@ body .about-experience .about-experience__year{font-family:"Syne","Pretendard Va
 
 .mpane__text{margin-top:auto}
 .mpane__meta{font-size:12px;font-weight:500;color:rgba(0,0,0,.45)}
-.mpane__text h3{margin-top:10px;font-size:clamp(30px,3vw,40px);line-height:1.05;font-weight:700;letter-spacing:-.045em;color:#000}
+.mpane__text h3{margin-top:10px;font-size:32px;line-height:1.05;font-weight:700;letter-spacing:-.045em;color:#000}
 
 .mpane__desc{margin-top:14px;font-size:16px;line-height:1.45;letter-spacing:-.03em;color:rgba(0,0,0,.8)}
 .mpane__chips{margin-top:18px;padding-top:0}
@@ -3325,3 +3325,9 @@ body.mi-case .mi-main h2 .mi-g,body.mi-case h2 .mi-g{font-family:"ONE Mobile Tit
 .about-profile-card__mail{display:flex;align-items:baseline;gap:14px;margin-top:auto;padding-top:4px;font-family:"Arial Black","Pretendard Variable",sans-serif;font-size:14px;font-weight:700;color:#d4d4d4;text-decoration:none;transition:color .3s}
 .about-profile-card__mail span{font-family:Montserrat,"Pretendard Variable",sans-serif;font-size:12px;font-weight:500;letter-spacing:1px;color:rgba(212,212,212,.6)}
 .about-profile-card__mail:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav{border-top-color:#e5e5e5;background:#f9fafb}
+body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav a{color:#101828}
+body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav small,body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav span{color:rgba(16,24,40,.5)}
+body:is(.nd-case,.dfu-case,.mi-case) .task-project-nav a:hover::before{opacity:.22}
+body:is(.nd-case,.dfu-case,.mi-case) .foot{color:#fafafa}
+.home .statement{padding-left:max(20px,calc((100% - 900px) / 2));padding-right:max(20px,calc((100% - 900px) / 2))}
