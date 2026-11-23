@@ -6,7 +6,7 @@
 <title>던파 유니버스 CMS — 박단비 Case Study</title>
 <meta name="description" content="던파 유니버스 CMS 케이스 스터디">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="../assets/css/style.css?v=dfu-lh-20261123">
+<link rel="stylesheet" href="../assets/css/style.css?v=gnbfont-20261123">
 </head>
 <body class="dfu-case">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
@@ -101,7 +101,8 @@
       <div class="dfu-acards"><div class="dfu-acard" data-reveal><small>USER CONTEXT</small><p>"내가 이 운영자라면"이라는 1인칭 관점으로<br>학습 없이도 쓸 수 있는 화면을 기준으로 삼았습니다.</p></div><div class="dfu-acard dfu-acard--alt" data-reveal><small>DATA STRUCTURE</small><p>게임마다 다르게 등장하는 IP 특성을<br>정보구조에 그대로 담아 한 화면에서 다루게 했습니다.</p></div><div class="dfu-acard" data-reveal><small>WORKFLOW REALITY</small><p>영역이 달라도 같은 패턴으로 다룰 수 있도록<br>목록 → 상세 폼 → 발행의 흐름을 통일했습니다.</p></div></div>
     </div>
   </section>
-  <section class="dfu-ia" id="ia">
+  <div class="dfu-cover">
+  <section class="dfu-ia" id="ia" data-pin>
     <header data-reveal><h2>Information Architecture</h2><p>캐릭터 관리, 클래스 관리, 콘텐츠 관리, 뉴스 관리 네 영역을 같은 패턴으로 구성했습니다.<br>각 영역은 목록 화면에서 상단 고정·발행 여부를 바로 제어하고, 상세 화면에서는 대표 정보와 게임별 패널로 나뉘는 모듈식 폼을 공유합니다.</p></header>
     <figure class="dfu-ia__map" data-reveal><img src="../assets/img/dfu/sitemap.png" alt="던파 유니버스 CMS 사이트맵" loading="lazy"></figure>
     <p class="dfu-ia__note" data-reveal>실제 서비스 구조를 기반으로 작성했으며, 일부 메뉴명은 일반화하여 표기했습니다.</p>
@@ -110,6 +111,7 @@
     <header class="dfu-head" data-reveal><small>05 - SCREEN DESIGN · CHARACTER LIST</small><h2><em class="">게임별 등록 현황을 한 줄로</em> 보고<br>노출과 발행은 목록에서 바로 제어</h2></header>
     <div class="dfu-stage" style="--h:720"><div class="dfu-card" style="--x:480;--y:40;--w:1099;--hh:556;--r:36" data-reveal><div class="dfu-card__screen" style="--ix:18;--iy:18;--iw:1064.953;--ih:520;--ir:4"><img src="../assets/img/dfu/cl2-screen.png" alt="캐릭터 목록 화면" loading="lazy" style=""></div></div><div class="dfu-pop d1" style="--x:890.24;--y:-19.18;--w:371.383;--hh:112.358;--b:6.862" data-reveal><div><img src="../assets/img/dfu/cl2-screen.png" alt="" loading="lazy" style="left:-64.52%;top:-72.7%;width:405.08%;height:636.24%"><img src="../assets/img/dfu/cl2-pop.png" alt="상단 고정 순서 설정 카드" loading="lazy" style="left:calc(-22.93*var(--u));top:calc(-79.47*var(--u));width:calc(839.729*var(--u));height:calc(391.374*var(--u))"></div></div><div class="dfu-call d2" style="--x:100;--y:288.15;--w:360" data-reveal><h3>게임별 등록 현황 칩</h3><p>던전앤파이터, 던파 모바일, 카잔, 오버킬, 사이퍼즈 컬럼마다 썸네일·대표 이미지 등록 여부를 칩으로 보여줍니다.</p></div><div class="dfu-call d2" style="--x:1346;--y:-68;--w:320" data-reveal><h3>상단 고정 순서 설정</h3><p>홈페이지 상단에 고정 노출할 캐릭터를 카드로 보여주고, 순서 저장 버튼으로 노출 순서를 바꿉니다.</p></div><div class="dfu-call d2" style="--x:1050;--y:628;--w:339" data-reveal><h3>고정 · 발행 토글</h3><p>상단 고정과 발행 여부는 목록의 토글로 바로 제어합니다. 상세에 들어가지 않아도 노출을 관리할 수 있습니다.</p></div><span class="dfu-conn" style="--x:452.57;--y:288.15;--w:427.676;--hh:0"><i style="inset:-1px 0"><img src="../assets/img/dfu/cl2-c1.svg" alt="" aria-hidden="true"></i></span><img class="dfu-pt" style="--x:448.76;--y:285.15;--w:6;--hh:6" src="../assets/img/dfu/end.svg" alt="" aria-hidden="true"><img class="dfu-pt dfu-pt--halo" style="--x:869.24;--y:272.15;--w:32;--hh:32" src="../assets/img/dfu/halo.svg" alt="" aria-hidden="true"><img class="dfu-pt" style="--x:880.24;--y:283.15;--w:10;--hh:10" src="../assets/img/dfu/dot.svg" alt="" aria-hidden="true"><span class="dfu-conn" style="--x:1206.47;--y:-56.42;--w:120.991;--hh:57.055"><i style="inset:-1.75% 0"><img src="../assets/img/dfu/cl2-c2.svg" alt="" aria-hidden="true"></i></span><img class="dfu-pt" style="--x:1325;--y:-60;--w:6;--hh:6" src="../assets/img/dfu/end.svg" alt="" aria-hidden="true"><img class="dfu-pt dfu-pt--halo" style="--x:1191.38;--y:-15.88;--w:32;--hh:32" src="../assets/img/dfu/halo.svg" alt="" aria-hidden="true"><img class="dfu-pt" style="--x:1202.38;--y:-4.880000000000001;--w:10;--hh:10" src="../assets/img/dfu/dot.svg" alt="" aria-hidden="true"><span class="dfu-conn" style="--x:684.18;--y:449.15;--w:725.453;--hh:189.741"><i style="inset:0 0 -0.53% 0"><img src="../assets/img/dfu/cl2-c3.svg" alt="" aria-hidden="true"></i></span><img class="dfu-pt" style="--x:1197.43;--y:636;--w:6;--hh:6" src="../assets/img/dfu/end.svg" alt="" aria-hidden="true"><img class="dfu-pt" style="--x:1031.36;--y:636;--w:6;--hh:6" src="../assets/img/dfu/end.svg" alt="" aria-hidden="true"></div>
   </section>
+  </div>
   <section class="dfu-stagesec dfu-stagesec--gray" id="matrix">
     <header class="dfu-head" data-reveal><small>05 - SCREEN DESIGN · CLASS MATRIX</small><h2>1차 → 2차 → <span class="han">眞</span> 각성까지<br><em class="">한 행에서 성장 트리 파악</em></h2></header>
     <div class="dfu-stage" style="--h:842"><div class="dfu-card" style="--x:-300;--y:40;--w:1248;--hh:676;--r:46.8" data-reveal><div class="dfu-card__screen" style="--ix:23.4;--iy:23.4;--iw:1201.2;--ih:629.2;--ir:20"><img src="../assets/img/dfu/cm2-screen.png" alt="클래스 목록 화면" loading="lazy" style="top:0;height:118.85%"></div></div><div class="dfu-pop d1" style="--x:1055;--y:295;--w:533.277;--hh:334;--b:8.42" data-reveal><div><img src="../assets/img/dfu/cm2-pop.png" alt="클래스 순서 설정 화면" loading="lazy" style="left:-25%;top:-4.14%;width:165.56%;height:165.56%"></div></div><div class="dfu-call d2" style="--x:1060;--y:135;--w:340" data-reveal><h3>게임별 이미지 등록 현황</h3><p>클래스마다 게임 컬럼별로 엠블렘 · 썸네일 · 대표 · 배경 이미지 등록 여부를 칩으로 보여줍니다.</p></div><div class="dfu-call d2" style="--x:1052;--y:654;--w:380" data-reveal><h3>클래스 순서 설정</h3><p>클래스 순서는 별도 화면에서 드래그로 바꾸고, 순서 저장으로 홈페이지 노출 순서를 확정합니다.</p></div><span class="dfu-conn" style="--x:338;--y:145.74;--w:715.363;--hh:55.262"><i style="inset:-1.81% 0"><img src="../assets/img/dfu/cm2-c1.svg" alt="" aria-hidden="true"></i></span><img class="dfu-pt" style="--x:1049;--y:142.74;--w:6;--hh:6" src="../assets/img/dfu/end.svg" alt="" aria-hidden="true"><img class="dfu-pt dfu-pt--halo" style="--x:322;--y:185;--w:32;--hh:32" src="../assets/img/dfu/halo.svg" alt="" aria-hidden="true"><img class="dfu-pt" style="--x:333;--y:196;--w:10;--hh:10" src="../assets/img/dfu/dot.svg" alt="" aria-hidden="true"></div>
@@ -124,7 +126,7 @@
   </section>
   <section class="dfu-effect" id="effect">
     <div class="dfu-eff">
-      <header class="dfu-eff__head" data-reveal><small>기대효과</small><h2><em>매뉴얼 없이 운영할 수 있어</em> 콘텐츠 등록부터 발행까지 빨라져요</h2><p>운영자가 입력할 것만 보고, 어느 영역이든 같은 방식으로 다루게 되면 등록·발행 속도와 콘텐츠 운영의 정확도가 함께 올라갈 거예요.</p></header>
+      <header class="dfu-eff__head" data-reveal><small>06 - EXPECTED EFFECT</small><h2><em>매뉴얼 없이 운영할 수 있어</em> 콘텐츠 등록부터 발행까지 빨라져요</h2><p>운영자가 입력할 것만 보고, 어느 영역이든 같은 방식으로 다루게 되면 등록·발행 속도와 콘텐츠 운영의 정확도가 함께 올라갈 거예요.</p></header>
       <i class="dfu-eff__line" aria-hidden="true"></i>
       <span class="dfu-eff__ring dfu-eff__ring--2" aria-hidden="true"></span>
       <span class="dfu-eff__ring dfu-eff__ring--1" aria-hidden="true"></span>
@@ -180,7 +182,7 @@
 </footer>
 <!-- @end footer -->
 <script src="../assets/js/lenis.min.js"></script>
-<script src="../assets/js/main.js?v=flowmodal-20261123b"></script>
+<script src="../assets/js/main.js?v=flowmodal-20261123b"></script><script src="../assets/js/pin-cover.js?v=pin-20261123"></script>
 <script src="../assets/js/nd-scroll.js?v=end-20261123b"></script>
 <script src="../assets/js/dfu-type.js?v=dfu-20261122"></script>
 <script src="../assets/js/hero-rays.js?v=flow-20261123c"></script>
