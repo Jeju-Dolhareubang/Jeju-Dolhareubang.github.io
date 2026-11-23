@@ -3528,16 +3528,16 @@ body.dfu-case .dfu-brand h2{font-weight:400!important}
 .pcard__go i.ph{transition:transform .5s var(--ease)}
 .pcard:hover .pcard__go i.ph{transform:rotate(45deg)}
 /* "See how I work": arrow in the button's own (white) text colour, sized to read. */
-.home .tools .btn--light i.ph{width:auto;height:auto;color:#fff;font-size:calc(16*var(--px));display:inline-block}
+.home .tools .btn--light i.ph{width:auto;height:auto;color:#fff;font-size:calc(16*var(--px));display:inline-block;--ff:var(--font-small)}
 @media (prefers-reduced-motion:reduce){.pcard__go i.ph{transition:none}}
 /* Project modal: larger text (title, description, meta, link, chips, tabs). */
-.mpane__text h3{font-size:max(calc(44*var(--px)),26px);line-height:1.2}
-.mpane__desc{font-size:max(calc(20*var(--px)),16px);line-height:1.55}
-.mpane__meta{font-size:max(calc(16*var(--px)),14px)}
+.mpane__text h3{font-size:max(calc(44*var(--px)),26px);line-height:1.2;--ff:initial}
+.mpane__desc{font-size:max(calc(20*var(--px)),16px);line-height:1.55;--ff:initial}
+.mpane__meta{font-size:max(calc(16*var(--px)),14px);--ff:var(--font-small)}
 /* Same size as the "See how I work" button. */
-.mpane__title .mpane__link{height:calc(52*var(--px));min-height:calc(52*var(--px));padding:0 calc(22*var(--px));gap:calc(10*var(--px));border-radius:calc(16*var(--px));font-size:14px;font-weight:600}
-.mpane__chips span{height:calc(36*var(--px));padding:0 calc(16*var(--px));font-size:max(calc(15*var(--px)),13px)}
-.modal__tabs button{font-size:max(calc(19*var(--px)),14px)}
+.mpane__title .mpane__link{height:calc(52*var(--px));min-height:calc(52*var(--px));padding:0 calc(22*var(--px));gap:calc(10*var(--px));border-radius:calc(16*var(--px));font-size:14px;font-weight:600;--ff:var(--font-small)}
+.mpane__chips span{height:calc(36*var(--px));padding:0 calc(16*var(--px));font-size:max(calc(15*var(--px)),13px);--ff:var(--font-small)}
+.modal__tabs button{font-size:max(calc(19*var(--px)),14px);--ff:initial}
 /* Project list: taller rows. The focus pill is 8px shorter than a row (JS offsets it by 4px to centre it). */
 .showcase__item{height:calc(68*var(--px));justify-content:center;padding:0 calc(18*var(--px))}
 .showcase__pill{height:calc(60*var(--px))}
@@ -3545,3 +3545,19 @@ body.dfu-case .dfu-brand h2{font-weight:400!important}
 .mpane__img[src*="cy-flow.jpg"]{object-fit:contain;object-position:center;padding:calc(24*var(--px));box-sizing:border-box}
 .mpane__img:is([src*="showcase/"],[src*="gldf.jpg"],[src*="notice.jpg"],[src*="cy-modal.jpg"]){object-position:center}
 .mpane__img[src*="nd-modal"]{object-position:center}
+/* About profile card: purple→pink light travels around the edge on hover */
+@property --edge-a{syntax:"<angle>";initial-value:0deg;inherits:false}
+.about-profile-card{position:relative}
+.about-profile-card::before{content:"";position:absolute;inset:-1px;z-index:6;padding:1.5px;border-radius:inherit;background:conic-gradient(from var(--edge-a),#7c3aed,#c026d3,#ff5fb0,#7dd3fc,#a78bfa,#ff5fb0,#7c3aed);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;pointer-events:none;transition:opacity .5s ease;animation:aboutEdge 3.2s linear infinite;animation-play-state:paused}
+.about-profile-card{transition:opacity 1.2s var(--ease),box-shadow .6s ease}
+.about-profile-card:hover::before{opacity:1;animation-play-state:running}
+.about-profile-card:hover{box-shadow:calc(4*var(--px)) calc(10*var(--px)) calc(25*var(--px)) #000,0 0 0 1px rgba(192,38,211,.12),0 0 calc(40*var(--px)) rgba(168,85,247,.22),0 0 calc(90*var(--px)) rgba(255,95,176,.14)}
+@keyframes aboutEdge{to{--edge-a:360deg}}
+@media (prefers-reduced-motion:reduce){.about-profile-card::before{animation:none;background:linear-gradient(135deg,#7c3aed,#c026d3 50%,#ff5fb0)}}
+.about-motion body.about-page .about-profile-card{transition:opacity 1.2s var(--ease),box-shadow .6s ease}
+/* holographic foil over the card, steered by --hx/--hy (about-holo.js) */
+.about-holo{position:absolute;inset:0;z-index:5;border-radius:inherit;pointer-events:none;opacity:0;mix-blend-mode:screen;transition:opacity .5s ease;
+  background:repeating-linear-gradient(115deg,rgba(124,58,237,0) 0%,rgba(124,58,237,.45) 6%,rgba(236,72,153,.45) 12%,rgba(125,211,252,.4) 18%,rgba(167,139,250,.35) 24%,rgba(124,58,237,0) 30%),radial-gradient(circle at var(--hx,50%) var(--hy,50%),rgba(255,255,255,.28),rgba(255,255,255,0) 42%);
+  background-size:260% 260%,100% 100%;background-position:var(--hx,50%) var(--hy,50%),0 0;filter:saturate(1.3)}
+.about-profile-card:hover .about-holo{opacity:.5}
+@media (prefers-reduced-motion:reduce){.about-holo{display:none}}
