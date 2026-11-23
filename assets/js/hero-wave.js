@@ -25,8 +25,8 @@
     // the crest line: layered sines drifting at different speeds
     ' float w=.8+.28*sin(x*1.35+t*.32)+.15*sin(x*2.7-t*.46+1.7)+.07*sin(x*4.9+t*.61+.4)+.12*(noise(vec2(x*1.2,t*.12))-.5);',
     ' float d=w-q.y;',
-    // grain that breaks up the edge like a dithered blur
-    ' float g=hash(gl_FragCoord.xy+fract(t*7.3)*91.7)-.5;',
+    // grain that breaks up the edge like a dithered blur (fixed per pixel, so it does not flicker)
+    ' float g=hash(gl_FragCoord.xy)-.5;',
     ' float edge=smoothstep(-.04,.34,d+g*.16);',
     ' vec3 black=vec3(.02);',
     ' vec3 deep=vec3(.02,.22,.12);',
@@ -78,7 +78,7 @@
     }
   }
 
-  var SPEED = 1.8; // overall flow speed of the wave
+  var SPEED = 1.2; // overall flow speed of the wave
   var visible = true, raf = 0, start = performance.now();
   function draw(now) {
     resize();

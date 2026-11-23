@@ -121,7 +121,7 @@
     var menuCta = doc.createElement('a');
     menuCta.className = 'menu__cta';
     menuCta.href = 'mailto:danbi960214@gmail.com';
-    menuCta.innerHTML = '<i aria-hidden="true">✦</i>Get in touch';
+    menuCta.innerHTML = '<i class="ph ph-sparkle" aria-hidden="true"></i>Get in touch';
     menuFoot.appendChild(menuCta);
   }
   function openMenu() {

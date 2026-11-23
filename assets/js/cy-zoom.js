@@ -8,7 +8,7 @@
   var lens = document.createElement('div');
   lens.className = 'cy-lens';
   lens.setAttribute('aria-hidden', 'true');
-  lens.innerHTML = '<span class="cy-lens__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.6" stroke="currentColor" stroke-width="1.7"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6.5 4.7v3.6M4.7 6.5h3.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>';
+  lens.innerHTML = '<span class="cy-lens__icon"><i class="ph ph-magnifying-glass-plus"></i></span>';
   document.body.appendChild(lens);
 
   var cur = null, mx = 0, my = 0, tracking = false, queued = false;
