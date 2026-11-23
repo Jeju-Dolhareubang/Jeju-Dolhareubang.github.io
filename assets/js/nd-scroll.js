@@ -11,6 +11,14 @@
     });
     document.body.classList.toggle('nd-on-dark', on);
   }
+  /* once past the middle, paint the page canvas dark so the bottom
+     overscroll (rubber-band) under the dark footer never flashes white */
+  var root = document.documentElement;
+  function canvas() {
+    root.classList.toggle('nd-end', window.scrollY > (root.scrollHeight - window.innerHeight) / 2);
+  }
+  canvas();
+  window.addEventListener('scroll', canvas, { passive: true });
   window.addEventListener('scroll', function () {
     if (ticking) return;
     ticking = true;
