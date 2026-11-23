@@ -13,7 +13,6 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = {
     'index.html': 'home',
     'about.html': 'about',
-    'how-i-work.html': 'how',
     'work/task.html': 'work',
     'work/neople-developers.html': 'work',
     'work/dnf-cms.html': 'work',
@@ -26,7 +25,7 @@ TAG_ATTR = {'about.html': 'data-cta-text'}  # about animates the footer line its
 def render(tpl, page, current):
     root = '../' if page.startswith('work/') else ''
     out = tpl.replace('{{root}}', root)
-    for key in ('home', 'work', 'about', 'how'):
+    for key in ('home', 'work', 'about'):
         out = out.replace('{{cur_%s}}' % key, ' is-current' if key == current else '')
     return out.replace('{{tag_attr}}', TAG_ATTR.get(page, 'data-reveal'))
 

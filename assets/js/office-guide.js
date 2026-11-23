@@ -31,7 +31,7 @@
       keywords: ['진행 중', '진행중', '현재', '요즘', '최근', 'in progress', 'now', 'current', 'wip'] },
     { title: '이전 작업 · 사이드 프로젝트', page: 'index.html', id: 'archive', message: '이전 작업과 사이드 프로젝트로 이동할게요.',
       keywords: ['이전', '이전 작업', '사이드', '사이드 프로젝트', '아카이브', '개인 작업', '토이', '화장실', '화장품', '워드프레스', 'archive', 'side project', 'side', 'wordpress', 'tailwind'] },
-    { title: '일하는 방식 · How I work', page: 'how-i-work.html', message: '일하는 방식을 보여드릴게요.',
+    { title: '일하는 방식 · How I work', page: 'index.html', id: 'now', message: '일하는 방식은 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['작업 방식', '일하는', '일하는 방식', '프로세스', '워크플로우', '흐름', '과정', '협업', '방법', 'how i work', 'how', 'process', 'workflow', 'collaboration', '설계', '디자인 과정', '작업 순서'] },
     { title: '소개 페이지 · About', page: 'about.html', message: '소개 페이지로 이동할게요.',
       keywords: ['소개', '소개 페이지', '프로필', 'about', 'profile', 'bio'] },
@@ -81,19 +81,19 @@
       keywords: ['공지', '공지문', '공지사항', '이미지 생성기', '생성기', '템플릿', 'notice', 'generator', '바이브 코딩', '바이브코딩', 'vibe coding', '배포'] },
 
     /* ---- tools & methods ---- */
-    { title: 'Figma · 디자인 시스템', page: 'how-i-work.html', message: 'Figma와 디자인 시스템 활용 방식을 보여드릴게요.',
+    { title: 'Figma · 디자인 시스템', page: 'index.html', id: 'now', message: 'Figma와 디자인 시스템 활용 방식은 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['figma', '피그마', '디자인 시스템', '디자인시스템', 'design system', '컴포넌트 시스템', '토큰', 'token', 'ui kit'] },
-    { title: 'AI · Claude Code 활용', page: 'how-i-work.html', message: 'AI 도구 활용 방식을 보여드릴게요.',
+    { title: 'AI · Claude Code 활용', page: 'index.html', id: 'now', message: 'AI 도구 활용 방식은 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['ai', '인공지능', 'claude', '클로드', 'claude code', '클로드 코드', 'gpt', 'chatgpt', '프롬프트', 'prompt', '자동화', 'llm'] },
-    { title: '구현 · 코드 (WebStorm · VS Code · GitHub)', page: 'how-i-work.html', message: '디자인을 코드로 구현하는 방식을 보여드릴게요.',
+    { title: '구현 · 코드 (WebStorm · VS Code · GitHub)', page: 'index.html', id: 'now', message: '디자인을 코드로 구현하는 방식은 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['코드', '코딩', '개발', '구현', '퍼블리싱', 'html', 'css', 'javascript', 'js', 'webstorm', '웹스톰', 'vs code', 'vscode', '비주얼 스튜디오', 'github', '깃허브', 'git', 'code'] },
     { title: 'Adobe 툴 (Photoshop · Illustrator)', page: 'index.html', id: 'now', message: '비주얼 작업 도구를 보여드릴게요.',
       keywords: ['adobe', '어도비', 'photoshop', '포토샵', 'illustrator', '일러스트', '일러스트레이터', '애프터이펙트', 'after effects', 'powerpoint', '파워포인트', 'ppt'] },
     { title: 'Flutter', page: 'index.html', id: 'now', message: '사용 도구 목록을 보여드릴게요.',
       keywords: ['flutter', '플러터', '하이브리드', '앱 개발', 'mobile app', '모바일'] },
-    { title: 'UX 리서치 · 정보 구조(IA)', page: 'how-i-work.html', message: '설계 단계의 작업 흐름을 보여드릴게요.',
+    { title: 'UX 리서치 · 정보 구조(IA)', page: 'index.html', id: 'now', message: '설계 단계의 작업 흐름은 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['ux', 'ui', 'ui/ux', '리서치', 'research', '정보 구조', '정보구조', 'ia', 'information architecture', '와이어프레임', 'wireframe', '사용성', 'usability', '기획'] },
-    { title: 'QA · 운영', page: 'how-i-work.html', message: '마무리 · QA 단계를 보여드릴게요.',
+    { title: 'QA · 운영', page: 'index.html', id: 'now', message: '마무리 · QA 단계는 도구 섹션의 "See how I work" 버튼에서 볼 수 있어요.',
       keywords: ['qa', '검수', '테스트', 'test', '운영', '유지보수', '마무리'] }
   ];
 

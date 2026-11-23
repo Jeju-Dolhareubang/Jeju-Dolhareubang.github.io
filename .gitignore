@@ -1,2 +1,8 @@
 .DS_Store
 _sheet.jpg
+
+# local-only dev helpers (not part of the published site)
+office-assistant-update/
+tools/*
+!tools/sync-partials.py
+!tools/subset-fonts.mjs

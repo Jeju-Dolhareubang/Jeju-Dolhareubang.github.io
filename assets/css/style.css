@@ -26,21 +26,22 @@
    Montserrat while Hangul automatically falls through to the ONE faces. */
 @font-face{
   font-family:"ONE Mobile";
-  src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff") format("woff");
+  src:url("../fonts/ONE-Mobile-Regular-subset.woff2") format("woff2");
   font-weight:400;
   font-style:normal;
   font-display:swap;
 }
 @font-face{
   font-family:"ONE Mobile";
-  src:url("https://cdn.jsdelivr.net/gh/superd75/myfont@v1.0.3/197/One_Mobile_OTF_Bold.woff2") format("woff2");
-  font-weight:700;
+  /* ONE Mobile has no Bold anymore; bold text uses the Title cut (a single heavy weight), declared for 600-900 so no faux bold is added. */
+  src:url("../fonts/ONE-Mobile-Title-subset.woff2") format("woff2");
+  font-weight:600 900;
   font-style:normal;
   font-display:swap;
 }
 @font-face{
   font-family:"ONE Mobile Title";
-  src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff") format("woff");
+  src:url("../fonts/ONE-Mobile-Title-subset.woff2") format("woff2");
   font-weight:400;
   font-style:normal;
   font-display:swap;
@@ -3737,3 +3738,13 @@ body.dfu-case .dfu-band--gray{background:#ebeef1;color:#262626}
   body.task-case .task-feature .task-feature__text h2{font-size:min(calc(40*var(--px)),calc(100cqw / 15.6))!important;white-space:nowrap}
   body.task-case .task-feature__points{margin-bottom:56px}
 }
+/* Archive list titles: use the body stack so bold Korean gets ONE Mobile (Title cut) like the other headings. */
+body.home .prow__t{--ff:var(--font-body)}
+/* About › ABOUT ME paragraphs: ONE Mobile Body (Regular) throughout; the lead sentence stays white but not bold (no Title cut). */
+body .about-copy__body{--ff:initial}
+body .about-copy__body strong{font-weight:400}
+/* Home › About me lead and the archive list: ONE Mobile Body (Regular) throughout; emphasis stays white, not bold (no Title cut). */
+body.home .statement__lead :is(b,strong){font-weight:400}
+body.home .prow__t{font-weight:400}
+/* Home › tools cards: when the two columns are stacked (phones/tablets) they must not parallax against each other, or the last card of column 1 slides over the first of column 2. */
+@media (max-width:820px){.home .tools__col{transform:none!important}}
