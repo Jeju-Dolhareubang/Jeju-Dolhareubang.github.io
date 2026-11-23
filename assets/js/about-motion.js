@@ -144,7 +144,7 @@
     }
   }
 
-  // Holographic band + specular sweep, tinted toward the site's green.
+  // Holographic band + specular sweep, tinted blue.
   function renderLight(ry, rx) {
     var key = Math.round(ry * 10) + ',' + Math.round(rx * 10);
     if (key === lastLightKey) return;
@@ -156,7 +156,7 @@
       for (var x = 0; x < LW; x++) {
         var proj = (x / LW) * cosA + (y / LH) * sinA + off;
         var band = Math.sin(proj * Math.PI * 5) * .5 + .5;
-        var hue = ((proj * 140 + ry * 6) % 140 + 140) % 140 + 60; // 60–200°: yellow-green → cyan
+        var hue = ((proj * 90 + ry * 6) % 90 + 90) % 90 + 180; // 180–270°: cyan → blue → indigo
         var h6 = hue / 60, sec = Math.floor(h6) % 6, f = h6 - Math.floor(h6);
         var r = 0, g = 0, b = 0;
         if (sec === 0) { r = 1; g = f; } else if (sec === 1) { r = 1 - f; g = 1; } else if (sec === 2) { g = 1; b = f; }

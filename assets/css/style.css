@@ -1500,12 +1500,12 @@ body .menu:not(.is-open):focus-within .menu__panel{
 }
 .showcase__name{
   margin:0 0 calc(4*var(--px));color:var(--sc-ink);
-  font-family:"Pretendard Variable",sans-serif!important;font-size:max(calc(28*var(--px)),14px);font-weight:600;
+  font-family:"Pretendard Variable",sans-serif!important;font-size:max(calc(32*var(--px)),14px);font-weight:600;
   line-height:1.2;letter-spacing:-.02em;--ff:initial
 }
 .showcase__tagline{
   max-width:20rem;margin:0;color:var(--sc-ink-2);
-  font-family:"Pretendard Variable",sans-serif!important;font-size:max(calc(28*var(--px)),14px);font-weight:400;
+  font-family:"Pretendard Variable",sans-serif!important;font-size:max(calc(32*var(--px)),14px);font-weight:400;
   line-height:1.2;letter-spacing:-.03em;--ff:initial
 }
 .showcase__more{
@@ -1546,7 +1546,7 @@ body .menu:not(.is-open):focus-within .menu__panel{
 }
 .showcase__title{
   color:rgba(255,255,255,.42);
-  font-family:"Pretendard Variable",sans-serif;font-size:max(calc(20*var(--px)),14px);font-weight:500;
+  font-family:"Pretendard Variable",sans-serif;font-size:max(calc(18*var(--px)),14px);font-weight:500;
   line-height:1.4;letter-spacing:-.02em;white-space:nowrap;
   transition:color .3s cubic-bezier(.4,0,.2,1);--ff:initial
 }
@@ -1633,7 +1633,7 @@ body .gnb .menu .menu__bar,body .gnb .menu.is-open .menu__bar{
   backdrop-filter:none;-webkit-backdrop-filter:none;
 }
 body .gnb .menu .menu__label{
-  display:flex;align-items:center;gap:8px;width:auto;height:26px;padding:3px 5px;overflow:hidden;font-size:0;--ff:initial
+  display:flex;align-items:center;gap:8px;width:auto;height:26px;padding:3px 5px;overflow:hidden;clip-path:inset(3px 0);font-size:0;--ff:initial
 }
 body .gnb .menu .menu__grip{position:relative;display:block;flex:none;width:10px;height:10px}
 body .gnb .menu .menu__grip span{position:absolute;width:4px;height:4px;border-radius:1px;background:#fff}
@@ -2240,7 +2240,7 @@ main{position:relative;z-index:1;background:inherit}
 .foot,.home .foot{padding-top:clamp(calc(100*var(--px)),10vw,calc(180*var(--px)))}
 .foot__shout{
   position:relative;z-index:0;margin:0 0 -.2em;padding:0 calc(20*var(--px));text-align:center;
-  font-size:max(clamp(calc(44*var(--px)),7.4vw,calc(128*var(--px))),14px);line-height:1.02;letter-spacing:-.05em;pointer-events:none;--ff:initial
+  font-size:max(clamp(calc(44*var(--px)),7.4vw,calc(128*var(--px))),14px);line-height:1.02;letter-spacing:-.01em;pointer-events:none;--ff:initial
 }
 body .foot__shout,body .foot__shout *{font-family:"ONE Mobile Title","Pretendard Variable",sans-serif!important}
 .foot__shout > span{display:block;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
@@ -2290,7 +2290,7 @@ body.task-case .task-case__close{position:absolute}
   body.task-case .task-intro__logo{left:calc(380 * var(--u));top:calc(50% - 129 * var(--u));width:calc(200 * var(--u));height:calc(200 * var(--u));padding:calc(20 * var(--u));border-radius:calc(40 * var(--u))}
   body.task-case .task-intro__logo::before{border-radius:calc(30 * var(--u))}
   body.task-case .task-intro__logo img{width:calc(100 * var(--u))}
-  body.task-case .task-intro__point{left:calc(580 * var(--u));top:calc(50% - 37 * var(--u));width:calc(16 * var(--u));height:calc(16 * var(--u))}
+  body.task-case .task-intro__point{left:calc(572 * var(--u));top:calc(50% - 37 * var(--u));width:calc(16 * var(--u));height:calc(16 * var(--u))}
   body.task-case .task-intro__connector{left:calc(590 * var(--u));top:calc(50% - 30 * var(--u));width:calc(356.686 * var(--u));height:calc(240.14 * var(--u))}
   body.task-case .task-intro__dot--mid{left:calc(742 * var(--u));top:calc(50% + 200 * var(--u));width:calc(16 * var(--u));height:calc(16 * var(--u));border-width:calc(5 * var(--u))}
   body.task-case .task-intro__dot--end{left:calc(931 * var(--u));top:calc(50% + 201 * var(--u));width:calc(14 * var(--u));height:calc(14 * var(--u));border-width:calc(4 * var(--u))}
@@ -3252,9 +3252,9 @@ body.nd-case main :is(p:not(.nd-tag),li,.nd-imp b,.nd-chip,.nd-caption,.nd-pcard
 /* MI section titles: the green first line (.mi-g) must use the same font as the second line */
 body.mi-case .mi-main h2 .mi-g,body.mi-case h2 .mi-g{font-family:"ONE Mobile Title","Pretendard Variable",sans-serif!important;font-weight:400!important;font-synthesis:none}
 
-/* Cyphers banner detail: left list is a fixed 400px column */
+/* Cyphers banner detail: left list is a fixed 430px column */
 @media (min-width:1101px){
-.cy-layout{grid-template-columns:calc(400*var(--px)) minmax(0,1fr);column-gap:calc(160*var(--px))}
+.cy-layout{grid-template-columns:calc(430*var(--px)) minmax(0,1fr);column-gap:calc(230*var(--px))}
 }
 
 /* Cyphers: no background behind the left list — the hero stays visible there; only the banner column is black */
@@ -3545,15 +3545,15 @@ body.dfu-case .dfu-brand h2{font-weight:400!important}
 .mpane__img[src*="cy-flow.jpg"]{object-fit:contain;object-position:center;padding:calc(24*var(--px));box-sizing:border-box}
 .mpane__img:is([src*="showcase/"],[src*="gldf.jpg"],[src*="notice.jpg"],[src*="cy-modal.jpg"]){object-position:center}
 .mpane__img[src*="nd-modal"]{object-position:center}
-/* About profile card: purple→pink light travels around the edge on hover */
+/* About profile card: blue light travels around the edge on hover */
 @property --edge-a{syntax:"<angle>";initial-value:0deg;inherits:false}
 .about-profile-card{position:relative}
-.about-profile-card::before{content:"";position:absolute;inset:-1px;z-index:6;padding:1.5px;border-radius:inherit;background:conic-gradient(from var(--edge-a),#7c3aed,#c026d3,#ff5fb0,#7dd3fc,#a78bfa,#ff5fb0,#7c3aed);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;pointer-events:none;transition:opacity .5s ease;animation:aboutEdge 3.2s linear infinite;animation-play-state:paused}
+.about-profile-card::before{content:"";position:absolute;inset:-1px;z-index:6;padding:1.5px;border-radius:inherit;background:conic-gradient(from var(--edge-a),#2563eb,#38bdf8,#7dd3fc,#60a5fa,#818cf8,#38bdf8,#2563eb);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;pointer-events:none;transition:opacity .5s ease;animation:aboutEdge 3.2s linear infinite;animation-play-state:paused}
 .about-profile-card{transition:opacity 1.2s var(--ease),box-shadow .6s ease}
 .about-profile-card:hover::before{opacity:1;animation-play-state:running}
-.about-profile-card:hover{box-shadow:calc(4*var(--px)) calc(10*var(--px)) calc(25*var(--px)) #000,0 0 0 1px rgba(192,38,211,.12),0 0 calc(40*var(--px)) rgba(168,85,247,.22),0 0 calc(90*var(--px)) rgba(255,95,176,.14)}
+.about-profile-card:hover{box-shadow:calc(4*var(--px)) calc(10*var(--px)) calc(25*var(--px)) #000,0 0 0 1px rgba(59,130,246,.14),0 0 calc(40*var(--px)) rgba(59,130,246,.24),0 0 calc(90*var(--px)) rgba(56,189,248,.14)}
 @keyframes aboutEdge{to{--edge-a:360deg}}
-@media (prefers-reduced-motion:reduce){.about-profile-card::before{animation:none;background:linear-gradient(135deg,#7c3aed,#c026d3 50%,#ff5fb0)}}
+@media (prefers-reduced-motion:reduce){.about-profile-card::before{animation:none;background:linear-gradient(135deg,#2563eb,#38bdf8 50%,#818cf8)}}
 .about-motion body.about-page .about-profile-card{transition:opacity 1.2s var(--ease),box-shadow .6s ease}
 /* holographic foil over the card, steered by --hx/--hy (about-holo.js) */
 .about-holo{position:absolute;inset:0;z-index:5;border-radius:inherit;pointer-events:none;opacity:0;mix-blend-mode:screen;transition:opacity .5s ease;
@@ -3626,4 +3626,114 @@ html body .gnb .menu,html body .gnb .menu *{--ff:Montserrat,"Pretendard Variable
 .mpane__desc{margin-top:8px;font-size:15px;line-height:1.5}
 .mpane__title .mpane__link{height:40px;margin-top:0;font-size:13px}
 .mpane__chips{margin-top:12px;gap:6px}
+}
+/* Tools: "AI," in ONE Mobile like the Hangul around it; icon row spans to the end of "씁니다." */
+body.home .tools__h .tools__ai{font-family:"ONE Mobile","Pretendard Variable",sans-serif!important}
+@media (min-width:821px){
+  .home .tools__icons{justify-content:space-between}
+  .home .tools__icons .ticon{flex-basis:calc(76*var(--px));width:calc(76*var(--px));height:calc(76*var(--px));border-radius:calc(18*var(--px))}
+}
+/* Footer tagline: Regular weight instead of Bold. */
+body .foot__tag,body .foot__tag *{font-weight:400!important}
+/* Footer columns: lighter weights. */
+body .foot__col a{font-weight:400}
+body .foot__col h3{font-weight:500}
+/* Project card title: SemiBold for the English face. */
+body .pcard__title{font-weight:600}
+/* Menu: thumbnails hidden for now. Delete this rule to bring them back. */
+body .gnb .menu .menu__thumb,body .gnb .menu.is-open .menu__thumb{display:none!important}
+/* About › Jeju: larger place line ("제주시 / 2021년 12월, 제주에 왔어요"). */
+body .about-jeju__copy .about-jeju__place{font-size:max(calc(21*var(--px)),17px);line-height:1.45}
+@media (min-width:821px){.about-jeju__copy{max-width:calc(340*var(--px))}}
+/* DFU CMS › Character list: more room above the section header. */
+@media (min-width:821px){#list.dfu-stagesec{padding-top:calc(140*var(--px))}}
+@media (max-width:820px){#list.dfu-stagesec{padding-top:calc(110*var(--px))}}
+/* TASK features (phone/tablet): titles stay on exactly two lines by scaling with the viewport; more air above AS-IS. */
+@media (max-width:820px){
+  body.task-case .task-feature h2{font-size:min(30px,calc((100vw - 40px) / 15.6))!important;line-height:1.3!important;white-space:nowrap}
+  body.task-case .task-feature__asis{margin-top:56px}
+}
+/* Progressive blur along the bottom edge of the viewport (assets/js/scroll-blur.js), on every page. */
+.scroll-blur{--sb-h:clamp(70px,11vh,130px);position:fixed;left:0;right:0;bottom:0;z-index:120;height:var(--sb-h);pointer-events:none;opacity:1;transition:opacity .4s ease}
+.scroll-blur.is-off{opacity:0}
+.scroll-blur::before,.scroll-blur::after{content:"";position:absolute;left:0;right:0;bottom:0}
+.scroll-blur::before{height:var(--sb-h);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);-webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.55) 50%,transparent 100%);mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.55) 50%,transparent 100%)}
+.scroll-blur::after{height:calc(var(--sb-h) * .55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);-webkit-mask-image:linear-gradient(to top,#000 0%,transparent 100%);mask-image:linear-gradient(to top,#000 0%,transparent 100%)}
+/* Case-study close button: heavier outline and icon; the arrow bobs downward on hover. */
+body:is(.task-case,.cy-case,.nd-case,.dfu-case,.mi-case) .task-case__close{border:3px solid #000;color:#000}
+body:is(.task-case,.cy-case,.nd-case,.dfu-case,.mi-case) .task-case__close i{font-size:calc(20*var(--px));-webkit-text-stroke:1.6px currentColor}
+body:is(.task-case,.cy-case,.nd-case,.dfu-case,.mi-case) .task-case__close:hover{color:#000}
+body:is(.task-case,.cy-case,.nd-case,.dfu-case,.mi-case) .task-case__close:hover i{animation:closeNudge .7s ease-in-out infinite}
+@keyframes closeNudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){body:is(.task-case,.cy-case,.nd-case,.dfu-case,.mi-case) .task-case__close:hover i{animation:none;transform:translateY(3px)}}
+/* TASK intro (Figma 862:667): keep the 1920x660 aspect at any width so the logo, curve and dots stay in proportion.
+   The end dot is a ring centred on the column divider: it hangs off the graphic column's right edge, so it follows the line exactly. */
+@media (min-width:821px){
+  body.task-case .task-intro{height:auto;aspect-ratio:1920 / 660}
+  body.task-case .task-intro__graphic{overflow:visible}
+  body.task-case .task-intro__dot--end{display:none}
+  body.task-case .task-intro__graphic::after{
+    --u:calc(100cqw / 946);
+    content:"";position:absolute;z-index:2;pointer-events:none;
+    right:calc(-.5px - 7 * var(--u));top:calc(50% + 202.14 * var(--u));
+    width:calc(14 * var(--u));height:calc(14 * var(--u));box-sizing:border-box;border-radius:50%;
+    border:max(1px,calc(1.5 * var(--u))) solid #4d4d4d;
+    background:radial-gradient(circle,#8a8a8a 0 calc(2 * var(--u)),#050505 calc(2.4 * var(--u)));
+  }
+}
+/* TASK intro: the start dot is centred on the logo's right edge; this short stub carries the line from the dot's centre to the curve. */
+@media (min-width:821px){
+  body.task-case .task-intro__graphic::before{
+    --u:calc(100cqw / 946);
+    content:"";position:absolute;z-index:0;pointer-events:none;
+    left:calc(580 * var(--u));top:calc(50% - 30 * var(--u));width:calc(10 * var(--u));height:calc(2 * var(--u));
+    background:rgba(212,212,212,.3);
+  }
+}
+/* DFU / Media Insight intro graph (same Figma frame as TASK): start dot centred on the logo's right edge, end dot centred on the column edge. */
+@media (min-width:1101px){
+  .dfu-graph{overflow:visible;z-index:1}
+  body .dfu-graph>.dfu-graph__pt{left:calc(572 * var(--u))}
+  body .dfu-graph>.dfu-graph__end{left:auto;right:calc(-.5px - 7 * var(--u));z-index:2}
+  body .mi-graph>.dfu-graph__end{right:calc(-7 * var(--u))}
+  .dfu-graph::before{
+    --u:calc(100cqw / 946);
+    content:"";position:absolute;pointer-events:none;
+    left:calc(580 * var(--u));top:calc(299.99 * var(--u));width:calc(12 * var(--u));height:calc(2 * var(--u));
+    background:#c1cfd4;
+  }
+  .mi-graph::before{background:rgba(212,212,212,.3)}
+}
+/* Cyphers: the two-up rows share one height. The left shot sets it (fixed ratio); the right image fills that box instead of sizing itself. */
+.cy-row--row2 .cy-shot:nth-child(2){aspect-ratio:auto;position:relative}
+.cy-row--row2 .cy-shot:nth-child(2) img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Cyphers: breathing room between the top edge of the black banner panel and the first banner (the panel itself still starts 48px down). */
+@media (min-width:821px){.cy-list{padding-top:calc(96*var(--px))}}
+/* Prev/next project nav: English titles one step lighter (Korean stays ONE Mobile Bold, which has no 600). */
+body .task-project-nav strong{font-weight:600}
+/* DFU CMS typography: the portal itself is set in Nexon's "던파 연마된 칼날" (DNF Forged Blade).
+   Latin-only subsets (Aa123 + the sample lines); the Hangul name above stays in the page font. */
+@font-face{font-family:"DNF Forged Blade";src:url("../fonts/DNFForgedBlade-Light-latin.woff2") format("woff2");font-weight:100 300;font-style:normal;font-display:swap}
+@font-face{font-family:"DNF Forged Blade";src:url("../fonts/DNFForgedBlade-Medium-latin.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:"DNF Forged Blade";src:url("../fonts/DNFForgedBlade-Bold-latin.woff2") format("woff2");font-weight:600 900;font-style:normal;font-display:swap}
+body.dfu-case .dfu-type .dfu-type__left p,
+body.dfu-case .dfu-type .dfu-type__right p{font-family:"DNF Forged Blade","ONE Mobile","Pretendard Variable",sans-serif!important;font-synthesis:none}
+/* DFU CMS colors: the swatches are the real CMS palette (sidebar #1A1A1C, accent blue #247CFB, table-header gray #EBEEF1) and are painted in their own color. */
+body.dfu-case .dfu-band--black{background:#1a1a1c;color:#fafafa}
+body.dfu-case .dfu-band--sky{background:#247cfb;color:#fff}
+body.dfu-case .dfu-band--gray{background:#ebeef1;color:#262626}
+/* TASK colors: every row's text block is a fixed-width box (Figma: 560 wide, name column 160) so names and values line up left. */
+@media (min-width:821px){
+  body.task-case :is(.task-colors>p,.task-color p){flex:none;width:calc(560*var(--px));gap:0}
+}
+@media (max-width:820px){
+  body.task-case :is(.task-colors>p,.task-color p){flex:none;width:270px}
+  body.task-case .task-colors>p{margin-left:auto}
+}
+/* TASK features (desktop): the title scales with its text column so it is always exactly two lines (the longest line is ~15.2em),
+   and the AS-IS block keeps at least 56px of air below the points. */
+@media (min-width:821px){
+  body.task-case .task-feature__text{container-type:inline-size}
+  body.task-case .task-feature .task-feature__text h2{font-size:min(calc(40*var(--px)),calc(100cqw / 15.6))!important;white-space:nowrap}
+  body.task-case .task-feature__points{margin-bottom:56px}
 }
