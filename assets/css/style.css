@@ -3509,7 +3509,7 @@ body.dfu-case .dfu-acards .dfu-acard p{letter-spacing:-.05em}
   .nd-flow__desc{top:calc(916*var(--px))}
 }
 .flow-modal__img{margin-bottom:calc(36*var(--px))}
-@media (max-width:820px){.nd-flow__desc{padding-top:16px}}
+@media (max-width:820px){.nd-flow__desc{padding-top:calc(16*var(--px))}}
 
 /* Phosphor icons (https://phosphoricons.com): shared sizing for the UI glyphs. */
 i.ph{display:inline-block;font-style:normal;line-height:1;vertical-align:-.125em}
@@ -3541,3 +3541,7 @@ body.dfu-case .dfu-brand h2{font-weight:400!important}
 /* Project list: taller rows. The focus pill is 8px shorter than a row (JS offsets it by 4px to centre it). */
 .showcase__item{height:calc(68*var(--px));justify-content:center;padding:0 calc(18*var(--px))}
 .showcase__pill{height:calc(60*var(--px))}
+/* Wide layout images in the square modal frame: show whole, centred */
+.mpane__img[src*="cy-flow.jpg"]{object-fit:contain;object-position:center;padding:calc(24*var(--px));box-sizing:border-box}
+.mpane__img:is([src*="showcase/"],[src*="gldf.jpg"],[src*="notice.jpg"],[src*="cy-modal.jpg"]){object-position:center}
+.mpane__img[src*="nd-modal"]{object-position:center}
