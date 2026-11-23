@@ -3482,3 +3482,18 @@ body.dfu-case .dfu-acards .dfu-acard p{letter-spacing:-.05em}
 .modal__tabs button:hover{color:#111}
 .modal__tabs button[aria-selected="true"]{background:#fff;color:#111;box-shadow:none}
 @media (max-width:820px){.modal__tabs{display:flex;padding:calc(4*var(--px))}.modal__tabs button{height:calc(36*var(--px));padding:0 calc(14*var(--px));font-size:13px}}
+/* Project modal: square image area */
+.mpane__media{aspect-ratio:1/1;align-self:start}
+
+/* DFU CMS screen sections (Figma 1305:1924 / 1980 / 2030 / 2087): centred header, 1920 stage, pop-outs with a thin white frame */
+@media (min-width:821px){
+  .dfu-stagesec{gap:calc(56*var(--px));padding:calc(60*var(--px)) 0;overflow:hidden}
+  #list.dfu-stagesec{gap:calc(80*var(--px))}
+  .dfu-stagesec>.dfu-head{width:auto;text-align:center}
+  .dfu-stagesec .dfu-stage{width:min(calc(1920*var(--px)),100%);align-self:center}
+  #matrix .dfu-stage{align-self:center}
+}
+.dfu-pop{border-width:calc(var(--b,6)*var(--u));border-radius:calc(8*var(--u))}
+.dfu-pop>div{border-radius:calc(2*var(--u))}
+.dfu-call h3{font-size:max(max(calc(20*var(--u)),calc(16*var(--px))),14px)}
+.dfu-call p{font-size:max(max(calc(15*var(--u)),calc(14*var(--px))),14px)}
