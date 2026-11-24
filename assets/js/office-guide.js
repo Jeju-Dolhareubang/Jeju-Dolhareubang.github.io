@@ -140,7 +140,7 @@
         '<p class="office-guide__message" aria-live="polite">무엇을 도와 드릴까요?</p>' +
         '<ul class="office-guide__results" hidden></ul>' +
         '<label for="office-guide-search">궁금한 내용을 입력하세요.</label>' +
-        '<div class="office-guide__row"><input id="office-guide-search" type="text" autocomplete="off" placeholder="예: 던파, 대시보드, 피그마"><button type="button" class="office-guide__btn" data-act="search">찾기(S)</button></div>' +
+        '<div class="office-guide__row"><input id="office-guide-search" type="text" autocomplete="off" data-clarity-mask="true" placeholder="예: 던파, 대시보드, 피그마"><button type="button" class="office-guide__btn" data-act="search">찾기(S)</button></div>' +
         '<button type="button" class="office-guide__btn office-guide__options" data-act="options">옵션(O)</button>' +
         '<div class="office-guide__opts" hidden><label><input type="checkbox" data-act="auto" checked> 랜덤 동작 자동 재생</label><p>말풍선을 열면 쉬고, 닫으면 다시 움직여요.</p><button type="button" class="office-guide__btn" data-act="more">다른 동작 보기</button></div>' +
       '</div>' +

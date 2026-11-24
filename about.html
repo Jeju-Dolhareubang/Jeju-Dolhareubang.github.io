@@ -22,6 +22,16 @@
     document.head.appendChild(s);
   })();
 </script>
+<!-- Microsoft Clarity (project ziizeiewro); the guard keeps it from loading twice -->
+<script type="text/javascript">
+  if (!window.clarity) {
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ziizeiewro");
+  }
+</script>
 </head>
 <body class="about-page">
 <div class="pt" aria-hidden="true"><span class="pt__mark">PARK DANBI</span></div>
@@ -185,7 +195,7 @@
 <script src="assets/js/lenis.min.js"></script>
 <script src="assets/js/main.js?v=flowmodal-20261123b"></script>
 <script src="assets/js/scroll-blur.js?v=blur-20261123b"></script>
-<script src="assets/js/office-guide.js?v=guide-20261123d"></script>
+<script src="assets/js/office-guide.js?v=guide-20261124a"></script>
 <script src="assets/js/about-jeju.js?v=flight-20261124a"></script>
 <script src="assets/js/about-motion.js?v=about-blue-20261123"></script>
 <script src="assets/js/about-holo.js?v=holo-20261123a"></script>
