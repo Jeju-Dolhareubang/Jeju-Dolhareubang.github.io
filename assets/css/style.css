@@ -3756,3 +3756,5 @@ body.task-case .task-problem .task-keep-br br{display:inline!important}
 .nd-overview__intro p{max-width:41em;word-break:keep-all;text-wrap:pretty}
 /* About map: family home (Incheon) marked in quiet grey next to the Jeju pin */
 .about-jeju__home text{fill:#9aa09b;font-size:13px;font-weight:600;letter-spacing:-.02em}
+/* TASK IA diagram: its boxes hold fixed-size text, so the whole diagram keeps its 2560px size on desktop */
+@media (min-width:821px){body.task-case .task-arch{--px:1px}}
