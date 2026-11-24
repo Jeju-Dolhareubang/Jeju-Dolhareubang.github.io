@@ -3764,3 +3764,16 @@ body.task-case .task-problem .task-keep-br br{display:inline!important}
   .home .prow>span:empty{display:none}
   .home .prow__date{text-align:left;min-width:0;width:auto}
 }
+/* Cookie consent bar (assets/js/consent.js): small dark glass card, bottom-left, clear of the Office guide */
+.consent{position:fixed;z-index:400;left:18px;bottom:18px;display:flex;align-items:center;gap:16px;max-width:min(560px,calc(100vw - 36px));padding:14px 14px 14px 18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(0,0,0,.28);color:#d4d4d4;--ff:var(--font-small);opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s cubic-bezier(.22,1,.36,1)}
+.consent.is-on{opacity:1;transform:none}
+.consent__text{margin:0;font-size:13px;line-height:1.55;letter-spacing:-.01em}
+.consent__text b{font-weight:600;color:#fafafa}
+.consent__text a{color:#a3a3a3;text-decoration:underline;text-underline-offset:2px}
+.consent__actions{display:flex;gap:6px;flex:none}
+.consent__btn{height:34px;padding:0 14px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:transparent;color:#d4d4d4;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.consent__btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.consent__btn--ok{border-color:#fafafa;background:#fafafa;color:#111}
+.consent__btn--ok:hover{background:#fff;color:#000}
+@media (max-width:640px){.consent{left:12px;right:12px;bottom:12px;max-width:none;flex-direction:column;align-items:stretch;gap:10px}.consent__actions .consent__btn{flex:1}}
+@media (prefers-reduced-motion:reduce){.consent{transition:none}}
