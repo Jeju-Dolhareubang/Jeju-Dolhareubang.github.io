@@ -3748,3 +3748,11 @@ body.home .statement__lead :is(b,strong){font-weight:400}
 body.home .prow__t{font-weight:400}
 /* Home › tools cards: when the two columns are stacked (phones/tablets) they must not parallax against each other, or the last card of column 1 slides over the first of column 2. */
 @media (max-width:820px){.home .tools__col{transform:none!important}}
+/* no-fit */ @media (min-width:821px){.home .tools__desc{width:min(460px,100%)}} /* text stays 14px, so the box keeps its width too: same line breaks on every screen */
+/* TASK Issue 02 keeps its line break on every screen */
+body.task-case .task-problem__issues article:nth-child(2) p br{display:inline!important}
+body.task-case .task-problem .task-keep-br br{display:inline!important}
+/* ND overview copy: no hard breaks; a measure tied to the font size wraps the same on every screen */
+.nd-overview__intro p{max-width:41em;word-break:keep-all;text-wrap:pretty}
+/* About map: family home (Incheon) marked in quiet grey next to the Jeju pin */
+.about-jeju__home text{fill:#9aa09b;font-size:13px;font-weight:600;letter-spacing:-.02em}

@@ -24,6 +24,7 @@
     [[131.856,37.247],[131.875,37.249],[131.878,37.235],[131.861,37.234],[131.856,37.247]]
   ];
   var site = [126.477, 33.483];
+  var home = [126.705, 37.456]; // Incheon (family home)
   var rad = Math.PI / 180;
   var range = function (start, end, step) { return Array.from({ length: Math.round((end - start) / step) + 1 }, function (_, i) { return start + i * step; }); };
   var grid = [].concat(
@@ -40,6 +41,7 @@
   var coastPath = root.querySelector('#about-jeju-coast');
   var limb = root.querySelector('#about-jeju-limb');
   var target = root.querySelector('#about-jeju-target');
+  var homeMark = root.querySelector('#about-jeju-home');
   var bound = root.querySelector('#about-jeju-bound');
   var bubble = root.querySelector('#about-jeju-bubble');
   var dolphinScene = root.querySelector('#about-jeju-dolphin-scene');
@@ -104,6 +106,11 @@
     limb.setAttribute('r', mix(170, 2250, zoom));
     limb.style.opacity = 1 - smooth((progress - 0.46) / 0.12);
     target.setAttribute('opacity', arrival);
+    if (homeMark) {
+      var hp = project(home);
+      homeMark.setAttribute('opacity', arrival);
+      homeMark.setAttribute('transform', 'translate(' + hp[0] + ' ' + hp[1] + ')');
+    }
     target.setAttribute('transform', 'translate(' + point[0] + ' ' + point[1] + ')');
     bubble.setAttribute('opacity', finished ? 1 : 0);
     dolphinScene.classList.toggle('is-visible', finished);
