@@ -42,6 +42,29 @@
   var limb = root.querySelector('#about-jeju-limb');
   var target = root.querySelector('#about-jeju-target');
   var homeMark = root.querySelector('#about-jeju-home');
+  var flight = root.querySelector('#about-jeju-flight');
+  var route = root.querySelector('#about-jeju-route');
+  var plane = root.querySelector('#about-jeju-plane');
+
+  /* Incheon -> Jeju: a quadratic arc bowing west over the Yellow Sea, drawn up to t */
+  function flightPath(a, b, t) {
+    var mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2;
+    var len = Math.sqrt((b[0] - a[0]) * (b[0] - a[0]) + (b[1] - a[1]) * (b[1] - a[1]));
+    var c = [mx - len * 0.38, my];
+    function at(u) {
+      var v = 1 - u;
+      return [v * v * a[0] + 2 * v * u * c[0] + u * u * b[0], v * v * a[1] + 2 * v * u * c[1] + u * u * b[1]];
+    }
+    var d = '', steps = 40;
+    for (var i = 0; i <= steps; i++) {
+      var q = at(t * i / steps);
+      d += (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1);
+    }
+    var head = at(t), u2 = Math.max(0, t - 0.01), back = at(u2);
+    var angle = Math.atan2(head[1] - back[1], head[0] - back[0]) * 180 / Math.PI;
+    if (t < 0.01) { var ahead = at(0.01); angle = Math.atan2(ahead[1] - head[1], ahead[0] - head[0]) * 180 / Math.PI; }
+    return { d: d, x: head[0], y: head[1], angle: angle };
+  }
   var bound = root.querySelector('#about-jeju-bound');
   var bubble = root.querySelector('#about-jeju-bubble');
   var dolphinScene = root.querySelector('#about-jeju-dolphin-scene');
@@ -110,6 +133,14 @@
       var hp = project(home);
       homeMark.setAttribute('opacity', arrival);
       homeMark.setAttribute('transform', 'translate(' + hp[0] + ' ' + hp[1] + ')');
+    }
+    if (flight) {
+      var fl = smooth((progress - 0.84) / 0.16);
+      var fp = flightPath(project(home), point, fl);
+      flight.setAttribute('opacity', arrival);
+      route.setAttribute('d', fp.d);
+      plane.setAttribute('transform', 'translate(' + fp.x.toFixed(1) + ' ' + fp.y.toFixed(1) + ') rotate(' + fp.angle.toFixed(1) + ')');
+      plane.setAttribute('opacity', fl >= 1 ? 0 : 1 - smooth((fl - 0.9) / 0.1));
     }
     target.setAttribute('transform', 'translate(' + point[0] + ' ' + point[1] + ')');
     bubble.setAttribute('opacity', finished ? 1 : 0);
