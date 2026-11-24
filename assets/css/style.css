@@ -3758,3 +3758,9 @@ body.task-case .task-problem .task-keep-br br{display:inline!important}
 .about-jeju__home text{fill:#9aa09b;font-size:13px;font-weight:600;letter-spacing:-.02em}
 /* TASK IA diagram: its boxes hold fixed-size text, so the whole diagram keeps its 2560px size on desktop */
 @media (min-width:821px){body.task-case .task-arch{--px:1px}}
+/* Home project list on phones: everything stacks left-aligned (title, sub, then date) */
+@media (max-width:820px){
+  .home .prow{grid-template-columns:minmax(0,1fr);justify-items:start;text-align:left;gap:6px}
+  .home .prow>span:empty{display:none}
+  .home .prow__date{text-align:left;min-width:0;width:auto}
+}
