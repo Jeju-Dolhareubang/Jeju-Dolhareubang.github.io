@@ -3777,3 +3777,16 @@ body.task-case .task-problem .task-keep-br br{display:inline!important}
 .consent__btn--ok:hover{background:#fff;color:#000}
 @media (max-width:640px){.consent{left:12px;right:12px;bottom:12px;max-width:none;flex-direction:column;align-items:stretch;gap:10px}.consent__actions .consent__btn{flex:1}}
 @media (prefers-reduced-motion:reduce){.consent{transition:none}}
+
+/* Selected work: centred "more below" cue at the bottom of the pinned showcase (desktop) */
+.showcase__scroll{display:none}
+@media (min-width:1024px){
+  .showcase__scroll{position:fixed;left:50%;bottom:28px;z-index:20;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.55);transform:translateX(-50%);opacity:0;pointer-events:none;transition:opacity .5s ease}
+  [data-showcase].is-cue .showcase__scroll{opacity:1}
+  [data-showcase].is-last .showcase__scroll{opacity:0}
+  .showcase__scroll-label{font-family:Montserrat,"Pretendard Variable",sans-serif!important;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;--ff:initial}
+  .showcase__scroll-track{position:relative;display:block;width:1.5px;height:48px;border-radius:2px;background:rgba(255,255,255,.16);overflow:hidden}
+  .showcase__scroll-track i{position:absolute;left:0;top:0;width:100%;height:40%;border-radius:2px;background:#fafafa;animation:scrollDrop 1.8s cubic-bezier(.65,0,.35,1) infinite}
+}
+@keyframes scrollDrop{0%{transform:translateY(-100%)}100%{transform:translateY(250%)}}
+@media (prefers-reduced-motion:reduce){.showcase__scroll-track i{animation:none;transform:none}}

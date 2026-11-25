@@ -141,6 +141,12 @@
   }
   if (bar) bar.setAttribute('aria-label', 'Open menu');
   if (bar) bar.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  // desktop pointers: the menu drops open on hover and closes shortly after the pointer leaves it
+  if (menu && bar && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var hoverClose = null;
+    menu.addEventListener('pointerenter', function () { clearTimeout(hoverClose); if (!menu.classList.contains('is-open')) openMenu(); });
+    menu.addEventListener('pointerleave', function () { clearTimeout(hoverClose); hoverClose = setTimeout(closeMenu, 260); });
+  }
   if (dim) dim.addEventListener('click', closeMenu);
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu && menu.classList.contains('is-open')) closeMenu(); });
 
@@ -429,6 +435,8 @@
         }
       });
       if (scPill) scPill.style.transform = 'translateY(' + (scItems[i].offsetTop + 4) + 'px)';
+      // scroll cue: thumb fills as the list advances; the cue fades once the last project is reached
+      showcase.classList.toggle('is-last', i === scItems.length - 1);
     };
     var scInner = $('.showcase__inner', showcase);
     // desktop: the list is pinned, so scroll progress through the section picks the item;
@@ -463,6 +471,13 @@
       if (scIntro.style.transform) scIntro.style.transform = '';
     };
     var queue = function () { if (!scTick) { scTick = true; requestAnimationFrame(update); } };
+    // "more below" cue: only while the showcase fills the screen
+    var cueTick = function () {
+      var r = showcase.getBoundingClientRect();
+      showcase.classList.toggle('is-cue', r.top < window.innerHeight * 0.25 && r.bottom > window.innerHeight * 1.1);
+    };
+    window.addEventListener('scroll', cueTick, { passive: true });
+    cueTick();
     window.addEventListener('scroll', queue, { passive: true });
     window.addEventListener('resize', function () { scCurrent = -1; fitList(); queue(); });
     scItems.forEach(function (item, k) {
